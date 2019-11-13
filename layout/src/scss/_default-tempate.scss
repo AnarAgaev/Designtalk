@@ -201,6 +201,45 @@ input.button {
     margin-bottom: 50px;
 }
 
+// Logotype
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: $color-primary-font;
+    font-weight: bold;
+    transition: all .5s;
+
+    &__letter {
+        display: block;
+        position: absolute;
+        color: $color-d;
+        font-size: 5rem;
+        font-weight: 700;
+        left: 50%;
+        transform: rotate(0deg) translate(-50%, 0);
+        transition:
+            font-size .5s,
+            transform .3s $animation-primary;
+    }
+
+    &__caption {
+        z-index: 1;
+    }
+
+    &:hover {
+        .logo__letter {
+            transform: rotate(-5deg) translate(-50%, -4px);
+        }
+    }
+
+    &::before {
+        content: none;
+    }
+}
+
 // Header
 .header {
     display: block;
@@ -210,63 +249,27 @@ input.button {
     background-color: rgba(255, 255, 255, .97);
     z-index: 100;
     transition: transform .7s;
-    .container {
-        position: relative;
+    
+    &__wrapper {
+       display: flex;
+       align-items: baseline;
+       justify-content: space-between;
     }
-    .row {
-        align-items: baseline;
-    }
-    &__logo {
-        line-height: 100px;
-        height: 100px;
-        display: inline-flex;
-        font-size: 1.5em;
-        cursor: pointer;
-        text-decoration: none;
-        color: $color-primary-font;
-        font-weight: bold;
-        transition: all .5s;
-        &__letter {
-            display: block;
-            position: absolute;
-            color: $color-d;
-            font-size: 5rem;
-            font-weight: 700;
-            z-index: 20;
-            left: 50%;
-            transform: rotate(0deg) translate(-50%, 0);
-            transition: 
-                font-size .5s,
-                transform .3s $animation-primary;
-        }
-        &__name {
-            z-index: 20;
-        }
 
-        &:hover {
-            .header__logo__letter {
-                transform: rotate(-5deg) translate(-50%, -4px);
-            }
-        }
-
-        &::before {
-            content: none;
-        }
-    }
     &__nav {
-        transition: margin-left .5s;
+        flex: 1 0 auto;
+
         &__list {
             display: flex;
         }
+        
         &__link {
             line-height: 100px;
             height: 100px;
-            display: inline-block;
             cursor: pointer;
             font-size: 0.93rem;
             transition: all .5s;
-            margin-right: 1rem;
-            position: relative;
+            margin-left: 1rem;
 
             &::before {
                 content: none;
@@ -299,23 +302,21 @@ input.button {
     }
     &__socials__list {
         display: flex;
-        justify-content: flex-end;
     }
     &__social__item {
         border-right: 1px solid $color-xxl;
-        margin-top: 34px;
-        transition: margin-top .5s;
         
         &:last-child {
             border-right: none;
-            .header__social__link {
+            
+            .icon-link {
                 padding-right: 0;
             }
         }
     }
+
     .icon-link {
         line-height: 32px;
-        height: 32px;
         padding: 0 9px;
         margin: 0;
         color: $color-m;
@@ -324,10 +325,9 @@ input.button {
             color: $color-primary-font;
         }
     }
+
     &.compress {
-        .header__logo {
-            line-height: 70px;
-            height: 70px;
+        .logo {
             font-size: 1.1em;
             
             &__letter {
@@ -336,16 +336,10 @@ input.button {
         }
 
         .header__nav {
-            margin-left: -45px;
-
             &__link {
                 line-height: 70px;
                 height: 70px;
             }
-        }
-
-        .header__social__item {
-            margin-top: 19px;
         }
     }
     &.hide {
@@ -360,11 +354,6 @@ input.button {
     width: 100%;
     padding: 50px 0 30px;
     background-color: $color-l;
-    z-index: 100;
-    
-    .container {
-        position: relative;
-    }
     
     &__nav {
         &__list {
@@ -412,6 +401,10 @@ input.button {
         font-size: 0.77rem;
         transition: color .3s;
 
+        &:last-child {
+            margin-right: 0;
+        }
+
         &::before {
             content: none;
         }
@@ -425,6 +418,7 @@ input.button {
         display: flex;
         justify-content: center;
         margin: 23px 0;
+        
         .icon-link {
             margin: 0 14px;
         }
@@ -434,6 +428,7 @@ input.button {
         text-align: center;
         font-size: 0.73rem;
         line-height: 2;
+        
         a {
             color: $color-primary-font;
 
@@ -443,7 +438,9 @@ input.button {
         }
     }
     &__logo {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        height: 100px;
     }
 }
 
@@ -484,6 +481,7 @@ input.button {
         width 0s .1s,
         height 0s .1s,
         transform 0s .1s;
+    
     &.show {
         width: 70px;
         height: 70px;
@@ -547,6 +545,7 @@ input.button {
         &_colorize3 > div {
             background-color: $color-xl;
         }
+        
         &_colorize1,
         &_colorize2,
         &_colorize3 {
@@ -585,6 +584,7 @@ input.button {
                  }
             }
         }
+        
         &__caption {
             height: 100%;
             display: flex;
@@ -593,6 +593,7 @@ input.button {
             align-items: flex-start;
             padding: 30px 0 0 0;
             font-size: 0.94rem;
+            
             h3 {
                 font-family: $font-primary;
                 font-size: 1.67rem;
@@ -601,12 +602,14 @@ input.button {
                 margin-top: 0;
                 word-spacing: 2px;
             }
+            
             p {
                 margin-bottom: 1.5rem;
                 line-height: 1.5;
                 font-size: .94rem;
             }
         }
+        
         &__pic {
             &-link {
                 display: block;
@@ -736,12 +739,14 @@ input {
             }
         }
     }
+    
     h2 {
         font-family: $font-primary;
         font-weight: 700;
         margin: 30px 0 40px;
         margin: 2rem 0;
     }
+    
     h3 {
         display: block;
         max-width: 80%;
@@ -750,9 +755,11 @@ input {
         margin-bottom: 30px;
         border-left: 10px solid $color-m;
     }
+    
     .button {
         margin-top: 15px;
     }
+    
     .hashtag {
         top: 0;
     }
