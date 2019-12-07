@@ -533,6 +533,7 @@ input.button {
 .article {
     &__item {
         border-top: 30px solid $color-secondery-font;
+        margin-bottom: 30px;
 
         &_colorize1 > div {
             background-color: $color-m;
@@ -724,7 +725,7 @@ input {
 
 .popular {
     &__item {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         
         &__pic-link {
             &::before {
