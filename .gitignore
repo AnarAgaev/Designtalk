@@ -3,3 +3,6 @@ layout/node_modules/
 
 # Ignore preproduction directory
 layout/dist/
+
+# Ignore idea configuration
+.idea/
