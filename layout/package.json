@@ -1,5 +1,5 @@
 {
-	"name": "Webpach-template",
+	"name": "Webpack-template",
 	"version": "1.0.0",
 	"description": "Webpack assembly for layout. It uses Pug, SCSS, Autoprefixer, Babel",
 	"main": "index.js",

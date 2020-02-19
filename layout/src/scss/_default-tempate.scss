@@ -18,6 +18,10 @@ body {
     color: $color-primary-font;
     line-height: 1.5;
     overflow-x: hidden;
+    background-image: repeating-linear-gradient(150deg,rgba(96,74,160,.06),rgba(96,74,160,.06) 1px,rgba(0,0,0,0) 0,rgba(0,0,0,0) 41px),repeating-linear-gradient(-150deg,rgba(96,74,160,.06),rgba(96,74,160,.06) 1px,rgba(0,0,0,0) 0,rgba(0,0,0,0) 41px);
+    background-size: 82px 47px;
+    background-attachment: fixed;
+
 }
 
 .header,
@@ -42,7 +46,7 @@ img {
     height: auto;
 }
 
-// Colors expamle
+// Colors example
 .colors-container__item {
     height: 127px;
     width: calc(100% + 30px);
@@ -60,14 +64,15 @@ h1, .h1,
 h2, .h2,
 h3, .h3 {
     position: relative;
-    font-family: $font-headers;
+    font-family: $font-primary;
     font-weight: 700;
 }
 h1, .h1 {
-    font-size: 6rem;
+    font-size: 4.7rem;
     line-height: 6rem;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
+    font-weight: 700;
 }
 h2, .h2 {
     font-size: 4rem;
@@ -197,7 +202,7 @@ input.button {
 // Content of pages
 .main {
     flex: 1 0 auto;
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
 }
 
@@ -206,7 +211,7 @@ input.button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1.43em;
     cursor: pointer;
     color: $color-primary-font;
     font-weight: bold;
@@ -216,13 +221,11 @@ input.button {
         display: block;
         position: absolute;
         color: $color-d;
-        font-size: 5rem;
+        font-size: 4.1rem;
         font-weight: 700;
         left: 50%;
-        transform: rotate(0deg) translate(-50%, 0);
-        transition:
-            font-size .5s,
-            transform .3s $animation-primary;
+        transform: rotate(-5deg) translate(-50%, -4px);
+        transition: font-size .5s $animation-primary;
     }
 
     &__caption {
@@ -231,7 +234,7 @@ input.button {
 
     &:hover {
         .logo__letter {
-            transform: rotate(-5deg) translate(-50%, -4px);
+          transform: rotate(0deg) translate(-50%, 0);
         }
     }
 
@@ -245,10 +248,9 @@ input.button {
     display: block;
     position: fixed;
     width: 100%;
-    border-bottom: 1px solid $color-xxl;
-    background-color: rgba(255, 255, 255, .97);
     z-index: 100;
-    transition: transform .7s;
+    border-bottom: 1px solid $color-secondery-font;
+    transition: transform .7s ease-in-out, background-color .3s ease-in-out, border-bottom .3s ease-in-out;
     
     &__wrapper {
        display: flex;
@@ -327,6 +329,8 @@ input.button {
     }
 
     &.compress {
+      background-color: hsla(0,0%,100%,.97);
+      border-bottom: 1px solid $color-xxl;
         .logo {
             font-size: 1.1em;
             
@@ -353,7 +357,7 @@ input.button {
     position: relative;
     width: 100%;
     padding: 50px 0 30px;
-    background-color: $color-l;
+    background-color: $color-back;
     
     &__nav {
         &__list {
@@ -532,7 +536,7 @@ input.button {
 
 .article {
     &__item {
-        border-top: 30px solid $color-secondery-font;
+        border-top: 30px solid transparent;
         margin-bottom: 30px;
 
         &_colorize1 > div {
@@ -606,8 +610,8 @@ input.button {
             
             p {
                 margin-bottom: 1.5rem;
-                line-height: 1.5;
-                font-size: .94rem;
+                line-height: 1.57;
+                font-size: 1rem;
             }
         }
         
@@ -736,7 +740,7 @@ input {
         &__caption {
             p {
                 font-size: 1rem;
-                line-height: 1.5;
+                line-height: 1.57;
             }
         }
     }
