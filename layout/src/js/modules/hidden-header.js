@@ -10,9 +10,9 @@ window.addEventListener('scroll', function () {
     let scroll = window.pageYOffset,
         scrollNow = scroll;
 
-    scrollNow > 0
-        ? header.classList.add('compress') 
-        : header.classList.remove('compress');
+    scrollNow > 30
+        ? header.classList.add('paint')
+        : header.classList.remove('paint');
 
     if (scrollNow > 700) {
         if (scrollNow < scrollPrevious) {
