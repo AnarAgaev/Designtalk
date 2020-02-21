@@ -1,47 +1,97 @@
-.container.popular
-    //- h2 Это читают больше всего
-    .row.popular__list
-        .col-lg-6
-            article.popular__item
-                .popular__item__pic
-                    //- a.hashtag(href="#") #Дом
-                    a(href="#").popular__item__pic-link
-                        img(src="/img/temp/smart-kvartira-v-brazilii-pufikhomes-1-1.jpg" alt="").popular__pic
-                    h3.accent.accent_dark
-                        span Светлая квартира с персиковыми стенами на окраине Стокгольма
-                .popular__item__caption
-                    p Пусть эта бюджетная квартира и находится на <a href="#">олитике данных.</a> окраине Стокгольма в одном из спальных районов, её дизайн не лишён знаменитого скандинавского шарма, присущего апартаментам в центре города.
-                    //- a(href="#").button Читать
-        .col-lg-6
-            article.popular__item
-                .popular__item__pic
-                    //- a.hashtag(href="#") #Урбан
-                    a(href="#").popular__item__pic-link
-                        img(src="/img/temp/interesting-colors-in-new-york-apartment-pufikhomes-1-1.jpg" alt="").popular__pic
-                    h3.accent.accent_dark 
-                        span Интересные цветовые сочетания в интерьере квартиры в Нью-Йорке
-                .popular__item__caption
-                    p Базовая отделка этой квартиры в Нью-Йорке заиграла по-новому благодаря интересной мебели и нетривиальным цветовым акцентам.
-                    //- a(href="#").button Читать
-        .col-lg-6
-            article.popular__item
-                .popular__item__pic
-                    //- a.hashtag(href="#") #Маленькие квартиры
-                    a(href="#").popular__item__pic-link
-                        img(src="/img/temp/elegantnaya-skandinavskaya-kvartira-v-priglushennyh-tonah-pufikhomes-1.jpg" alt="").popular__pic
-                    h3.accent.accent_dark
-                        span Элегантная скандинавская квартира в приглушенных тонах
-                .popular__item__caption
-                    p Этот интерьер в Стокгольме вызывает ассоциацию с осенью. Немножко хмурый, драматично приглушенный, с ворсистым ковром и теплым текстилем — похоже, здесь очень приятно коротать прохладные осенние вечера.
-                    //- a(href="#").button Читать
-        .col-lg-6
-            article.popular__item
-                .popular__item__pic
-                    //- a.hashtag(href="#") #Урбан
-                    a(href="#").popular__item__pic-link
-                        img(src="/img/temp/malenkaya-kvartira-v-temno-seryh-tonah-v-shvecii-40kvm-pufikhomes-2-1.jpg" alt="").popular__pic
-                    h3.accent.accent_dark 
-                        span Маленькая серая квартира с видом на залив в Стокгольме
-                .popular__item__caption
-                    p В этой очень компактной квартире в центре Стокгольме по сути нет спальни — есть только небольшая кровать в углу единственной жилой комнаты.
-                    //- a(href="#").button Читать
+.popular
+    .container
+        h3 это читают больше всего
+        .article__list
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/smart-kvartira-v-brazilii-pufikhomes-1-1.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Smart квартира в Бразилии
+                p.article__item__description Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью и оригинальными предметами декора
+                    a.hashtag(href="#") #Маленькие квартиры
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/elegantnaya-krasivaya-sovremennaya-kvartira-v-stokgolme-pufikhomes-4a.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Изысканный дизайн современных апартаментов
+                p.article__item__description Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью
+                    a.hashtag(href="#") #Современный Арт-Деко
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/korichnevye-steny-v-skandinavskoi-kvartire-pufikhomes-1-1.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Современная квартира с музыкальной комнатой в Стокгольме
+                p.article__item__description Несмотря на стереотипы, сочетание бежевого и серого может быть удачным
+                    a.hashtag(href="#") #Скандика
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/kids-room-for-two-three-pufikhomes-2a.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Детская для двоих или троих: несколько прекрасных идей
+                p.article__item__description Если в семье больше одного ребенка, а детская всего одна, то это может стать настоящей головной болью
+                    a.hashtag(href="#") #Подборки
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/minimalistichnaya-kvartira-v-moskve-pufikhomes-2.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline 10 причин полюбить белый интерьер
+                p.article__item__description Мы так часто и так много пишем о разных белых интерьерах, что наконец-то решили сделать подборочку
+                    a.hashtag(href="#") #Концепции
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/smart-kvartira-v-brazilii-pufikhomes-1-1.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Smart квартира в Бразилии
+                p.article__item__description Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью
+                    a.hashtag(href="#") #Маленькие квартиры
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/elegantnaya-krasivaya-sovremennaya-kvartira-v-stokgolme-pufikhomes-4a.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Изысканный дизайн современных апартаментов
+                p.article__item__description Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью и оригинальными предметами декора
+                    a.hashtag(href="#") #Современный Арт-Деко
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/korichnevye-steny-v-skandinavskoi-kvartire-pufikhomes-1-1.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Современная квартира с музыкальной комнатой в Стокгольме
+                p.article__item__description Несмотря на стереотипы, сочетание бежевого и серого может быть удачным
+                    a.hashtag(href="#") #Скандика
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/kids-room-for-two-three-pufikhomes-2a.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline Детская для двоих или троих: несколько прекрасных идей
+                p.article__item__description Если в семье больше одного ребенка, а детская всего одна, то это может стать настоящей головной болью
+                    a.hashtag(href="#") #Подборки
+
+            article.article
+                div
+                    a(href="#").article__item__pic-link
+                        img(src="/img/temp/minimalistichnaya-kvartira-v-moskve-pufikhomes-2.jpg" alt="")
+                    a(href="#").article__item__caption-link
+                        span.text-underline 10 причин полюбить белый интерьер
+                p.article__item__description Мы так часто и так много пишем о разных белых интерьерах, что наконец-то решили сделать подборочку
+                    a.hashtag(href="#") #Концепции
+
+        .popular__controls
+            .btn__controls.btn__left#popularMoveLeft
+            .btn__controls.btn__right#popularMoveRight

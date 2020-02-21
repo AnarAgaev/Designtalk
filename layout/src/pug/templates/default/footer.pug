@@ -1,56 +1,65 @@
 .container
-    nav.footer__nav
-        ul.footer__nav__list
-            li.footer__nav__item
-                a.footer__nav__link(src="#") О нас
-            li.footer__nav__item
-                a.footer__nav__link(src="#") Хочешь к нам?
-            li.footer__nav__item
-                a.footer__nav__link.active(src="#") Контакты
-            li.footer__nav__item
-                a.footer__nav__link(src="#") #Фильтр по хештегу
-            li.footer__nav__item
-                a.footer__nav__link(src="#") Рекламодателям
-    
-    .footer__privacy__list
-        a(href="#").footer__privacy__item Политика обработки персональных данных
-        a(href="#").footer__privacy__item Политика конфиденциальности
-        a(href="#").footer__privacy__item Пользовательское соглашение
-        a(href="#").footer__privacy__item Политика использования файлов cookie
+    .row
+        nav.col-lg-3
+            ul.footer__list
+                li.footer__item
+                    a.footer__link.text-underline(href="#") o нас
+                li.footer__item
+                    a.footer__link.text-underline(href="#") опубликовать проект
+                li.footer__item
+                    a.footer__link.text-underline(href="#") контакты
+                li.footer__item
+                    a.footer__link.text-underline(href="#")
+                        b рекламодателям
 
-    ul.footer__socials__list
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-facebook-f
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-instagram
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-vk
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-odnoklassniki 
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-twitter
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-telegram-plane
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-pinterest-p
-        li.footer__social__item
-            a.icon-link(src="" target="_blank" rel="nofollow")
-                i.fab.fa-flipboard
-    
-    .footer__copy 
-        p © OOO "Издательсьво "Спэйс Билдер" 2019 - 2020. Все права защищены.
-            br
-            | По вопросам соблюдения интеллектуальных прав обращайтесь по адресу 
-            a(href="mailto:intellectualrights@spacebuilder.ru") intellectualrights@spacebuilder.ru
+        .col-lg-5
+            ul.footer__list.footer__privacy-list
+                li.footer__item
+                    a.footer__link.text-underline(href="#") Политика обработки персональных данных
+                li.footer__item
+                    a.footer__link.text-underline(href="#") Политика конфиденциальности
+                li.footer__item
+                    a.footer__link.text-underline(href="#") Пользовательское соглашение
+                li.footer__item
+                    a.footer__link.text-underline(href="#") Политика использования файлов cookie
 
-    .footer__logo
-        a.logo(href="/") 
-            span.logo__caption Spacebuilder
-            span.logo__letter Sb
+        .col-lg-3
+            .footer__socials-caption подписывайтесь на нас в социальных сетях
+            ul.footer__socials-list
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-facebook-f
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-instagram
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-vk
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-odnoklassniki
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-twitter
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-telegram-plane
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-pinterest-p
+                li.footer__social__item
+                    a.icon-link(src="" target="_blank" rel="nofollow")
+                        i.fab.fa-flipboard
+
+        .col-lg-7.footer__copy
+            p © Общество с ограниченной ответственностью "Цифровое Медиа "Спэйс Билдер" 2019 - 2020.
+                br
+                | Все права защищены. Использование материалов сайта spacebuilder.ru разрешается только с письменного согласия редакции и при наличии гиперссылки на spacebuilder.ru.
+                br
+                | По вопросам соблюдения интеллектуальных прав обращайтесь по адресу&nbsp;
+                a(href="mailto:intellectualrights@spacebuilder.ru") intellectualrights@spacebuilder.ru
+
+        .col-lg-12.footer__logo
+            a.logo(href="/")
+                span.logo__caption Spacebuilder
+                span.logo__letter Sb
