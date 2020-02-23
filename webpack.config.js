@@ -1,12 +1,17 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env = {}) => {
 
   const { mode = 'development' } = env;
-
   const isProd = mode === 'production';
   const isDev = mode === 'development';
+
+  const PATHS = {
+    src: path.join(__dirname, './src'),
+    dist: path.join(__dirname, './dist')
+  };
 
   const getStyleLoaders = () => {
     return [
@@ -37,8 +42,31 @@ module.exports = (env = {}) => {
   return {
     mode: isProd ? 'production' : isDev && 'development',
 
+    externals: {
+      paths: PATHS
+    },
+
+    entry: {
+      main: PATHS.src,
+    },
+
     output: {
-      filename: isProd ? 'main-[hash:8].js' : undefined
+      filename: isProd ? 'main-[hash:8].js' : undefined,
+      path: PATHS.dist,
+      publicPath: ''
+    },
+
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            name: 'vendors',
+            test: /node_modules/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
     },
 
     module: {
@@ -93,7 +121,14 @@ module.exports = (env = {}) => {
     plugins: getPlugins(),
 
     devServer: {
-      open: true
+      contentBase: PATHS.dist,
+      port: 9000,
+      open: true,
+      compress: true,
+      overlay: {
+        warnings: true,
+        errors: true
+      }
     }
   };
 };
