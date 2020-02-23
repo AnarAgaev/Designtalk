@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack  --env.mode=production",
+    "build": "webpack --env.mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnarAgaev/Babel-and-Webpack.git"
   },
-  "author": "",
+  "author": "Anar.N.Agaev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AnarAgaev/Babel-and-Webpack/issues"
@@ -43,5 +43,17 @@
     "core-js": "^3.6.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
