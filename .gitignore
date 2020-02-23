@@ -1,7 +1,9 @@
 # Ignore node modules files
+node_modules/
 layout/node_modules/
 
 # Ignore preproduction directory
+dist/
 layout/dist/
 
 # Ignore idea configuration
