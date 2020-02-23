@@ -1,0 +1,21 @@
+//- Animation functions
+$animation-primary      : cubic-bezier(0.075, 0.82, 0.165, 1);
+
+// Colors
+$color-primary-font     : rgba(34, 34, 34, 1);      //#222;
+$color-secondery-font   : rgba(255, 255, 255, 1);   //#fff;
+$color-xxl              : rgba(238, 238, 238, 1);   //#eee;
+$color-xl               : rgba(218, 219, 217, 1);   // #dadbd9;
+$color-l                : rgba(182, 183, 181, 1);   // #b6b7b5;
+$color-m                : rgba(155, 157, 155, 1);   // #9b9d9b
+$color-d                : rgba(117, 118, 117, 1);   // #757675;
+$color-xd               : rgba(87, 88, 88, 1);      // #575858;
+$color-back             : rgba(245, 245, 246, 1);   // #f5f5f6
+
+// Fonts
+$font-primary           : 'Montserrat', sans-serif;
+
+// Media quares
+$mq-lg                  : 1440px;
+$mq-md                  : 1024px;
+$mq-sm                  : 768px;

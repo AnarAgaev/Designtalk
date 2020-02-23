@@ -1,5 +1,4 @@
-$body-color: gold;
-
-body {
-  background-color: $body-color;
-}
+// Include style components and mixins
+@import 'fonts';
+@import 'variables';
+@import 'default-tempate';
