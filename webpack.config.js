@@ -86,7 +86,6 @@ module.exports = (env = {}) => {
         // Loading SASS/SCSS
         {
           test: /\.(scss|sass)$/,
-          exclude: /node_modules/,
           use: [...getStyleLoaders(), 'sass-loader']
         },
         // Loading images
