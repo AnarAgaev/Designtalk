@@ -1,0 +1,36 @@
+@import '../../scss/variables';
+
+.social {
+  &-list {
+    display: flex;
+
+    &__item {
+      &:last-child {
+        a { padding-right: 0; }
+      }
+    }
+
+    &__link {
+      line-height: 32px;
+      padding: 0 9px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .3s;
+      font-size: 1.17rem;
+      margin: 0;
+
+      svg path {
+        fill: #757675;
+        transition: fill .3s;
+      }
+
+      &:hover {
+        svg path { fill:$color-primary-font; }
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.header {
+  .nav {
+    flex: 1 0 auto;
+
+    ul {
+      display: flex;
+      margin-left: 12px;
+    }
+
+    a {
+      line-height: 70px;
+      height: 70px;
+      cursor: pointer;
+      font-size: 0.81rem;
+      transition: all .5s;
+      margin-left: 1rem;
+      text-transform: uppercase;
+
+      &::before {
+        content: none;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: rgb(87, 88, 88);
+        background: linear-gradient(67deg, rgba(87, 88, 88, 1) 0%, rgba(155, 157, 155, 1) 50%, rgba(218, 219, 217, 1) 100%);
+        transition: all .4s ease;
+        opacity: 0;
+      }
+
+      &:hover::after {
+        width: calc(100% - 2px);
+        left: 1px;
+        opacity: 1;
+        animation: scrollBg 8s linear infinite;
+      }
+
+      &.active {
+        font-weight: bold;
+      }
+
+      &.dim {
+        opacity: .77;
+      }
+    }
+  }
+}

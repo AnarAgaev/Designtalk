@@ -80,7 +80,6 @@ module.exports = (env = {}) => {
         // Loading CSS
         {
           test: /\.(css)$/,
-          exclude: /node_modules/,
           use: getStyleLoaders()
         },
         // Loading SASS/SCSS
