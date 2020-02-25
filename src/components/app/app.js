@@ -5,10 +5,17 @@ import 'bootstrap/scss/bootstrap-grid.scss';
 
 import '../../scss/main.scss';
 import Header from "../header";
+import Footer from "../footer";
 
 const App = () => {
   return (
-    <Header/>
+    <>
+      <Header/>
+      <main className="main">
+
+      </main>
+      <Footer/>
+    </>
   )
 };
 

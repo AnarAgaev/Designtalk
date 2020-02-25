@@ -1,36 +1,66 @@
 @import '../../scss/variables';
 
 .social {
-  &-list {
+  &__list {
     display: flex;
+  }
+
+  &__item {
+    &:last-child {
+      a { padding-right: 0; }
+    }
+  }
+
+  &__link {
+    line-height: 32px;
+    padding: 0 9px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+    font-size: 1.17rem;
+    margin: 0;
+
+    svg path {
+      fill: #757675;
+      transition: fill .3s;
+    }
+
+    &:hover {
+      svg path { fill:$color-primary-font; }
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.footer {
+  .social {
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      margin: 23px 0 0;
+    }
 
     &__item {
+      &:first-child {
+        a { padding-left: 0; }
+      }
+
       &:last-child {
         a { padding-right: 0; }
       }
     }
 
     &__link {
-      line-height: 32px;
-      padding: 0 9px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all .3s;
-      font-size: 1.17rem;
-      margin: 0;
-
-      svg path {
-        fill: #757675;
-        transition: fill .3s;
-      }
-
-      &:hover {
-        svg path { fill:$color-primary-font; }
-      }
-
-      &::before {
-        content: none;
-      }
+      padding: 0 12px;
     }
+  }
+
+  &__socials-caption {
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-weight: 800;
   }
 }

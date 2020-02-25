@@ -1,24 +1,35 @@
+@import "../../scss/variables";
+@import "../../scss/extends";
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    cursor: pointer;
+    font-size: 0.81rem;
+    transition: all .5s;
+    text-transform: uppercase;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
 .header {
   .nav {
     flex: 1 0 auto;
 
-    ul {
-      display: flex;
-      margin-left: 12px;
+    &__list {
+      margin-left: 0.7rem;
     }
 
-    a {
+    &__link {
       line-height: 70px;
       height: 70px;
-      cursor: pointer;
-      font-size: 0.81rem;
-      transition: all .5s;
       margin-left: 1rem;
-      text-transform: uppercase;
-
-      &::before {
-        content: none;
-      }
 
       &::after {
         content: '';
@@ -48,6 +59,32 @@
       &.dim {
         opacity: .77;
       }
+    }
+  }
+}
+
+.footer {
+  .nav {
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      margin-bottom: 20px;
+
+      &:last-child a {
+        font-weight: 700;
+      }
+    }
+
+    &__link {
+      @extend %text-underline;
+      padding-left: 0;
+      padding-right: 0;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      width: auto !important;
     }
   }
 }

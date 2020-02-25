@@ -1,0 +1,11 @@
+%text-underline {
+  width: 100%;
+  background-image: linear-gradient(transparent calc(100% - 1px), $color-d 1px);
+  background-repeat: no-repeat;
+  transition: background-size .6s ease;
+  background-size: 0 100%;
+
+  &:hover {
+    background-size: 100% 100%;
+  }
+}

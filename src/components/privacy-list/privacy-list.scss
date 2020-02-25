@@ -1,0 +1,25 @@
+@import "../../scss/variables";
+@import "../../scss/extends";
+
+.privacy {
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    text-transform: none;
+    @extend %text-underline;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 0.875rem;
+    width: auto !important;
+
+    &::before {
+      content: none;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
