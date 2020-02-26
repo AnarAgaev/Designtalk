@@ -1,14 +1,14 @@
-import React, {Component} from "react";
-
+import React from "react";
+import { Link } from "react-router-dom";
 import './logotype.scss';
 
-export default class Logotype extends Component {
-  render() {
-    return (
-      <a className="logo" href="/">
-        <span className="logo__caption">Spacebuilder</span>
-        <span className="logo__letter">Sb</span>
-      </a>
-    )
-  }
-}
+const Logotype = () => {
+  return (
+    <Link className="logo" to="/">
+      <span className="logo__caption">Spacebuilder</span>
+      <span className="logo__letter">Sb</span>
+    </Link>
+  )
+};
+
+export default Logotype;

@@ -69,34 +69,38 @@ h3, .h3 {
   font-weight: 800;
   letter-spacing: -.05em;
   text-transform: uppercase;
+  margin: 0;
 }
 h1, .h1 {
   font-size: 4.7rem;
   line-height: 6rem;
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
 }
 h2, .h2 {
   font-size: 4rem;
   line-height: 4.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 h3, .h3 {
   font-size: 2rem;
   line-height: 3.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 // Typical paragraph
 p {
-    line-height: 1.7;
-    font-size: 1.131rem;
+  line-height: 1.7;
+  font-size: 1.131rem;
+  font-weight: normal;
+  font-style: normal;
 }
 
 // Links
-a {
+a,
+.link {
   display: inline-block;
   position: relative;
   color: $color-primary-font;
@@ -112,9 +116,9 @@ a {
       display: block;
       position: absolute;
       width: 100%;
-      height: 30%;
+      height: 43%;
       opacity: .17;
-      bottom: 4px;
+      bottom: 2px;
       background-color: $color-d;
       transition: all .2s ease-in-out;
   }
@@ -289,29 +293,14 @@ input.button {
 
 
 
-.caption {
-  font-size: 4rem;
-  line-height: 1.13;
-  margin-bottom: 5rem;
-
-  span {
-    font-weight: 100;
-    word-spacing: 2px;
-    color: $color-primary-font;
-    background: linear-gradient(67deg,#575858,#9b9d9b 50%,#dadbd9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
 .hashtag {
   font-weight: 400;
-  font-size: .8rem;
+  font-size: .73rem;
   opacity: .7;
   text-transform: uppercase;
   padding-bottom: 1px;
   margin-bottom: 5px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .cursor {
@@ -340,77 +329,6 @@ input.button {
         width .3s 0s,
         height .3s 0s,
         transform .3s 0s;
-  }
-}
-
-.article {
-  margin-bottom: 50px;
-
-  &__item {
-  margin-top: 50px;
-  margin-bottom: 100px;
-
-    &__caption {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 30px 0 0 30px;
-      font-size: 0.94rem;
-
-      h3 {
-        font-family: $font-primary;
-        margin-top: 0;
-        word-spacing: 2px;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.25;
-        max-width: 100%;
-        letter-spacing: 0;
-        text-transform: none;
-      }
-
-      &-description,
-      p {
-          margin-bottom: 1.5rem;
-          font-size: 0.8rem;
-          opacity: 0.7;
-      }
-
-      &-link {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        max-width: 80%;
-        margin: 17px 0 0 15px;
-        position: relative;
-
-        &::before {
-          content: none;
-        }
-
-        & + div > .hashtag {
-          text-transform: none;
-          margin-top: 3px;
-          margin-left: 15px;
-        }
-      }
-    }
-
-    &__pic {
-      &-link {
-          display: block;
-          &::before {
-              content: none;
-          }
-
-        &:hover + .article__item__caption-link .text-underline {
-          background-size: 100% 100%;
-        }
-      }
-    }
   }
 }
 

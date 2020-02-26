@@ -1,21 +1,21 @@
-import React, {Component} from "react";
-
+import React from "react";
+import { Link } from "react-router-dom";
 import './privacy-list.scss';
 
-export default class PrivacyList extends Component {
-  render() {
-    return (
-      <ul className="privacy__list">
-        <li className="privacy__item">
-          <a href="/" className="privacy__link">политика обработки персональных данных</a>
-        </li>
-        <li className="privacy__item">
-          <a href="/" className="privacy__link">политика конфиденциальности</a>
-        </li>
-        <li className="privacy__item">
-          <a href="/" className="privacy__link">политика использования файлов cookie</a>
-        </li>
-      </ul>
-    );
-  }
-}
+const PrivacyList = () => {
+  return (
+    <ul className="privacy__list">
+      <li className="privacy__item">
+        <Link to="/policy-personal-data" className="privacy__link">политика обработки персональных данных</Link>
+      </li>
+      <li className="privacy__item">
+        <Link to="/privacy-policy" className="privacy__link">политика конфиденциальности</Link>
+      </li>
+      <li className="privacy__item">
+        <Link to="/cookie-policy" className="privacy__link">политика использования файлов cookie</Link>
+      </li>
+    </ul>
+  );
+};
+
+export default PrivacyList;

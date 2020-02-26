@@ -1,13 +1,13 @@
-import React, {Component} from "react";
+import React from "react";
 
 import "./social-title.scss";
 
-export default class SocialTitle extends Component {
-  render() {
-    return (
-      <h4 className="social-title">
-        подписывайтесь на нас в социальных сетях
-      </h4>
-    )
-  }
-}
+const SocialTitle = () => {
+  return (
+    <h4 className="social-title">
+      подписывайтесь на нас в социальных сетях
+    </h4>
+  );
+};
+
+export default SocialTitle;
