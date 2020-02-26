@@ -28,7 +28,7 @@
     transition: all .3s ease-in-out;
   }
 
-  &.paint::before {
+  &.background-show::before {
     opacity: 1;
     height: 100%;
   }
