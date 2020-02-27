@@ -116,7 +116,7 @@ a,
       display: block;
       position: absolute;
       width: 100%;
-      height: 43%;
+      height: 37%;
       opacity: .17;
       bottom: 2px;
       background-color: $color-d;
@@ -287,16 +287,6 @@ input.button {
       background-color: $color-secondery-font;
     }
   }
-}
-
-.hashtag {
-  font-weight: 400;
-  font-size: .73rem;
-  opacity: .7;
-  text-transform: uppercase;
-  padding-bottom: 1px;
-  margin-bottom: 5px;
-  letter-spacing: 2px;
 }
 
 .cursor {

@@ -22,14 +22,20 @@ const Main = () => {
     { columns: 6, columnClass: 'pl-5', img: img4, hashtag: '#Маленькие квартиры', caption: 'Маленькая серая квартира с видом на залив в Стокгольме'}
   ];
 
-  return (
-    <>
+  const MainPageTitle = () => {
+    return (
       <Container>
         <h1 className="index-title">
           Spacebuilder
           <span> &#8212; цифровой блог о дизайне пространства</span>
         </h1>
       </Container>
+    );
+  };
+
+  return (
+    <>
+      <MainPageTitle />
       <LastArticle />
       <ArticlesList articles={ articlesListData }/>
       <ButtonMore />

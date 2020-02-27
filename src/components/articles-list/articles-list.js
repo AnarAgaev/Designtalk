@@ -8,12 +8,7 @@ const ArticlesList = ({ articles }) => {
 
   const  elements = articles.map((item) => {
     return (
-      <ArticlesListItem
-        columns={item.columns}
-        columnClass={item.columnClass}
-        img={item.img}
-        hashtag={item.hashtag}
-        caption={item.caption} />
+      <ArticlesListItem { ...item } />
     );
   });
 

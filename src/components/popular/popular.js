@@ -27,7 +27,7 @@ const Popular = () => {
             <p className="popular__item__description">
               Эта роскошная современная квартира в Стокгольме наполнена
               уникальной дизайнерской мебелью и оригинальными предметами
-              декора <a className="hashtag" href="#">#Маленькие квартиры</a>
+              декора <a href="#">#Маленькие квартиры</a>
             </p>
           </article>
           <article className="popular__item">
@@ -41,7 +41,7 @@ const Popular = () => {
             <p className="popular__item__description">
               Эта роскошная современная квартира в Стокгольме
               наполнена уникальной дизайнерской
-              мебелью <a className="hashtag" href="#">#Современный Арт-Деко</a>
+              мебелью <a href="#">#Современный Арт-Деко</a>
             </p>
           </article>
           <article className="popular__item">
@@ -54,7 +54,7 @@ const Popular = () => {
             </div>
             <p className="popular__item__description">
               Несмотря на стереотипы, сочетание бежевого и серого может быть
-              удачным <a className="hashtag" href="#">#Скандика</a>
+              удачным <a href="#">#Скандика</a>
             </p>
           </article>
           <article className="popular__item">
@@ -67,7 +67,7 @@ const Popular = () => {
             </div>
             <p className="popular__item__description">
               Если в семье больше одного ребенка, а детская всего одна, то это
-              может стать настоящей головной болью <a className="hashtag" href="#">#Подборки</a>
+              может стать настоящей головной болью <a href="#">#Подборки</a>
             </p>
           </article>
           <article className="popular__item">
@@ -80,7 +80,7 @@ const Popular = () => {
             </div>
             <p className="popular__item__description">
               Мы так часто и так много пишем о разных белых интерьерах, что
-              наконец-то решили сделать подборочку <a className="hashtag" href="#">#Концепции</a>
+              наконец-то решили сделать подборочку <a href="#">#Концепции</a>
             </p>
           </article>
           <article className="popular__item">
@@ -94,7 +94,7 @@ const Popular = () => {
             <p className="popular__item__description">
               Эта роскошная современная квартира в Стокгольме наполнена
               уникальной дизайнерской мебелью и оригинальными предметами
-              декора <a className="hashtag" href="#">#Маленькие квартиры</a>
+              декора <a href="#">#Маленькие квартиры</a>
             </p>
           </article>
           <article className="popular__item">
@@ -108,7 +108,7 @@ const Popular = () => {
             <p className="popular__item__description">
               Эта роскошная современная квартира в Стокгольме
               наполнена уникальной дизайнерской
-              мебелью <a className="hashtag" href="#">#Современный Арт-Деко</a>
+              мебелью <a href="#">#Современный Арт-Деко</a>
             </p>
           </article>
           <article className="popular__item">
@@ -121,7 +121,7 @@ const Popular = () => {
             </div>
             <p className="popular__item__description">
               Несмотря на стереотипы, сочетание бежевого и серого может быть
-              удачным <a className="hashtag" href="#">#Скандика</a>
+              удачным <a href="#">#Скандика</a>
             </p>
           </article>
           <article className="popular__item">
@@ -134,7 +134,7 @@ const Popular = () => {
             </div>
             <p className="popular__item__description">
               Если в семье больше одного ребенка, а детская всего одна, то это
-              может стать настоящей головной болью <a className="hashtag" href="#">#Подборки</a>
+              может стать настоящей головной болью <a href="#">#Подборки</a>
             </p>
           </article>
           <article className="popular__item">
@@ -147,7 +147,7 @@ const Popular = () => {
             </div>
             <p className="popular__item__description">
               Мы так часто и так много пишем о разных белых интерьерах, что
-              наконец-то решили сделать подборочку <a className="hashtag" href="#">#Концепции</a>
+              наконец-то решили сделать подборочку <a href="#">#Концепции</a>
             </p>
           </article>
         </div>

@@ -12,11 +12,11 @@ const LastArticle = () => {
       <Row>
         <Col lg={4}>
           <div className="last-article">
-            <Link to="/" className="hashtag link">#Деревянные дома</Link>
+            <Link to="/" className="last-article__link">#Деревянные дома</Link>
             <h3 className="last-article__title">
               Минималистичный деревянный домик в горах с роскошным видом
             </h3>
-            <p className="last-article__caption">
+            <p className="last-article__description">
               Роскошный вид из окон этого горного домика во
               Франции контрастирует с простым, но уютным интерьером.
               Отделка выполнена из светлого дерева, почти вся мебель
