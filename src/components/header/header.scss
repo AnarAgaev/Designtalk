@@ -25,7 +25,7 @@
     background-blend-mode: multiply;
     backdrop-filter: blur(25px);
     opacity: 0;
-    transition: all .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
   }
 
   &.background-show::before {
