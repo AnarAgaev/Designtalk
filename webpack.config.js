@@ -118,6 +118,8 @@ module.exports = (env = {}) => {
 
     plugins: getPlugins(),
 
+    devtool: 'source-map',
+
     devServer: {
       contentBase: PATHS.dist,
       port: 9000,

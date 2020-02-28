@@ -2,7 +2,6 @@ import React from "react";
 
 import './articles-list-item.scss';
 import {Link} from "react-router-dom";
-import {Col} from "react-bootstrap";
 
 const ArticlesListItem = ({ img, hashtag, caption }) => {
   return (

@@ -7,8 +7,11 @@ import ArticlesListItem from "../articles-list-item";
 const ArticlesList = ({ articles }) => {
 
   const  elements = articles.map((item) => {
+
+    const { id, ...itemProps } = item;
+
     return (
-      <ArticlesListItem { ...item } />
+      <ArticlesListItem key={ id } { ...itemProps } />
     );
   });
 
