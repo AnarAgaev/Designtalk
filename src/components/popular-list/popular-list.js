@@ -18,8 +18,8 @@ const PopularList = ({ popularListData }) => {
           { elements }
         </div>
         <div className="popular__controls">
-          <div className="btn__controls btn__left" id="popularMoveLeft" />
-          <div className="btn__controls btn__right" id="popularMoveRight" />
+          <div className="controller controller__left" />
+          <div className="controller" />
         </div>
       </Container>
     </div>

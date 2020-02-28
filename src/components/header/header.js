@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import Logotype from "../logotype";
 import Nav from "../nav";
