@@ -4,10 +4,8 @@ import './articles-list.scss';
 import {Container, Row} from "react-bootstrap";
 import ArticlesListItem from "../articles-list-item";
 
-const ArticlesList = ({ articles }) => {
-
-  const  elements = articles.map((item) => {
-
+const ArticlesList = ({ articlesListData }) => {
+  const  elements = articlesListData.map((item) => {
     const { id, ...itemProps } = item;
 
     return (
