@@ -1,0 +1,27 @@
+.popular {
+  padding-top: 2rem;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    height: 600px;
+  }
+
+  a::before {
+    content: none;
+  }
+
+  &__list {
+    width: 99999px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: absolute;
+    left: 15px;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+  }
+}
