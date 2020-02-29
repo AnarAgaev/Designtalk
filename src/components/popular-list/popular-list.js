@@ -3,11 +3,17 @@ import { Container } from "react-bootstrap";
 import PopularListItem from "../popular-list-item";
 
 import './popular-list.scss';
+import LastArticle from "../last-article";
 
-const PopularList = ({ popularListData }) => {
+const PopularList = ({ popularListData,  handleCursorOverImg }) => {
   const elements = popularListData.map((item) => {
     const { id, ...itemProp } = item;
-    return <PopularListItem { ...itemProp }  key={ id } />;
+    return (
+      <PopularListItem
+        { ...itemProp }
+        key={ id }
+        handleCursorOverImg={ handleCursorOverImg } />
+    );
   });
 
   return (

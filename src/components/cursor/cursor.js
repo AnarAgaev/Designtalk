@@ -2,21 +2,15 @@ import React, { Component } from "react";
 import './cursor.scss';
 
 export default class Cursor extends Component {
-  state = {
-    visible: false,
-    top: 0,
-    left: 0
-  };
 
   render() {
-    const { visible, top, left } = this.state;
+    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.props;
+    const className = cursorVisible ? 'cursor visible' : 'cursor';
+    const cursorStyle = cursorVisible ? {
+        left: cursorOffsetX,
+        top: cursorOffsetY
+      } : {};
 
-    let className = 'cursor';
-
-    if(visible) {
-      className += ' visible';
-    }
-
-    return <div className={ className } />
+    return <div style={ cursorStyle } className={ className } />
   }
 }

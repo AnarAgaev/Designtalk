@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import './main.scss';
 
 import LastArticle from "../../last-article";
@@ -36,17 +36,24 @@ const popularListData = [
   { id: 9, img: img6, caption: 'Детская для двоих или троих: несколько прекрасных идей', rubric: '#Подборки', description: 'Если в семье больше одного ребенка, а детская всего одна, то это может стать настоящей головной болью' },
 ];
 
-const Main = () => {
-  return (
-    <>
-      <MainPageTitle />
-      <LastArticle />
-      <ArticlesList articlesListData={ articlesListData } />
-      <ButtonMore />
-      <Subscribe />
-      <PopularList popularListData={ popularListData } />
-    </>
-  );
-};
+export default class Main extends Component {
+  render() {
+    const { handleCursorOverImg } = this.props;
 
-export default Main;
+    return (
+      <>
+        <MainPageTitle />
+        <LastArticle handleCursorOverImg={ handleCursorOverImg } />
+        <ArticlesList
+          articlesListData={ articlesListData }
+          handleCursorOverImg={ handleCursorOverImg }
+        />
+        <ButtonMore />
+        <Subscribe />
+        <PopularList
+          popularListData={ popularListData }
+          handleCursorOverImg={ handleCursorOverImg } />
+      </>
+    );
+  }
+}
