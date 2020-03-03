@@ -162,44 +162,18 @@ input {
   font-weight: normal;
   margin-bottom: 1rem;
 
-  &::-webkit-input-placeholder {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
+  &::-webkit-input-placeholder {opacity: 1; transition: opacity 0.3s ease;}
+  &::-moz-placeholder {opacity: 1; transition: opacity 0.3s ease;}
+  &:-moz-placeholder {opacity: 1; transition: opacity 0.3s ease;}
+  &:-ms-input-placeholder {opacity: 1; transition: opacity 0.3s ease;}
+  &:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus::-moz-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus:-moz-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus:-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
 
-  &::-moz-placeholder {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  &:-moz-placeholder {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  &:-ms-input-placeholder {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  &:focus::-webkit-input-placeholder {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:focus::-moz-placeholder {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:focus:-moz-placeholder {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:focus:-ms-input-placeholder {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  &:active, &:hover, &:focus {
+    outline: 0;
+    outline-offset: 0;
   }
 }
 
@@ -238,10 +212,23 @@ input.button {
   &:focus {
     background-color: transparent;
     color: $color-primary-font;
+    outline: 0;
+    outline-offset: 0;
   }
 
   &::before {
     content: none;
+  }
+
+  &.blocked {
+    background-color: $color-xd;
+    border-color: $color-xd;
+    cursor: default;
+    &:hover {
+      background-color: $color-xd;
+      border-color: $color-xd;
+      color: $color-l;
+    }
   }
 }
 

@@ -10,7 +10,8 @@ module.exports = (env = {}) => {
 
   const PATHS = {
     src: path.join(__dirname, './src'),
-    dist: path.join(__dirname, './dist')
+    dist: path.join(__dirname, './dist'),
+    public: path.join(__dirname, './public')
   };
 
   const getStyleLoaders = () => {

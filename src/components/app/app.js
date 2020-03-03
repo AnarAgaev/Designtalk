@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "../header";
@@ -16,13 +16,13 @@ import PolicyPersonalData from "../pages/policy-personal-data";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
+import ModalMessage from "../modal-message";
 
 export default class App extends Component {
-
   state = {
     cursorVisible: false,
     cursorOffsetX: 0,
-    cursorOffsetY: 0
+    cursorOffsetY: 0,
   };
 
   handleCursorOverImg = (visible, offsetX = 0, offsetY = 0) => {
@@ -41,7 +41,9 @@ export default class App extends Component {
   };
 
   render() {
-    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
+    const { cursorVisible,
+            cursorOffsetX,
+            cursorOffsetY } = this.state;
 
     return (
       <Router>
