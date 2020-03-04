@@ -24,6 +24,8 @@ import img8 from "../pages/main/img/minimalistichnaya-kvartira-v-moskve-pufikhom
 import img2 from "../pages/main/img/interesting-colors-in-new-york-apartment-pufikhomes-1-1.jpg";
 import img3 from "../pages/main/img/elegantnaya-skandinavskaya-kvartira-v-priglushennyh-tonah-pufikhomes-1.jpg";
 import img4 from "../pages/main/img/malenkaya-kvartira-v-temno-seryh-tonah-v-shvecii-40kvm-pufikhomes-2-1.jpg";
+import ModalMessage from "../modal-message";
+import {Container} from "react-bootstrap";
 
 export default class App extends Component {
   state = {
@@ -49,7 +51,9 @@ export default class App extends Component {
     ],
     popularListPosition: 0,
     popularListItemWidth: 312,
-    slipBlocker: true
+    slipBlocker: true,
+    modalMsg: '',
+    modalVisible: false
   };
 
   handleCursorOverImg = (visible, offsetX = 0, offsetY = 0) => {
@@ -83,6 +87,20 @@ export default class App extends Component {
     }
   };
 
+  handleModalShow = (msg) => {
+    this.setState({
+      modalVisible: true,
+      modalMsg: msg
+    });
+  };
+
+  handleModalHide = () => {
+    this.setState({
+      modalMsg: '',
+      modalVisible: false
+    })
+  };
+
   MainPage = () => {
     return (
       <Main
@@ -90,14 +108,15 @@ export default class App extends Component {
         popularListData={ this.state.popularListData }
         articlesListData={ this.state.articlesListData }
         popularListPosition={ this.state.popularListPosition }
-        toggleSlide={ this.toggleSlide } />
+        toggleSlide={ this.toggleSlide }
+        handleModalShow={ this.handleModalShow } />
     );
   };
 
   render() {
-    const { cursorVisible,
-            cursorOffsetX,
-            cursorOffsetY } = this.state;
+    const { cursorVisible, cursorOffsetX,
+            cursorOffsetY, modalVisible,
+            modalMsg } = this.state;
 
     return (
       <Router>
@@ -115,6 +134,10 @@ export default class App extends Component {
           </Switch>
         </main>
         <Footer />
+        <ModalMessage
+          modalVisible={ modalVisible }
+          modalMsg={ modalMsg }
+          handleModalHide={ this.handleModalHide } />
         <Cursor
           cursorVisible = { cursorVisible }
           cursorOffsetX = { cursorOffsetX }

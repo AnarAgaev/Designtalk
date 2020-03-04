@@ -11,9 +11,7 @@ export default class Subscribe extends Component {
 
   state = {
     email: '',
-    error: false,
-    modalMsg: '',
-    modalVisible: false
+    error: false
   };
 
   handleInputChange = (event) => {
@@ -21,10 +19,10 @@ export default class Subscribe extends Component {
       email: event.target.value,
       error: false
     });
-    this.handleFormValidate();
+    this.formValidate();
   };
 
-  handleFormValidate = () => {
+  formValidate = () => {
     const regular = /.+@.+\..+/i;
     regular.test(this.state.email) ?
       this.setState({ error: false }) :
@@ -36,23 +34,12 @@ export default class Subscribe extends Component {
     const { error, email } = this.state;
 
     if (!error && email !== '') {
-      this.onModalShow('Спасибо за подписку на наши новости! Будет много инетересного и вдохновляющего.');
+      this.props.handleModalShow('Спасибо за подписку на наши новости! Будет много инетересного.');
+      this.setState({
+        email: '',
+        error: false
+      });
     } else this.textInput.current.focus();
-  };
-
-  onModalShow = (msg) => {
-    this.setState({
-      modalVisible: true,
-      modalMsg: msg
-    });
-  };
-
-  onModalHide = () => {
-    this.setState({
-      email: '',
-      modalMsg: '',
-      modalVisible: false
-    })
   };
 
   handleInputBlur = () => {
@@ -62,8 +49,7 @@ export default class Subscribe extends Component {
   };
 
   render() {
-    const { email, error, modalVisible, modalMsg } = this.state;
-
+    const { email, error } = this.state;
     const btnClass = error ? 'button blocked' : 'button';
 
     return (
@@ -92,10 +78,6 @@ export default class Subscribe extends Component {
             </form>
           </Col>
         </Row>
-        <ModalMessage
-          modalVisible={ modalVisible }
-          modalMsg={ modalMsg }
-          onModalHide={ this.onModalHide } />
       </Container>
     );
   }

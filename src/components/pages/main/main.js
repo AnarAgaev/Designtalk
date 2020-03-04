@@ -19,11 +19,9 @@ import img8 from './img/minimalistichnaya-kvartira-v-moskve-pufikhomes-2.jpg';
 
 export default class Main extends Component {
   render() {
-    const { handleCursorOverImg,
-            popularListData,
-            articlesListData,
-            popularListPosition,
-            toggleSlide } = this.props;
+    const { handleCursorOverImg, popularListData,
+            articlesListData, popularListPosition,
+            toggleSlide, handleModalShow } = this.props;
 
     return (
       <>
@@ -35,7 +33,7 @@ export default class Main extends Component {
           handleCursorOverImg={ handleCursorOverImg }
         />
         <ButtonMore />
-        <Subscribe />
+        <Subscribe handleModalShow={ handleModalShow } />
         <PopularList
           popularListData={ popularListData }
           handleCursorOverImg={ handleCursorOverImg }
