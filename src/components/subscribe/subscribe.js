@@ -55,6 +55,12 @@ export default class Subscribe extends Component {
     })
   };
 
+  handleInputBlur = () => {
+    this.state.email === '' ?
+      this.setState({ error: false }) :
+      undefined;
+  };
+
   render() {
     const { email, error, modalVisible, modalMsg } = this.state;
 
@@ -73,6 +79,7 @@ export default class Subscribe extends Component {
                      placeholder="Адрес почты"
                      value={ email }
                      onChange={ this.handleInputChange }
+                     onBlur={ this.handleInputBlur }
                      ref={ this.textInput } />
               <button className={ btnClass }
                       type="submit">подписаться</button>

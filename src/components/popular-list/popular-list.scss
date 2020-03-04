@@ -4,24 +4,26 @@
 
   .container {
     position: relative;
-    height: 600px;
   }
 
   a::before {
     content: none;
   }
 
+  &__list__wrap {
+    position: relative;
+    height: 390px;
+    margin-bottom: 33px;
+  }
+
   &__list {
-    width: 99999px;
+    //width: 99999px;
+    width: auto;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     position: absolute;
-    left: 15px;
-  }
-
-  &__controls {
-    position: absolute;
-    bottom: 0;
+    left: 0;
+    transition: left .3s ease;
   }
 }

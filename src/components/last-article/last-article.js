@@ -15,7 +15,7 @@ export default class LastArticle extends Component {
         <Row>
           <Col lg={4}>
             <div className="last-article">
-              <Link to="/" className="last-article__link">#Деревянные дома</Link>
+              <Link to="/" className="last-article__link">Деревянные дома</Link>
               <h3 className="last-article__title">
                 Минималистичный деревянный домик в горах с роскошным видом
               </h3>

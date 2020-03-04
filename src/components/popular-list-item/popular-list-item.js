@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import './popular-list-item.scss';
 
 export default class PopularListItem extends Component {
