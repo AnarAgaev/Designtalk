@@ -2,7 +2,8 @@ import React from "react";
 
 import './modal-message.scss';
 
-const ModalMessage = ({ modalMsg, modalVisible, handleModalHide }) => {
+const ModalMessage = ({ modalMsg, modalVisible,
+                        handleModalHide }) => {
   const modalClass = modalVisible ? 'modal visible' : 'modal';
 
   return (
@@ -13,7 +14,12 @@ const ModalMessage = ({ modalMsg, modalVisible, handleModalHide }) => {
             <p>{ modalMsg }</p>
           </div>
           <div className="modal__footer">
-            <button type="button" className="button" onClick={ handleModalHide }>Закрыть</button>
+            <button
+              type="button"
+              className="button"
+              onClick={ handleModalHide }>
+              Закрыть
+            </button>
           </div>
         </div>
       </div>
