@@ -1,26 +1,24 @@
 export default class BlogService {
 
-  data = [
-    {
-      id: 1,
-      title: 'Production-Ready Microservices',
-      author: 'Susan J. Fowler',
-      price: 32,
-      coverImage: 'https://images-na.ssl-images-amazon.com/images/I/41yJ75gpV-L._SX381_BO1,204,203,200_.jpg'},
-    {
-      id: 2,
-      title: 'Release It!',
-      author: 'Michael T. Nygard',
-      price: 45,
-      coverImage: 'https://images-na.ssl-images-amazon.com/images/I/414CRjLjwgL._SX403_BO1,204,203,200_.jpg'}
-  ];
+  // _apiBase = 'https://swapi.co/api';
+  _apiBase = 'https://spacebuilder.ru';
 
-  getBooks() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(this.data);
-        reject(new Error('Something bad happened!'));
-      }, 700);
-    });
+  async getResource(url) {
+    const response = await fetch(`${this._apiBase}${url}`);
+
+    if (!response.ok) {
+      throw new Error(`Could not fetch ${url}, received ${response.status}`);
+    }
+
+    return await response.json();
   }
+
+  async getAllArticles() {
+    return await this.getResource(`/articles/`);
+  }
+
+  async getArticle(name = null) {
+    return await this.getResource(`/articles/?name=${name}`);
+  }
+
 }

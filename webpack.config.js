@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env = {}) => {
 
@@ -27,7 +28,10 @@ module.exports = (env = {}) => {
         title: 'Hello world',
         buildTime: new Date().toDateString(),
         template: 'public/index.html'
-      })
+      }),
+      new CopyPlugin([
+        { from: `${PATHS.src}/img`, to: 'img' },
+      ]),
     ];
 
     if (isProd) {

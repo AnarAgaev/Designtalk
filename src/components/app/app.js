@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import BlogService from "../../services/blog-service";
 
 import Header from "../header";
 import Main from "../pages/main";
@@ -12,6 +13,7 @@ import ForAdvertisers from "../pages/for-advertisers";
 import CookiePolicy from "../pages/cookie-policy";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
+import ModalMessage from "../modal-message";
 
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
@@ -24,14 +26,51 @@ import img8 from "../pages/main/img/minimalistichnaya-kvartira-v-moskve-pufikhom
 import img2 from "../pages/main/img/interesting-colors-in-new-york-apartment-pufikhomes-1-1.jpg";
 import img3 from "../pages/main/img/elegantnaya-skandinavskaya-kvartira-v-priglushennyh-tonah-pufikhomes-1.jpg";
 import img4 from "../pages/main/img/malenkaya-kvartira-v-temno-seryh-tonah-v-shvecii-40kvm-pufikhomes-2-1.jpg";
-import ModalMessage from "../modal-message";
-import {Container} from "react-bootstrap";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.updateLastArticle();
+  }
+
+  blogService = new BlogService();
+
+  updateLastArticle() {
+    this.blogService.getArticle()
+      .then((article) => {
+        this.setState({
+          lastArticle: {
+            id: article.id,
+            url: article.url,
+            rubric: {
+              id: article.rubric.id,
+              url: article.rubric.url,
+              name: article.rubric.name
+            },
+            title: article.title,
+            preview: article.preview,
+            picture: article.picture
+          }
+        });
+      });
+  }
+
   state = {
     cursorVisible: false,
     cursorOffsetX: 0,
     cursorOffsetY: 0,
+    lastArticle: {
+      id: null,
+      url: null,
+      rubric: {
+        id: null,
+        url: null,
+        name: null
+      },
+      title: null,
+      preview: null,
+      picture: 'img-plug.png'
+    },
     articlesListData: [
       { id: 1, img: img1, rubric: 'Маленькие квартиры', caption: 'Светлая квартира с персиковыми стенами на окраине Стокгольма'},
       { id: 2, img: img2, rubric: 'Маленькие квартиры', caption: 'Интересные цветовые сочетания в интерьере квартиры в Нью-Йорке'},
@@ -104,10 +143,11 @@ export default class App extends Component {
   MainPage = () => {
     return (
       <Main
-        handleCursorOverImg={ this.handleCursorOverImg }
         popularListData={ this.state.popularListData }
         articlesListData={ this.state.articlesListData }
         popularListPosition={ this.state.popularListPosition }
+        lastArticle={ this.state.lastArticle }
+        handleCursorOverImg={ this.handleCursorOverImg }
         toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
     );
@@ -146,3 +186,9 @@ export default class App extends Component {
     );
   }
 }
+
+
+// service.getAllArticles()
+//   .then((response) => {
+//     console.log(response);
+//   });

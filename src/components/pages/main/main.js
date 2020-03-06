@@ -21,13 +21,14 @@ export default class Main extends Component {
   render() {
     const { handleCursorOverImg, popularListData,
             articlesListData, popularListPosition,
-            toggleSlide, handleModalShow } = this.props;
+            toggleSlide, handleModalShow, lastArticle } = this.props;
 
     return (
       <>
         <MainPageTitle />
         <LastArticle
-          handleCursorOverImg={ handleCursorOverImg } />
+          handleCursorOverImg={ handleCursorOverImg }
+          lastArticle={ lastArticle } />
         <ArticlesList
           articlesListData={ articlesListData }
           handleCursorOverImg={ handleCursorOverImg }
