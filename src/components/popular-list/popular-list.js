@@ -22,6 +22,8 @@ export default class PopularList extends Component {
       );
     });
 
+    console.log(popularListData)
+
     const onClickLeftControl = () => {
       const right = this.popularListRef.current.getBoundingClientRect().right;
       toggleSlide(1, right);

@@ -4,26 +4,27 @@ import './popular-list-item.scss';
 
 export default class PopularListItem extends Component {
   render() {
-    const { img, description,
-            rubric, caption,
-            handleCursorOverImg } = this.props;
+    const { handleCursorOverImg, url,
+            rubric, title, preview,
+            picture } = this.props;
 
     return (
       <article className="popular-list-item">
         <div>
-          <Link to="/"
+          <Link to={ `/articles/${url}` }
             className="popular-list-item__picture"
-            style={{backgroundImage: `url(${ img })`}}
+            style={{ backgroundImage: `url(/img/${ picture })` }}
             onMouseOut={() => handleCursorOverImg(false)}
             onMouseMove={({pageX, pageY}) => {
               handleCursorOverImg(true, pageX, pageY)
             }} />
-          <Link className="popular-list-item__caption" to="/">
-            <span>{ caption }</span>
+          <Link to={ `/articles/${url}` }
+                className="popular-list-item__caption">
+            <span>{ title }</span>
           </Link>
         </div>
         <p className="popular-list-item__description">
-          <span>{ description }</span><a href="#">{ rubric }</a>
+          <span>{ preview }</span><a href={ `/articles/?filter=true&rubric=${rubric.url}` }>{ rubric.name }</a>
         </p>
       </article>
     );

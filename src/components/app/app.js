@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BlogService from "../../services/blog-service";
-
 import Header from "../header";
 import Main from "../pages/main";
 import Cursor from "../cursor";
@@ -14,23 +13,16 @@ import CookiePolicy from "../pages/cookie-policy";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
-
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
-import img1 from "../pages/main/img/smart-kvartira-v-brazilii-pufikhomes-1-1.jpg";
-import img5 from "../pages/main/img/elegantnaya-krasivaya-sovremennaya-kvartira-v-stokgolme-pufikhomes-4a.jpg";
-import img7 from "../pages/main/img/korichnevye-steny-v-skandinavskoi-kvartire-pufikhomes-1-1.jpg";
-import img6 from "../pages/main/img/kids-room-for-two-three-pufikhomes-2a.jpg";
-import img8 from "../pages/main/img/minimalistichnaya-kvartira-v-moskve-pufikhomes-2.jpg";
-import img2 from "../pages/main/img/interesting-colors-in-new-york-apartment-pufikhomes-1-1.jpg";
-import img3 from "../pages/main/img/elegantnaya-skandinavskaya-kvartira-v-priglushennyh-tonah-pufikhomes-1.jpg";
-import img4 from "../pages/main/img/malenkaya-kvartira-v-temno-seryh-tonah-v-shvecii-40kvm-pufikhomes-2-1.jpg";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.updateLastArticle();
+    this.updateArticles();
+    this.updatePopularArticles();
   }
 
   blogService = new BlogService();
@@ -39,19 +31,26 @@ export default class App extends Component {
     this.blogService.getArticle()
       .then((article) => {
         this.setState({
-          lastArticle: {
-            id: article.id,
-            url: article.url,
-            rubric: {
-              id: article.rubric.id,
-              url: article.rubric.url,
-              name: article.rubric.name
-            },
-            title: article.title,
-            preview: article.preview,
-            picture: article.picture
-          }
+          lastArticle: article
         });
+      });
+  }
+
+  updateArticles() {
+    this.blogService.getAllArticles()
+      .then((articles) => {
+        this.setState({
+          articlesListData: articles.results
+        })
+      });
+  }
+
+  updatePopularArticles() {
+    this.blogService.getAllArticles(9)
+      .then((articles) => {
+        this.setState({
+          popularListData: articles.results
+        })
       });
   }
 
@@ -71,25 +70,10 @@ export default class App extends Component {
       preview: null,
       picture: 'img-plug.png'
     },
-    articlesListData: [
-      { id: 1, img: img1, rubric: 'Маленькие квартиры', caption: 'Светлая квартира с персиковыми стенами на окраине Стокгольма'},
-      { id: 2, img: img2, rubric: 'Маленькие квартиры', caption: 'Интересные цветовые сочетания в интерьере квартиры в Нью-Йорке'},
-      { id: 3, img: img3, rubric: 'Маленькие квартиры', caption: 'Элегантная скандинавская квартира в приглушенных тонах'},
-      { id: 4, img: img4, rubric: 'Маленькие квартиры', caption: 'Маленькая серая квартира с видом на залив в Стокгольме'},
-    ],
-    popularListData: [
-      { id: 1, img: img1, caption: 'Smart квартира в Бразилии', rubric: 'Маленькие квартиры', description: 'Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью и оригинальными предметами декора' },
-      { id: 2, img: img5, caption: 'Изысканный дизайн современных апартаментов', rubric: 'Современный Арт-Деко', description: 'Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью' },
-      { id: 3, img: img7, caption: 'Современная квартира с музыкальной комнатой в Стокгольме', rubric: 'Скандика', description: 'Несмотря на стереотипы, сочетание бежевого и серого может быть удачным' },
-      { id: 4, img: img6, caption: 'Детская для двоих или троих: несколько прекрасных идей', rubric: 'Подборки', description: 'Если в семье больше одного ребенка, а детская всего одна, то это может стать настоящей головной болью' },
-      { id: 5, img: img8, caption: '10 причин полюбить белый интерьер', rubric: 'Концепции', description: 'Мы так часто и так много пишем о разных белых интерьерах, что наконец-то решили сделать подборочку' },
-      { id: 6, img: img1, caption: 'Smart квартира в Бразилии', rubric: '#Маленькие квартиры', description: 'Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью и оригинальными предметами декора' },
-      { id: 7, img: img5, caption: 'Изысканный дизайн современных апартаментов', rubric: 'Современный Арт-Деко', description: 'Эта роскошная современная квартира в Стокгольме наполнена уникальной дизайнерской мебелью' },
-      { id: 8, img: img7, caption: 'Современная квартира с музыкальной комнатой в Стокгольме', rubric: 'Скандика', description: 'Несмотря на стереотипы, сочетание бежевого и серого может быть удачным' },
-      { id: 9, img: img6, caption: 'Детская для двоих или троих: несколько прекрасных идей', rubric: 'Подборки', description: 'Если в семье больше одного ребенка, а детская всего одна, то это может стать настоящей головной болью' },
-    ],
+    articlesListData: [],
+    popularListData: [],
     popularListPosition: 0,
-    popularListItemWidth: 312,
+    popularListItemWidth: 332,
     slipBlocker: true,
     modalMsg: '',
     modalVisible: false
@@ -186,9 +170,3 @@ export default class App extends Component {
     );
   }
 }
-
-
-// service.getAllArticles()
-//   .then((response) => {
-//     console.log(response);
-//   });

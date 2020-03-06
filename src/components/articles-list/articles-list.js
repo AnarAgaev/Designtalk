@@ -1,7 +1,7 @@
 import React from "react";
 
 import './articles-list.scss';
-import {Container, Row} from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import ArticlesListItem from "../articles-list-item";
 
 const ArticlesList = ({ articlesListData, handleCursorOverImg }) => {

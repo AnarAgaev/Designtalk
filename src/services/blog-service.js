@@ -13,12 +13,15 @@ export default class BlogService {
     return await response.json();
   }
 
-  async getAllArticles() {
+  async getAllArticles(count = false) {
+    if (count) {
+      return await this.getResource(`/articles/?count=${count}`);
+    }
+
     return await this.getResource(`/articles/`);
   }
 
   async getArticle(name = null) {
     return await this.getResource(`/articles/?name=${name}`);
   }
-
 }

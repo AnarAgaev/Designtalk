@@ -6,23 +6,24 @@ import './articles-list-item.scss';
 
 export default class ArticlesListItem extends Component {
   render() {
-    const { img, rubric, caption, handleCursorOverImg } = this.props;
+    const { url, rubric, title, picture, handleCursorOverImg } = this.props;
+    const urlRubric = `/article/?filer=true&rubric=${rubric.url}`;
 
     return (
       <Col className="article-list__item">
-        <Link to="/" className="article-list__picture">
+        <Link to={ `/article/${url}` } className="article-list__picture">
           <img
-            src={ img } alt="Image"
+            src={ `/img/${picture}` } alt={ title }
             onMouseOut={() => handleCursorOverImg(false)}
             onMouseMove={({pageX, pageY}) => {
               handleCursorOverImg(true, pageX, pageY)
             }} />
         </Link>
         <Link to="/" className="article-list__caption">
-          <span>{ caption }</span>
+          <span>{ title }</span>
         </Link>
-        <Link to="/" className="article-list__rubric">
-          { rubric }
+        <Link to={ urlRubric } className="article-list__rubric">
+          { rubric.name }
         </Link>
       </Col>
     );
