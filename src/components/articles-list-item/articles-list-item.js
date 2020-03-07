@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Col} from "react-bootstrap";
-
+import { Col } from "react-bootstrap";
 import './articles-list-item.scss';
 
 export default class ArticlesListItem extends Component {
@@ -15,7 +14,7 @@ export default class ArticlesListItem extends Component {
           <img
             src={ `/img/${picture}` } alt={ title }
             onMouseOut={() => handleCursorOverImg(false)}
-            onMouseMove={({pageX, pageY}) => {
+            onMouseMove={({ pageX, pageY }) => {
               handleCursorOverImg(true, pageX, pageY)
             }} />
         </Link>

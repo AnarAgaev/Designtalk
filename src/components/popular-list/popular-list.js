@@ -1,28 +1,39 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import PopularListItem from "../popular-list-item";
+import Cursor from "../cursor";
 import './popular-list.scss';
 
 export default class PopularList extends Component {
   popularListRef = React.createRef();
 
+  state = {
+    cursorVisible: false,
+    cursorOffsetX: 0,
+    cursorOffsetY: 0,
+  };
+
+  handleCursorOverImg = (visible = false, offsetX = 0, offsetY = 0) => {
+    this.setState({
+      cursorVisible: visible,
+      cursorOffsetX: offsetX,
+      cursorOffsetY: offsetY
+    })
+  };
+
   render() {
-    const { popularListData,
-      handleCursorOverImg,
-      popularListPosition,
-      toggleSlide } = this.props;
+    const { popularListData, popularListPosition, toggleSlide } = this.props;
+    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
 
     const elements = popularListData.map((item) => {
       const { id, ...itemProp } = item;
       return (
         <PopularListItem
-          { ...itemProp }
           key={ id }
-          handleCursorOverImg={ handleCursorOverImg } />
+          { ...itemProp }
+          handleCursorOverImg={ this.handleCursorOverImg } />
       );
     });
-
-    console.log(popularListData)
 
     const onClickLeftControl = () => {
       const right = this.popularListRef.current.getBoundingClientRect().right;
@@ -55,6 +66,10 @@ export default class PopularList extends Component {
               className="controller" />
           </div>
         </Container>
+        <Cursor
+          cursorVisible = { cursorVisible }
+          cursorOffsetX = { cursorOffsetX }
+          cursorOffsetY = { cursorOffsetY } />
       </div>
     );
   }

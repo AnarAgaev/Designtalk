@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BlogService from "../../services/blog-service";
 import Header from "../header";
 import Main from "../pages/main";
-import Cursor from "../cursor";
 import Footer from "../footer";
 import About from "../pages/about";
 import PublishProject from "../pages/publish-project";
@@ -27,64 +26,51 @@ export default class App extends Component {
 
   blogService = new BlogService();
 
+  onLastArticleLoaded = (article) => {
+    this.setState({
+      lastArticle: article
+    });
+  };
+
   updateLastArticle() {
-    this.blogService.getArticle()
-      .then((article) => {
-        this.setState({
-          lastArticle: article
-        });
-      });
+    this.blogService
+      .getArticle()
+      .then(this.onLastArticleLoaded);
   }
+
+  onArticlesLoaded = (articles) => {
+    this.setState({
+      articlesListData: articles.results
+    });
+  };
 
   updateArticles() {
-    this.blogService.getAllArticles()
-      .then((articles) => {
-        this.setState({
-          articlesListData: articles.results
-        })
-      });
+    this.blogService
+      .getArticles()
+      .then(this.onArticlesLoaded);
   }
 
+  onPopularArticlesLoaded = (articles) => {
+    this.setState({
+      popularListData: articles.results
+    });
+  };
+
   updatePopularArticles() {
-    this.blogService.getAllArticles(9)
-      .then((articles) => {
-        this.setState({
-          popularListData: articles.results
-        })
-      });
+    this.blogService
+      .getArticles(9)
+      .then(this.onPopularArticlesLoaded);
   }
 
   state = {
-    cursorVisible: false,
-    cursorOffsetX: 0,
-    cursorOffsetY: 0,
-    lastArticle: {
-      id: null,
-      url: null,
-      rubric: {
-        id: null,
-        url: null,
-        name: null
-      },
-      title: null,
-      preview: null,
-      picture: 'img-plug.png'
-    },
+    lastArticle: [],
     articlesListData: [],
     popularListData: [],
     popularListPosition: 0,
     popularListItemWidth: 332,
     slipBlocker: true,
     modalMsg: '',
-    modalVisible: false
-  };
-
-  handleCursorOverImg = (visible, offsetX = 0, offsetY = 0) => {
-    this.setState({
-      cursorVisible: visible,
-      cursorOffsetX: offsetX,
-      cursorOffsetY: offsetY
-    })
+    modalVisible: false,
   };
 
   toggleSlide = (direction, right) => {
@@ -127,20 +113,17 @@ export default class App extends Component {
   MainPage = () => {
     return (
       <Main
-        popularListData={ this.state.popularListData }
-        articlesListData={ this.state.articlesListData }
-        popularListPosition={ this.state.popularListPosition }
         lastArticle={ this.state.lastArticle }
-        handleCursorOverImg={ this.handleCursorOverImg }
+        articlesListData={ this.state.articlesListData }
+        popularListData={ this.state.popularListData }
+        popularListPosition={ this.state.popularListPosition }
         toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
     );
   };
 
   render() {
-    const { cursorVisible, cursorOffsetX,
-            cursorOffsetY, modalVisible,
-            modalMsg } = this.state;
+    const { modalVisible, modalMsg } = this.state;
 
     return (
       <Router>
@@ -162,10 +145,6 @@ export default class App extends Component {
           modalVisible={ modalVisible }
           modalMsg={ modalMsg }
           handleModalHide={ this.handleModalHide } />
-        <Cursor
-          cursorVisible = { cursorVisible }
-          cursorOffsetX = { cursorOffsetX }
-          cursorOffsetY = { cursorOffsetY } />
       </Router>
     );
   }
