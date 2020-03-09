@@ -5,23 +5,23 @@ import './last-article.scss';
 
 export default class LastArticle extends Component {
   state = {
-    titleHover: false
+    isTitleHover: false
   };
 
   handleTitleOver = () => {
     this.setState({
-      titleHover: true
+      isTitleHover: true
     });
   };
 
   handleTitleOut = () => {
     this.setState({
-      titleHover: false
+      isTitleHover: false
     });
   };
 
   render() {
-    const { titleHover } = this.state;
+    const { isTitleHover } = this.state;
     const { rubric = { link: null, name: null },
       ...article } = this.props.lastArticle;
     const urlArticle = '/articles/' + article.url;
@@ -34,7 +34,7 @@ export default class LastArticle extends Component {
             <div className="last-article">
               <Link to={ urlRubric } className="last-article__link">{ rubric.name }</Link>
               <Link to={ urlArticle } className="last-article__title">
-                <span className={ titleHover ? 'hover' : null }>{ article.title }</span>
+                <span className={ isTitleHover ? 'hover' : null }>{ article.title }</span>
               </Link>
               <p className="last-article__description">{ article.preview }</p>
               <Link to={ urlArticle } className="button">Читать</Link>

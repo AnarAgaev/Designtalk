@@ -27,10 +27,6 @@ export default class Header extends Component {
     const { scrolled } = this.state;
     let scroll = window.pageYOffset;
 
-    (scroll > 30)
-      ? this.setState({ background: true })
-      : this.setState({ background: false });
-
     if (scroll > 700) {
       if (scroll < scrolled) {
         this.setState({

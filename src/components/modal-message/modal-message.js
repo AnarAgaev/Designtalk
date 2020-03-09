@@ -2,9 +2,10 @@ import React from "react";
 
 import './modal-message.scss';
 
-const ModalMessage = ({ modalMsg, modalVisible,
-                        handleModalHide }) => {
-  const modalClass = modalVisible ? 'modal visible' : 'modal';
+const ModalMessage = ({ modalMsg, modalVisible, handleModalHide }) => {
+  const modalClass = modalVisible ?
+    'modal visible' :
+    'modal';
 
   return (
     <div className={ modalClass }>

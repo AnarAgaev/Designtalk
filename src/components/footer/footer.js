@@ -1,12 +1,12 @@
 import React from "react";
-import './footer.scss';
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Nav from "../nav";
 import PrivacyList from "../privacy-list";
 import Logotype from "../logotype";
 import Copyright from "../copyright";
 import SocialList from "../socials-list";
 import SocialTitle from "../social-title";
+import './footer.scss';
 
 const Footer = () => {
   return (

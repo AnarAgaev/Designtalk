@@ -33,6 +33,14 @@ export default class PopularList extends Component {
     });
   };
 
+  componentDidMount() {
+    console.log(this.popularListRef.current.getBoundingClientRect().right)
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(this.popularListRef.current.getBoundingClientRect().right)
+  }
+
   render() {
     const { popularListData, popularListPosition, toggleSlide } = this.props;
     const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
