@@ -21,12 +21,9 @@ export default class PopularList extends Component {
     })
   };
 
-  render() {
-    const { popularListData, popularListPosition, toggleSlide } = this.props;
-    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
-
-    const elements = popularListData.map((item) => {
-      const { id, ...itemProp } = item;
+  renderArticles = (articles) => {
+    return articles.map((article) => {
+      const { id, ...itemProp } = article;
       return (
         <PopularListItem
           key={ id }
@@ -34,6 +31,12 @@ export default class PopularList extends Component {
           handleCursorOverImg={ this.handleCursorOverImg } />
       );
     });
+  };
+
+  render() {
+    const { popularListData, popularListPosition, toggleSlide } = this.props;
+    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
+    const articles = this.renderArticles(popularListData);
 
     const onClickLeftControl = () => {
       const right = this.popularListRef.current.getBoundingClientRect().right;
@@ -54,7 +57,7 @@ export default class PopularList extends Component {
               className="popular__list"
               style={{ left: popularListPosition }}
               ref={ this.popularListRef } >
-              { elements }
+              { articles }
             </div>
           </div>
           <div className="popular__controls">

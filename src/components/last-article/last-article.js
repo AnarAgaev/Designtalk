@@ -22,16 +22,17 @@ export default class LastArticle extends Component {
 
   render() {
     const { titleHover } = this.state;
-    const { rubric = null, ...article } = this.props.lastArticle;
+    const { rubric = { link: null, name: null },
+      ...article } = this.props.lastArticle;
     const urlArticle = '/articles/' + article.url;
-    const urlRubric = '/articles/?filter=true&rubric=' + article.link;
+    const urlRubric = '/articles/?filter=true&rubric=' + rubric.link;
 
     return (
       <Container>
         <Row>
           <Col lg={6} style={{zIndex: '1'}}>
             <div className="last-article">
-              <Link to={ urlRubric } className="last-article__link">{ article.name }</Link>
+              <Link to={ urlRubric } className="last-article__link">{ rubric.name }</Link>
               <Link to={ urlArticle } className="last-article__title">
                 <span className={ titleHover ? 'hover' : null }>{ article.title }</span>
               </Link>

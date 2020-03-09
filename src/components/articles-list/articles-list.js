@@ -19,11 +19,9 @@ export default class ArticlesList extends Component {
     })
   };
 
-  render() {
-    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
-
-    const  elements = this.props.articlesListData.map((item) => {
-      const { id, ...itemProps } = item;
+  renderArticles = (articles) => {
+    return articles.map((article) => {
+      const { id, ...itemProps } = article;
 
       return (
         <ArticlesListItem
@@ -32,11 +30,16 @@ export default class ArticlesList extends Component {
           handleCursorOverImg={ this.handleCursorOverImg } />
       );
     });
+  };
+
+  render() {
+    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
+    const articles = this.renderArticles(this.props.articlesListData);
 
     return (
       <Container>
         <Row className="article-list">
-          { elements }
+          { articles }
         </Row>
         <Cursor
           cursorVisible = { cursorVisible }
