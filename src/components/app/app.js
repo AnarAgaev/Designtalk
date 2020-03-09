@@ -18,14 +18,22 @@ import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.updateLastArticle();
-    this.updateArticles();
-    this.updatePopularArticles();
-  }
-
   blogService = new BlogService();
+
+  state = {
+    nextPage: '/articles/?page=2',
+    previousPage: null,
+    lastArticle: [],
+    articlesListData: [],
+    popularListData: [],
+    popularListPosition: 0,
+    popularListItemWidth: 332,
+    slipBlocker: true,
+    modalMsg: '',
+    modalVisible: false,
+    errorVisible: false,
+    spinnerVisible: false
+  };
 
   onError = (error) => {
     this.setState({
@@ -97,21 +105,6 @@ export default class App extends Component {
       .catch(this.onError);
   };
 
-  state = {
-    nextPage: '/articles/?page=2',
-    previousPage: null,
-    lastArticle: [],
-    articlesListData: [],
-    popularListData: [],
-    popularListPosition: 0,
-    popularListItemWidth: 332,
-    slipBlocker: true,
-    modalMsg: '',
-    modalVisible: false,
-    errorVisible: false,
-    spinnerVisible: false
-  };
-
   toggleSlide = (direction, right) => {
     const { popularListPosition,
             popularListItemWidth,
@@ -161,6 +154,12 @@ export default class App extends Component {
         toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
     );
+  };
+
+  componentDidMount() {
+    this.updateLastArticle();
+    this.updateArticles();
+    this.updatePopularArticles();
   };
 
   render() {

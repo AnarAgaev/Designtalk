@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-
-import './articles-list.scss';
 import { Container, Row } from "react-bootstrap";
 import ArticlesListItem from "../articles-list-item";
 import Cursor from "../cursor";
+import './articles-list.scss';
 
 export default class ArticlesList extends Component {
   state = {
