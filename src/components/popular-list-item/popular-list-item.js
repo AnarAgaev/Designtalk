@@ -24,7 +24,10 @@ export default class PopularListItem extends Component {
           </Link>
         </div>
         <p className="popular-list-item__description">
-          <span>{ preview }</span><a href={ `/articles/?filter=true&rubric=${rubric.url}` }>{ rubric.name }</a>
+          <span>{ preview }</span>
+          <a href={ `/articles/?filter=true&rubric=${rubric.url}` }>
+            { rubric.name }
+          </a>
         </p>
       </article>
     );

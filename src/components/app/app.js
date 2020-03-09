@@ -23,7 +23,7 @@ export default class App extends Component {
   state = {
     nextPage: '/articles/?page=2',
     previousPage: null,
-    lastArticle: [],
+    lastArticle: { picture: 'undefined.png' },
     articlesListData: [],
     popularListData: [],
     popularListPosition: 0,

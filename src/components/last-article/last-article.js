@@ -22,34 +22,28 @@ export default class LastArticle extends Component {
 
   render() {
     const { titleHover } = this.state;
-
-    const {
-      url = null,
-      rubric : { link = null, name = null } = [],
-      title = null, preview = null,
-      picture = 'img-plug.png'
-    } = this.props.lastArticle;
-    const urlArticle = '/articles/' + url;
-    const urlPic = '/img/' + picture;
-    const urlRubric = '/articles/?filter=true&rubric=' + link;
+    const { rubric = null, ...article } = this.props.lastArticle;
+    const urlArticle = '/articles/' + article.url;
+    const urlRubric = '/articles/?filter=true&rubric=' + article.link;
 
     return (
       <Container>
         <Row>
           <Col lg={6} style={{zIndex: '1'}}>
             <div className="last-article">
-              <Link to={ urlRubric } className="last-article__link">{ name }</Link>
+              <Link to={ urlRubric } className="last-article__link">{ article.name }</Link>
               <Link to={ urlArticle } className="last-article__title">
-                <span className={ titleHover ? 'hover' : null }>{ title }</span>
+                <span className={ titleHover ? 'hover' : null }>{ article.title }</span>
               </Link>
-              <p className="last-article__description">{ preview }</p>
+              <p className="last-article__description">{ article.preview }</p>
               <Link to={ urlArticle } className="button">Читать</Link>
             </div>
           </Col>
           <Col lg={6}>
             <Link to={ urlArticle } className="last-article__picture">
               <img
-                src={ urlPic } alt={ title }
+                src={ '/img/' + article.picture }
+                alt={ article.title }
                 onMouseOut={ this.handleTitleOut }
                 onMouseOver={ this.handleTitleOver } />
             </Link>

@@ -1,7 +1,7 @@
 export default class BlogService {
   _apiBase = 'https://spacebuilder.ru';
 
-  _transformArticle(article) {
+  _transformArticle = (article) => {
     return {
       id: article.id,
       url: article.url,
