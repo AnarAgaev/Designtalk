@@ -14,7 +14,7 @@ html, body, #root {
 }
 .main {
   flex: 1 0 auto;
-  padding-top: 130px;
+  padding-top: 70px;
   padding-bottom: 50px;
 }
 
@@ -202,14 +202,16 @@ input.button {
   color: $color-l;
 
   &:link,
-  &:visited {
+  &:visited,
+  &:focus {
     background-color: $color-primary-font;
     color: $color-l;
+    outline: 0;
+    outline-offset: 0;
   }
 
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     background-color: transparent;
     color: $color-primary-font;
     outline: 0;

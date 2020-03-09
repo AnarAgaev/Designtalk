@@ -7,7 +7,6 @@ import './header.scss';
 
 export default class Header extends Component {
   state = {
-    background: false,
     visible: true,
     scrolled: 0
   };
@@ -50,15 +49,9 @@ export default class Header extends Component {
   };
 
   render() {
-    const { background, visible } = this.state;
-    let classNames = 'header';
-
-    if (background) {
-      classNames += ' background-show';
-    }
-    if (!visible) {
-      classNames += ' hide';
-    }
+    const classNames = this.state.visible ?
+      'header' :
+      'header hide';
 
     return (
       <header className={ classNames }>

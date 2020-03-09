@@ -12,6 +12,7 @@ import CookiePolicy from "../pages/cookie-policy";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
+import Spinner from "../spinner";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
@@ -26,6 +27,13 @@ export default class App extends Component {
 
   blogService = new BlogService();
 
+  onError = (error) => {
+    this.setState({
+      errorVisible: true,
+      spinnerVisible: false
+    });
+  };
+
   onLastArticleLoaded = (article) => {
     this.setState({
       lastArticle: article
@@ -35,7 +43,8 @@ export default class App extends Component {
   updateLastArticle() {
     this.blogService
       .getArticle()
-      .then(this.onLastArticleLoaded);
+      .then(this.onLastArticleLoaded)
+      .catch(this.onError);
   }
 
   onArticlesLoaded = (articles) => {
@@ -47,7 +56,8 @@ export default class App extends Component {
   updateArticles() {
     this.blogService
       .getArticles()
-      .then(this.onArticlesLoaded);
+      .then(this.onArticlesLoaded)
+      .catch(this.onError);
   }
 
   onPopularArticlesLoaded = (articles) => {
@@ -59,10 +69,37 @@ export default class App extends Component {
   updatePopularArticles() {
     this.blogService
       .getArticles(9)
-      .then(this.onPopularArticlesLoaded);
+      .then(this.onPopularArticlesLoaded)
+      .catch(this.onError);
   }
 
+  onNextPage = (articles) => {
+    const newArticlesListData = [
+      ...this.state.articlesListData,
+      ...articles.results ];
+
+    this.setState({
+      nextPage: articles.next,
+      previousPage: articles.previous,
+      articlesListData: newArticlesListData,
+      spinnerVisible: false
+    });
+  };
+
+  updateNexPage = () => {
+    this.setState({
+      spinnerVisible: true
+    });
+
+    this.blogService
+      .getArticles(false, this.state.nextPage)
+      .then(this.onNextPage)
+      .catch(this.onError);
+  };
+
   state = {
+    nextPage: '/articles/?page=2',
+    previousPage: null,
     lastArticle: [],
     articlesListData: [],
     popularListData: [],
@@ -71,6 +108,8 @@ export default class App extends Component {
     slipBlocker: true,
     modalMsg: '',
     modalVisible: false,
+    errorVisible: false,
+    spinnerVisible: false
   };
 
   toggleSlide = (direction, right) => {
@@ -117,6 +156,8 @@ export default class App extends Component {
         articlesListData={ this.state.articlesListData }
         popularListData={ this.state.popularListData }
         popularListPosition={ this.state.popularListPosition }
+        getNexPage={ this.updateNexPage }
+        nextPage={ this.state.nextPage }
         toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
     );
@@ -145,6 +186,8 @@ export default class App extends Component {
           modalVisible={ modalVisible }
           modalMsg={ modalMsg }
           handleModalHide={ this.handleModalHide } />
+        <Spinner
+          spinnerVisible={ this.state.spinnerVisible } />
       </Router>
     );
   }

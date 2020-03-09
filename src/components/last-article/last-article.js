@@ -2,25 +2,26 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './last-article.scss';
-import Cursor from "../cursor";
 
 export default class LastArticle extends Component {
   state = {
-    cursorVisible: false,
-    cursorOffsetX: 0,
-    cursorOffsetY: 0,
+    titleHover: false
   };
 
-  handleCursorOverImg = (visible = false, offsetX = 0, offsetY = 0) => {
+  handleTitleOver = () => {
     this.setState({
-      cursorVisible: visible,
-      cursorOffsetX: offsetX,
-      cursorOffsetY: offsetY
-    })
+      titleHover: true
+    });
+  };
+
+  handleTitleOut = () => {
+    this.setState({
+      titleHover: false
+    });
   };
 
   render() {
-    const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
+    const { titleHover } = this.state;
 
     const {
       url = null,
@@ -35,29 +36,25 @@ export default class LastArticle extends Component {
     return (
       <Container>
         <Row>
-          <Col lg={4}>
+          <Col lg={6} style={{zIndex: '1'}}>
             <div className="last-article">
               <Link to={ urlRubric } className="last-article__link">{ name }</Link>
-              <h3 className="last-article__title">{ title }</h3>
+              <Link to={ urlArticle } className="last-article__title">
+                <span className={ titleHover ? 'hover' : null }>{ title }</span>
+              </Link>
               <p className="last-article__description">{ preview }</p>
               <Link to={ urlArticle } className="button">Читать</Link>
             </div>
           </Col>
-          <Col lg={8}>
+          <Col lg={6}>
             <Link to={ urlArticle } className="last-article__picture">
               <img
-                src={ urlPic } alt="Some text"
-                onMouseOut={() => this.handleCursorOverImg()}
-                onMouseMove={({ pageX, pageY }) => {
-                  this.handleCursorOverImg(true, pageX, pageY)
-                }} />
+                src={ urlPic } alt={ title }
+                onMouseOut={ this.handleTitleOut }
+                onMouseOver={ this.handleTitleOver } />
             </Link>
           </Col>
         </Row>
-        <Cursor
-          cursorVisible = { cursorVisible }
-          cursorOffsetX = { cursorOffsetX }
-          cursorOffsetY = { cursorOffsetY } />
       </Container>
     );
   }

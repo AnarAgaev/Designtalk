@@ -25,11 +25,12 @@ export default class BlogService {
     return await response.json();
   }
 
-  async getArticles(count = false) {
-    const url = count ?
+  async getArticles(count = false, url = false) {
+    const link = url ? url : count ?
       `/articles/?count=${count}` :
       `/articles/`;
-    const articles = await this.getResource(url);
+
+    const articles = await this.getResource(link);
 
     articles.results.map(article => this._transformArticle(article));
     return articles;
