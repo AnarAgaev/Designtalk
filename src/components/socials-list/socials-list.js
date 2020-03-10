@@ -13,7 +13,7 @@ export default class SocialList extends Component {
   renderSocialItems = () => {
     return this.socialItems.map((item) => {
       return (
-        <li className="social__item">
+        <li className="social__item" key={ item.iconName }>
           <a className="social__link" target="_blank" rel="nofollow">
             <FontAwesomeIcon icon={ item } />
           </a>

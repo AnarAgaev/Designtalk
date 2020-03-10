@@ -33,28 +33,20 @@ export default class PopularList extends Component {
     });
   };
 
-  componentDidMount() {
-    console.log(this.popularListRef.current.getBoundingClientRect().right)
-  }
+  onClickLeftControl = () => {
+    const right = this.popularListRef.current.getBoundingClientRect().right;
+    this.props.toggleSlide(1, right);
+  };
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log(this.popularListRef.current.getBoundingClientRect().right)
-  }
+  onClickRightControl = () => {
+    const right = this.popularListRef.current.getBoundingClientRect().right;
+    this.props.toggleSlide(-1, right);
+  };
 
   render() {
-    const { popularListData, popularListPosition, toggleSlide } = this.props;
+    const { popularListData, popularListPosition } = this.props;
     const { cursorVisible, cursorOffsetX, cursorOffsetY } = this.state;
     const articles = this.renderArticles(popularListData);
-
-    const onClickLeftControl = () => {
-      const right = this.popularListRef.current.getBoundingClientRect().right;
-      toggleSlide(1, right);
-    };
-
-    const onClickRightControl = () => {
-      const right = this.popularListRef.current.getBoundingClientRect().right;
-      toggleSlide(-1, right);
-    };
 
     return (
       <div className="popular">
@@ -70,10 +62,10 @@ export default class PopularList extends Component {
           </div>
           <div className="popular__controls">
             <div
-              onClick={ onClickLeftControl }
+              onClick={ this.onClickLeftControl }
               className="controller controller__left" />
             <div
-              onClick={ onClickRightControl }
+              onClick={ this.onClickRightControl }
               className="controller" />
           </div>
         </Container>
