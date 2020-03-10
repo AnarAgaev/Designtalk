@@ -13,6 +13,7 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
 import Spinner from "../spinner";
+import ErrorIndicator from "../error-indicator";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
@@ -31,13 +32,13 @@ export default class App extends Component {
     slipBlocker: true,
     modalMsg: '',
     modalVisible: false,
-    errorVisible: false,
+    hasError: false,
     spinnerVisible: false
   };
 
-  onError = (error) => {
+  onError = (error, info) => {
     this.setState({
-      errorVisible: true,
+      hasError: true,
       spinnerVisible: false
     });
   };
@@ -94,7 +95,7 @@ export default class App extends Component {
     });
   };
 
-  updateNexPage = () => {
+  getNexPage = () => {
     this.setState({
       spinnerVisible: true
     });
@@ -149,7 +150,7 @@ export default class App extends Component {
         articlesListData={ this.state.articlesListData }
         popularListData={ this.state.popularListData }
         popularListPosition={ this.state.popularListPosition }
-        getNexPage={ this.updateNexPage }
+        getNexPage={ this.getNexPage }
         nextPage={ this.state.nextPage }
         toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
@@ -162,8 +163,16 @@ export default class App extends Component {
     this.updatePopularArticles();
   };
 
+  componentDidCatch(error, errorInfo) {
+    this.onError(error, errorInfo);
+  }
+
   render() {
     const { modalVisible, modalMsg } = this.state;
+
+    if (this.state.hasError) {
+      return <ErrorIndicator />;
+    }
 
     return (
       <Router>

@@ -22,6 +22,10 @@ export default class PopularList extends Component {
   };
 
   renderArticles = (articles) => {
+    if (!articles.length) {
+      return null;
+    }
+
     return articles.map((article) => {
       const { id, ...itemProp } = article;
       return (

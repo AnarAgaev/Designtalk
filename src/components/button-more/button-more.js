@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 
 import './button-more.scss';
 
 const ButtonMore = ({ getNexPage, nextPage }) => {
-
   const styleButton = nextPage ?
     { display: 'block' } :
     { display: 'none' };

@@ -16,16 +16,16 @@ export default class BlogService {
     };
   };
 
-  async getResource(url) {
+  getResource = async (url) => {
     const response = await fetch(`${this._apiBase}${url}`);
 
     if (!response.ok) {
       throw new Error(`Could not fetch ${url}, received ${response.status}`);
     }
     return await response.json();
-  }
+  };
 
-  async getArticles(count = false, url = false) {
+  getArticles = async (count = false, url = false) => {
     const link = url ? url : count ?
       `/articles/?count=${count}` :
       `/articles/`;
@@ -34,10 +34,10 @@ export default class BlogService {
 
     articles.results.map(article => this._transformArticle(article));
     return articles;
-  }
+  };
 
-  async getArticle(name = null) {
+  getArticle = async (name = null) => {
     const article = await this.getResource(`/articles/?name=${name}`);
     return this._transformArticle(article);
-  }
+  };
 }
