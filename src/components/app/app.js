@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BlogService from "../../services/blog-service";
 import Header from "../header";
 import Main from "../pages/main";
+import ErrorBoundary from "../error-boundary";
 import Footer from "../footer";
 import About from "../pages/about";
 import PublishProject from "../pages/publish-project";
@@ -13,7 +14,6 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
 import Spinner from "../spinner";
-import ErrorIndicator from "../error-indicator";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
@@ -32,7 +32,6 @@ export default class App extends Component {
     slipBlocker: true,
     modalMsg: '',
     modalVisible: false,
-    hasError: false,
     spinnerVisible: false
   };
 
@@ -170,33 +169,31 @@ export default class App extends Component {
   render() {
     const { modalVisible, modalMsg } = this.state;
 
-    if (this.state.hasError) {
-      return <ErrorIndicator />;
-    }
-
     return (
-      <Router>
-        <Header />
-        <main className="main">
-          <Switch>
-            <Route path="/" component={ this.MainPage } exact={true} />
-            <Route path="/about" component={ About } />
-            <Route path="/publish-project" component={ PublishProject } />
-            <Route path="/contacts" component={ Contacts } />
-            <Route path="/for-advertisers" component={ ForAdvertisers } />
-            <Route path="/policy-personal-data" component={ PolicyPersonalData } />
-            <Route path="/privacy-policy" component={ PrivacyPolicy } />
-            <Route path="/cookie-policy" component= {CookiePolicy } />
-          </Switch>
-        </main>
-        <Footer />
-        <ModalMessage
-          modalVisible={ modalVisible }
-          modalMsg={ modalMsg }
-          handleModalHide={ this.handleModalHide } />
-        <Spinner
-          spinnerVisible={ this.state.spinnerVisible } />
-      </Router>
+      <ErrorBoundary>
+        <Router>
+          <Header />
+          <main className="main">
+            <Switch>
+              <Route path="/" component={ this.MainPage } exact={true} />
+              <Route path="/about" component={ About } />
+              <Route path="/publish-project" component={ PublishProject } />
+              <Route path="/contacts" component={ Contacts } />
+              <Route path="/for-advertisers" component={ ForAdvertisers } />
+              <Route path="/policy-personal-data" component={ PolicyPersonalData } />
+              <Route path="/privacy-policy" component={ PrivacyPolicy } />
+              <Route path="/cookie-policy" component= {CookiePolicy } />
+            </Switch>
+          </main>
+          <Footer />
+          <ModalMessage
+            modalVisible={ modalVisible }
+            modalMsg={ modalMsg }
+            handleModalHide={ this.handleModalHide } />
+          <Spinner
+            spinnerVisible={ this.state.spinnerVisible } />
+        </Router>
+      </ErrorBoundary>
     );
   }
 }

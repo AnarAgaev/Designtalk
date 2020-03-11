@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
 import ArticlesListItem from "../articles-list-item";
 import Cursor from "../cursor";
+import ErrorBoundary from "../error-boundary";
 import './articles-list.scss';
 
 export default class ArticlesList extends Component {
@@ -11,15 +12,21 @@ export default class ArticlesList extends Component {
     cursorOffsetY: 0,
   };
 
-  handleCursorOverImg = (visible = false, offsetX = 0, offsetY = 0) => {
-    this.setState({
-      cursorVisible: visible,
-      cursorOffsetX: offsetX,
-      cursorOffsetY: offsetY
-    })
+  handleCursorOverImg = (visible, offsetX, offsetY) => {
+    const newState = !visible ?
+      { cursorVisible: visible } :
+      { cursorVisible: visible,
+        cursorOffsetX: offsetX,
+        cursorOffsetY: offsetY };
+
+    this.setState( newState );
   };
 
   renderArticles = (articles) => {
+    if (!articles.length) {
+      return null;
+    }
+
     return articles.map((article) => {
       const { id, ...itemProps } = article;
 
@@ -37,15 +44,17 @@ export default class ArticlesList extends Component {
     const articles = this.renderArticles(this.props.articlesListData);
 
     return (
-      <Container>
-        <Row className="article-list">
-          { articles }
-        </Row>
-        <Cursor
-          cursorVisible = { cursorVisible }
-          cursorOffsetX = { cursorOffsetX }
-          cursorOffsetY = { cursorOffsetY } />
-      </Container>
+      <ErrorBoundary>
+        <Container>
+          <Row className="article-list">
+            { articles }
+          </Row>
+          <Cursor
+            cursorVisible = { cursorVisible }
+            cursorOffsetX = { cursorOffsetX }
+            cursorOffsetY = { cursorOffsetY } />
+        </Container>
+      </ErrorBoundary>
     );
   }
 };

@@ -4,6 +4,7 @@ import ArticlesList from "../../articles-list";
 import ButtonMore from "../../button-more";
 import Subscribe from "../../subscribe";
 import PopularList from "../../popular-list";
+import ErrorBoundary from "../../error-boundary";
 import './main.scss';
 
 export default class Main extends Component {
@@ -13,7 +14,7 @@ export default class Main extends Component {
             nextPage } = this.props;
 
     return (
-      <>
+      <ErrorBoundary>
         <LastArticle lastArticle={ lastArticle } />
         <ArticlesList articlesListData={ articlesListData } />
         <ButtonMore getNexPage={ getNexPage } nextPage={ nextPage } />
@@ -22,7 +23,7 @@ export default class Main extends Component {
           popularListData={ popularListData }
           popularListPosition={ popularListPosition }
           toggleSlide={ toggleSlide } />
-      </>
+      </ErrorBoundary>
     );
   }
 }
