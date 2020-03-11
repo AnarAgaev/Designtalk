@@ -14,6 +14,7 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
 import Spinner from "../spinner";
+import ErrorIndicator from "../error-indicator";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
@@ -32,7 +33,8 @@ export default class App extends Component {
     slipBlocker: true,
     modalMsg: '',
     modalVisible: false,
-    spinnerVisible: false
+    spinnerVisible: false,
+    hasError: false
   };
 
   onError = (error, info) => {
@@ -162,12 +164,12 @@ export default class App extends Component {
     this.updatePopularArticles();
   };
 
-  componentDidCatch(error, errorInfo) {
-    this.onError(error, errorInfo);
-  }
-
   render() {
     const { modalVisible, modalMsg } = this.state;
+
+    if (this.state.hasError) {
+      return <ErrorIndicator />;
+    }
 
     return (
       <ErrorBoundary>
@@ -186,13 +188,13 @@ export default class App extends Component {
             </Switch>
           </main>
           <Footer />
-          <ModalMessage
-            modalVisible={ modalVisible }
-            modalMsg={ modalMsg }
-            handleModalHide={ this.handleModalHide } />
-          <Spinner
-            spinnerVisible={ this.state.spinnerVisible } />
         </Router>
+        <ModalMessage
+          modalVisible={ modalVisible }
+          modalMsg={ modalMsg }
+          handleModalHide={ this.handleModalHide } />
+        <Spinner
+          spinnerVisible={ this.state.spinnerVisible } />
       </ErrorBoundary>
     );
   }

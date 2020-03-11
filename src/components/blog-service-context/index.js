@@ -1,4 +1,7 @@
-import { BlogServiceProvider, BlogServiceConsumer } from "./blog-service-context";
+import {
+  BlogServiceProvider,
+  BlogServiceConsumer
+} from "./blog-service-context";
 
 export {
   BlogServiceProvider,
