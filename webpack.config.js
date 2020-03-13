@@ -30,7 +30,7 @@ module.exports = (env = {}) => {
         template: 'public/index.html'
       }),
       new CopyPlugin([
-        { from: `${PATHS.src}/img`, to: 'img' },
+        { from: `${PATHS.src}/images`, to: 'images' },
       ]),
     ];
 
@@ -126,14 +126,17 @@ module.exports = (env = {}) => {
     devtool: 'source-map',
 
     devServer: {
-      contentBase: PATHS.dist,
+      // contentBase: PATHS.dist,
+      historyApiFallback: true,
+      contentBase: './',
+      hot: true,
       port: 9000,
       open: true,
       compress: true,
       overlay: {
         warnings: true,
         errors: true
-      }
+      },
     }
   };
 };

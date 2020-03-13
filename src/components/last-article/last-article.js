@@ -45,7 +45,7 @@ export default class LastArticle extends Component {
             <Col lg={6}>
               <Link to={ urlArticle } className="last-article__picture">
                 <img
-                  src={ '/img/' + article.picture }
+                  src={ '/images/' + article.picture }
                   alt={ article.title }
                   onMouseOut={ this.handleTitleOut }
                   onMouseOver={ this.handleTitleOver } />

@@ -1,6 +1,6 @@
 import React from 'react';
 import './error-indicator.scss';
-import img from './error.gif';
+import image from '../../images/error.gif';
 
 const ErrorIndicator = () => {
   return (
@@ -11,7 +11,7 @@ const ErrorIndicator = () => {
         We are already fixing this issue.
       </div>
       <div className="error-indicator__picture">
-        <img src={ img }  alt="Error happened"/>
+        <img src={ image }  alt="Error happened"/>
       </div>
     </div>
   );

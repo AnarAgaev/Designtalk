@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import BlogService from "../../services/blog-service";
 import Header from "../header";
 import Main from "../pages/main";
@@ -15,6 +15,7 @@ import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
+import Articles from "../pages/articles";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
@@ -177,14 +178,21 @@ export default class App extends Component {
           <Header />
           <main className="main">
             <Switch>
-              <Route path="/" component={ this.MainPage } exact={true} />
+              <Route path="/" component={ this.MainPage } exact />
+              <Route path="/articles/" component= { Articles } exact />
+              <Route path="/articles/:id"
+                render={({ match }) => {
+                  const { id } = match.params;
+                  return <Articles articleId={ id } />;
+                }} />
               <Route path="/about" component={ About } />
               <Route path="/publish-project" component={ PublishProject } />
               <Route path="/contacts" component={ Contacts } />
               <Route path="/for-advertisers" component={ ForAdvertisers } />
               <Route path="/policy-personal-data" component={ PolicyPersonalData } />
               <Route path="/privacy-policy" component={ PrivacyPolicy } />
-              <Route path="/cookie-policy" component= {CookiePolicy } />
+              <Route path="/cookie-policy" component= { CookiePolicy } />
+              <Redirect to="/404" />
             </Switch>
           </main>
           <Footer />

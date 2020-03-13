@@ -14,7 +14,7 @@ export default class ArticlesListItem extends Component {
         <Col className="article-list__item">
           <Link to={ `/articles/${url}` } className="article-list__picture">
             <img
-              src={ `/img/${picture}` } alt={ title }
+              src={ `/images/${picture}` } alt={ title }
               onMouseOut={() => handleCursorOverImg(false)}
               onMouseMove={({ pageX, pageY }) => {
                 handleCursorOverImg(true, pageX, pageY)
