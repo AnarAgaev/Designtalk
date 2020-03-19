@@ -40,4 +40,9 @@ export default class BlogService {
     const article = await this.getResource(`/articles/?name=${name}`);
     return this._transformArticle(article);
   };
+
+  getArticleDetails = async (name) => {
+    const article = await this.getResource(`/articles/${name}`);
+    return this._transformArticle(article);
+  };
 }

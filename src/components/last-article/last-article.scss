@@ -35,14 +35,14 @@
     letter-spacing: 0;
     text-transform: none;
     font-size: 4.3vw;
-    color: $color-secondery-font ;
+    color: $color-secondary-font ;
 
     &::before {
       content: none;
     }
 
     &:hover {
-      color: $color-secondery-font ;
+      color: $color-secondary-font ;
     }
 
     span {
@@ -60,7 +60,7 @@
     margin-top: 1rem;
     line-height: 1.25;
     font-size: 1rem;
-    color: $color-secondery-font ;
+    color: $color-secondary-font ;
     font-weight: 200;
     z-index: 1;
   }

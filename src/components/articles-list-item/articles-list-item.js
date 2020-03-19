@@ -5,6 +5,9 @@ import ErrorBoundary from "../error-boundary";
 import './articles-list-item.scss';
 
 export default class ArticlesListItem extends Component {
+
+  _baseUrl = 'https://spacebuilder.ru';
+
   render() {
     const { url, rubric, title, picture, handleCursorOverImg } = this.props;
     const urlRubric = `/articles/?filer=true&rubric=${rubric.url}`;
@@ -14,7 +17,7 @@ export default class ArticlesListItem extends Component {
         <Col className="article-list__item">
           <Link to={ `/articles/${url}` } className="article-list__picture">
             <img
-              src={ `/images/${picture}` } alt={ title }
+              src={ `${this._baseUrl}/images/${picture}` } alt={ title }
               onMouseOut={() => handleCursorOverImg(false)}
               onMouseMove={({ pageX, pageY }) => {
                 handleCursorOverImg(true, pageX, pageY)

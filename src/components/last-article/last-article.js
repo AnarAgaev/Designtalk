@@ -5,6 +5,9 @@ import ErrorBoundary from "../error-boundary";
 import './last-article.scss';
 
 export default class LastArticle extends Component {
+
+  _baseUrl = 'https://spacebuilder.ru';
+
   state = {
     isTitleHover: false
   };
@@ -45,7 +48,7 @@ export default class LastArticle extends Component {
             <Col lg={6}>
               <Link to={ urlArticle } className="last-article__picture">
                 <img
-                  src={ '/images/' + article.picture }
+                  src={ this._baseUrl + '/images/' + article.picture }
                   alt={ article.title }
                   onMouseOut={ this.handleTitleOut }
                   onMouseOver={ this.handleTitleOver } />

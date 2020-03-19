@@ -4,6 +4,8 @@ import ErrorBoundary from "../error-boundary";
 import './popular-list-item.scss';
 
 export default class PopularListItem extends Component {
+  _baseUrl = 'https://spacebuilder.ru';
+
   render() {
     const { handleCursorOverImg, url,
             rubric, title, preview,
@@ -15,7 +17,7 @@ export default class PopularListItem extends Component {
           <div>
             <Link to={ `/articles/${url}` }
               className="popular-list-item__picture"
-              style={{ backgroundImage: `url(/images/${ picture })` }}
+              style={{ backgroundImage: `url(${(this._baseUrl)}/images/${ picture })` }}
               onMouseOut={() => handleCursorOverImg(false)}
               onMouseMove={({pageX, pageY}) => {
                 handleCursorOverImg(true, pageX, pageY)
