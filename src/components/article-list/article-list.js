@@ -20,12 +20,13 @@ class ArticleList extends Component {
   }
 
   render() {
-    const articles = renderArticleList(this.props.articles, ArticleListItem);
+    const { articles } =  this.props;
+    const articleList = renderArticleList(articles, ArticleListItem);
 
     return (
       <Container>
         <Row className="article-list">
-          { articles }
+          { articleList }
         </Row>
       </Container>
     );

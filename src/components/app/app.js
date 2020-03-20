@@ -54,19 +54,6 @@ export default class App extends Component {
       .catch(this.onError);
   }
 
-  onArticlesLoaded = (articles) => {
-    this.setState({
-      articlesListData: articles.results
-    });
-  };
-
-  updateArticles() {
-    this.blogService
-      .getArticles()
-      .then(this.onArticlesLoaded)
-      .catch(this.onError);
-  }
-
   onPopularArticlesLoaded = (articles) => {
     this.setState({
       popularListData: articles.results
@@ -156,7 +143,6 @@ export default class App extends Component {
 
   componentDidMount() {
     this.updateLastArticle();
-    this.updateArticles();
     this.updatePopularArticles();
   };
 
