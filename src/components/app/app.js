@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import BlogService from "../../services/blog-service";
 import Header from "../header";
 import Main from "../pages/main";
-import ErrorBoundary from "../error-boundary";
 import Footer from "../footer";
 import About from "../pages/about";
 import PublishProject from "../pages/publish-project";
@@ -24,10 +23,7 @@ export default class App extends Component {
   blogService = new BlogService();
 
   state = {
-    nextPage: '/articles/?page=2',
-    previousPage: null,
     lastArticle: { picture: 'undefined.png' },
-    articlesListData: [],
     popularListData: [],
     popularListPosition: 0,
     popularListItemWidth: 332,
@@ -149,7 +145,6 @@ export default class App extends Component {
     return (
       <Main
         lastArticle={ this.state.lastArticle }
-        articlesListData={ this.state.articlesListData }
         popularListData={ this.state.popularListData }
         popularListPosition={ this.state.popularListPosition }
         getNexPage={ this.getNexPage }
@@ -173,37 +168,35 @@ export default class App extends Component {
     }
 
     return (
-      <ErrorBoundary>
-        <Router>
-          <Header />
-          <main className="main">
-            <Switch>
-              <Route path="/" component={ this.MainPage } exact />
-              <Route path="/articles/" component= { Articles } exact />
-              <Route path="/articles/:id"
-                render={({ match }) => {
-                  const { id } = match.params;
-                  return <Articles articleId={ id } />;
-                }} />
-              <Route path="/about" component={ About } />
-              <Route path="/publish-project" component={ PublishProject } />
-              <Route path="/contacts" component={ Contacts } />
-              <Route path="/for-advertisers" component={ ForAdvertisers } />
-              <Route path="/policy-personal-data" component={ PolicyPersonalData } />
-              <Route path="/privacy-policy" component={ PrivacyPolicy } />
-              <Route path="/cookie-policy" component= { CookiePolicy } />
-              <Redirect to="/404" />
-            </Switch>
-          </main>
-          <Footer />
-        </Router>
+      <>
+        <Header />
+        <main className="main">
+          <Switch>
+            <Route path="/" component={ this.MainPage } exact />
+            <Route path="/articles/" component= { Articles } exact />
+            <Route path="/articles/:id"
+              render={({ match }) => {
+                const { id } = match.params;
+                return <Articles articleId={ id } />;
+              }} />
+            <Route path="/about" component={ About } />
+            <Route path="/publish-project" component={ PublishProject } />
+            <Route path="/contacts" component={ Contacts } />
+            <Route path="/for-advertisers" component={ ForAdvertisers } />
+            <Route path="/policy-personal-data" component={ PolicyPersonalData } />
+            <Route path="/privacy-policy" component={ PrivacyPolicy } />
+            <Route path="/cookie-policy" component= { CookiePolicy } />
+            <Redirect to="/404" />
+          </Switch>
+        </main>
+        <Footer />
         <ModalMessage
           modalVisible={ modalVisible }
           modalMsg={ modalMsg }
           handleModalHide={ this.handleModalHide } />
         <Spinner
           spinnerVisible={ this.state.spinnerVisible } />
-      </ErrorBoundary>
+      </>
     );
   }
 }

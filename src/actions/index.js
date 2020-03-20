@@ -1,7 +1,11 @@
-const articlesLoaded = (articles) => {
+const articlesLoaded = (response) => {
+  const { next, previous, results } = response;
+
   return {
     type: 'ARTICLES_LOADED',
-    payload: articles
+    next: next,
+    previous: previous,
+    articles: results
   };
 };
 
