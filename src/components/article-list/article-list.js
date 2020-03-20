@@ -5,6 +5,7 @@ import ArticleListItem from "../article-list-item";
 import withBlogService from "../hoc";
 import { compose } from "../../utils";
 import { articlesLoaded } from '../../actions';
+import { renderArticleList } from "../../renders";
 import './article-list.scss';
 
 class ArticleList extends Component {
@@ -18,24 +19,9 @@ class ArticleList extends Component {
     });
   }
 
-  renderArticles = (articles) => {
-    if (!articles.length) {
-      return null;
-    }
-
-    return articles.map((article) => {
-      const { id, ...itemProps } = article;
-
-      return (
-        <ArticleListItem
-          key={ id }
-          { ...itemProps } />
-      );
-    });
-  };
-
   render() {
-    const articles = this.renderArticles(this.props.articles);
+    const articles = renderArticleList(this.props.articles, ArticleListItem);
+
     return (
       <Container>
         <Row className="article-list">
