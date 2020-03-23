@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Container, Row } from "react-bootstrap";
 import ArticleListItem from "../article-list-item";
+import renderArticleList from "../../renders/render-article-list";
 import withBlogService from "../hoc";
 import { compose } from "../../utils";
 import { articlesLoaded } from '../../actions';
-import { renderArticleList } from "../../renders";
 import './article-list.scss';
 
 class ArticleList extends Component {
@@ -21,7 +21,10 @@ class ArticleList extends Component {
 
   render() {
     const { articles } =  this.props;
-    const articleList = renderArticleList(articles, ArticleListItem);
+    const articleList = renderArticleList(
+      articles,
+      ArticleListItem
+    );
 
     return (
       <Container>
@@ -37,11 +40,14 @@ const mapStateToProps = ({ articles }) => {
   return { articles };
 };
 
-const mapDispatchToProps =  {
+const mapDispatchToProps = {
   articlesLoaded
 };
 
 export default compose(
   withBlogService(),
-  connect(mapStateToProps, mapDispatchToProps)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(ArticleList);

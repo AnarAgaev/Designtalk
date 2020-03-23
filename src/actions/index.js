@@ -1,14 +1,7 @@
-const articlesLoaded = (response) => {
-  const { next, previous, results } = response;
-
-  return {
-    type: 'ARTICLES_LOADED',
-    next: next,
-    previous: previous,
-    articles: results
-  };
-};
+import articlesLoaded from './articles-loaded';
+import cursorOverImg from "./cursor-over-img";
 
 export {
-  articlesLoaded
+  articlesLoaded,
+  cursorOverImg
 };
