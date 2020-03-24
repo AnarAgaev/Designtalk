@@ -32,15 +32,7 @@ export default class App extends Component {
     slipBlocker: true,
 
     modalMsg: '',
-    modalVisible: false,
-
-    hasError: false
-  };
-
-  onError = (error, info) => {
-    this.setState({
-      hasError: true,
-    });
+    modalVisible: false
   };
 
   onLastArticleLoaded = (article) => {
@@ -144,10 +136,6 @@ export default class App extends Component {
 
   render() {
     const { modalVisible, modalMsg } = this.state;
-
-    if (this.state.hasError) {
-      return <ErrorIndicator />;
-    }
 
     return (
       <>

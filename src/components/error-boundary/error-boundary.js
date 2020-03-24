@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ErrorIndicator from '../error-indicator';
+import { hasError } from '../../actions';
 
-export default class ErrorBoundary extends Component {
+class ErrorBoundary extends Component {
 
-  state = {
-    hasError: false
-  };
-
-  componentDidCatch() {
-    this.setState({
-      hasError: true
-    });
+  componentDidCatch(error, errorInfo) {
+    hasError(error);
   }
 
   render() {
-    if (this.state.hasError) {
+    if (this.props.error) {
       return <ErrorIndicator />;
     }
 
     return this.props.children;
   }
 }
+
+const mapStateToProps = ({ error }) => {
+  return { error };
+};
+
+const mapDispatchToProps = { loadingError: hasError };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ErrorBoundary);

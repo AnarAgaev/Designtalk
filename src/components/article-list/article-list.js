@@ -5,8 +5,9 @@ import ArticleListItem from "../article-list-item";
 import renderArticleList from "../../renders/render-article-list";
 import withBlogService from "../hoc";
 import { compose } from "../../utils";
-import { articlesLoaded, dataRequested } from '../../actions';
+import { articlesLoaded, dataRequested, hasError} from '../../actions';
 import './article-list.scss';
+import ErrorIndicator from "../error-indicator";
 
 class ArticleList extends Component {
 
@@ -14,21 +15,31 @@ class ArticleList extends Component {
     const {
       blogService,
       articlesLoaded,
-      dataRequested } = this.props;
+      dataRequested,
+      hasError } = this.props;
 
     dataRequested();
 
     blogService.getArticles()
       .then((response) => {
         articlesLoaded(response);
+      })
+      .catch((error) => {
+        hasError(error);
       });
   }
 
   render() {
+    const { articles, error } = this.props;
+
     const articleList = renderArticleList(
-      this.props.articles,
+      articles,
       ArticleListItem
     );
+
+    if (error) {
+      return <ErrorIndicator />
+    }
 
     return (
       <Container>
@@ -40,13 +51,14 @@ class ArticleList extends Component {
   }
 }
 
-const mapStateToProps = ({ articles }) => {
-  return { articles };
+const mapStateToProps = ({ articles, error }) => {
+  return { articles, error };
 };
 
 const mapDispatchToProps = {
   articlesLoaded,
-  dataRequested
+  dataRequested,
+  hasError
 };
 
 export default compose(
