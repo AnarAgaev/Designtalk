@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import PopularListItem from "../popular-list-item";
-import renderArticleList from "../../renders/render-article-list";
+import { renderElementList } from "../../utils";
 import './popular-list.scss';
 
 export default class PopularList extends Component {
@@ -19,7 +19,7 @@ export default class PopularList extends Component {
 
   render() {
     const { popularListData, popularListPosition } = this.props;
-    const articles = renderArticleList(popularListData, PopularListItem);
+    const articles = renderElementList(popularListData, PopularListItem);
 
     return (
       <div className="popular">

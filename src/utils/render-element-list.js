@@ -1,4 +1,4 @@
-const renderArticleList = (list, component) => {
+const renderElementList = (list, component) => {
 
   if (!list.length) {
     return null;
@@ -9,4 +9,4 @@ const renderArticleList = (list, component) => {
   });
 };
 
-export default renderArticleList;
+export default renderElementList;

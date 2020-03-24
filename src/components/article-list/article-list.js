@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Container, Row } from "react-bootstrap";
 import ArticleListItem from "../article-list-item";
-import renderArticleList from "../../renders/render-article-list";
 import withBlogService from "../hoc";
-import { compose } from "../../utils";
+import { compose, renderElementList } from "../../utils";
 import { articlesLoaded, dataRequested, hasError} from '../../actions';
 import './article-list.scss';
 import ErrorIndicator from "../error-indicator";
@@ -18,7 +17,7 @@ class ArticleList extends Component {
   render() {
     const { articles, error } = this.props;
 
-    const articleList = renderArticleList(
+    const articleList = renderElementList(
       articles,
       ArticleListItem
     );
