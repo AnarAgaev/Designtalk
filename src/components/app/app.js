@@ -24,12 +24,16 @@ export default class App extends Component {
 
   state = {
     lastArticle: { picture: 'undefined.png' },
+
     popularListData: [],
     popularListPosition: 0,
     popularListItemWidth: 332,
+
     slipBlocker: true,
+
     modalMsg: '',
     modalVisible: false,
+
     hasError: false
   };
 
@@ -78,9 +82,6 @@ export default class App extends Component {
   };
 
   getNexPage = () => {
-    this.setState({
-    });
-
     this.blogService
       .getArticles(false, this.state.nextPage)
       .then(this.onNextPage)
@@ -131,7 +132,6 @@ export default class App extends Component {
         popularListData={ this.state.popularListData }
         popularListPosition={ this.state.popularListPosition }
         getNexPage={ this.getNexPage }
-        nextPage={ this.state.nextPage }
         toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
     );

@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { Container } from "react-bootstrap";
 import './button-more.scss';
 
-const ButtonMore = ({ getNexPage, nextPage }) => {
-  const styleButton = nextPage ?
+const ButtonMore = ({ getNexPage, visible }) => {
+
+  const styleButton = visible ?
     { display: 'block' } :
     { display: 'none' };
 
@@ -21,4 +23,12 @@ const ButtonMore = ({ getNexPage, nextPage }) => {
   );
 };
 
-export default ButtonMore;
+const mapStateToProps = ({ next }) => {
+  return {
+    visible: !!next
+  };
+};
+
+export default connect(
+  mapStateToProps
+)(ButtonMore);
