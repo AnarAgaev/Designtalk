@@ -16,13 +16,13 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
 
-    case 'DATA_REQUESTED':
+    case 'FETCH_ARTICLES_REQUEST':
       return {
         ...state,
         loading: true
       };
 
-    case 'ARTICLES_LOADED':
+    case 'FETCH_ARTICLES_SUCCESS':
       const { next, previous, articles } = action;
       return {
         ...state,
@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
         loading: false
       };
 
-    case 'HAS_ERROR':
+    case 'FETCH_ARTICLES_FAILURE':
       return {
         ...state,
         loading: false,

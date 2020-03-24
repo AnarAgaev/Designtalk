@@ -1,11 +1,9 @@
-import articlesLoaded from './articles-loaded';
 import cursorOverImg from "./cursor-over-img";
-import dataRequested from "./data-requested";
-import hasError from './has-error';
+import fetchArticles from "./fetch-articles";
+import fetchArticlesFailure from "./fetch-articles-failure";
 
 export {
-  articlesLoaded,
+  fetchArticles,
   cursorOverImg,
-  dataRequested,
-  hasError
+  fetchArticlesFailure
 };

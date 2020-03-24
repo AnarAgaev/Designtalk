@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import ArticleListItem from "../article-list-item";
 import withBlogService from "../hoc";
 import { compose, renderElementList } from "../../utils";
-import { articlesLoaded, dataRequested, hasError} from '../../actions';
+import { fetchArticles } from '../../actions';
 import './article-list.scss';
 import ErrorIndicator from "../error-indicator";
 
@@ -40,21 +40,9 @@ const mapStateToProps = ({ articles, error }) => {
   return { articles, error };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const { blogService } = ownProps;
-
+const mapDispatchToProps = ( dispatch, { blogService } ) => {
   return {
-    fetchData: () => {
-      dispatch(dataRequested());
-
-      blogService.getArticles()
-        .then((response) => {
-          dispatch(articlesLoaded(response));
-        })
-        .catch((error) => {
-          dispatch(hasError(error));
-        });
-    }
+    fetchData: fetchArticles(blogService, dispatch)
   };
 };
 

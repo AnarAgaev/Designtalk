@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ErrorIndicator from '../error-indicator';
-import { hasError } from '../../actions';
+import { fetchArticlesFailure } from '../../actions';
 
 class ErrorBoundary extends Component {
 
   componentDidCatch(error, errorInfo) {
-    hasError(error);
+    fetchArticlesFailure(error);
   }
 
   render() {
@@ -22,7 +22,7 @@ const mapStateToProps = ({ error }) => {
   return { error };
 };
 
-const mapDispatchToProps = { loadingError: hasError };
+const mapDispatchToProps = { loadingError: fetchArticlesFailure };
 
 export default connect(
   mapStateToProps,
