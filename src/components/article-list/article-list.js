@@ -12,21 +12,7 @@ import ErrorIndicator from "../error-indicator";
 class ArticleList extends Component {
 
   componentDidMount() {
-    const {
-      blogService,
-      articlesLoaded,
-      dataRequested,
-      hasError } = this.props;
-
-    dataRequested();
-
-    blogService.getArticles()
-      .then((response) => {
-        articlesLoaded(response);
-      })
-      .catch((error) => {
-        hasError(error);
-      });
+    this.props.fetchData();
   }
 
   render() {
@@ -55,10 +41,22 @@ const mapStateToProps = ({ articles, error }) => {
   return { articles, error };
 };
 
-const mapDispatchToProps = {
-  articlesLoaded,
-  dataRequested,
-  hasError
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const { blogService } = ownProps;
+
+  return {
+    fetchData: () => {
+      dispatch(dataRequested());
+
+      blogService.getArticles()
+        .then((response) => {
+          dispatch(articlesLoaded(response));
+        })
+        .catch((error) => {
+          dispatch(hasError(error));
+        });
+    }
+  };
 };
 
 export default compose(
