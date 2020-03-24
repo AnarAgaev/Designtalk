@@ -5,24 +5,28 @@ import ArticleListItem from "../article-list-item";
 import renderArticleList from "../../renders/render-article-list";
 import withBlogService from "../hoc";
 import { compose } from "../../utils";
-import { articlesLoaded } from '../../actions';
+import { articlesLoaded, dataRequested } from '../../actions';
 import './article-list.scss';
 
 class ArticleList extends Component {
 
   componentDidMount() {
-    const { blogService } = this.props;
-    const data = blogService.getArticles();
+    const {
+      blogService,
+      articlesLoaded,
+      dataRequested } = this.props;
 
-    data.then((response) => {
-      this.props.articlesLoaded(response);
-    });
+    dataRequested();
+
+    blogService.getArticles()
+      .then((response) => {
+        articlesLoaded(response);
+      });
   }
 
   render() {
-    const { articles } =  this.props;
     const articleList = renderArticleList(
-      articles,
+      this.props.articles,
       ArticleListItem
     );
 
@@ -41,7 +45,8 @@ const mapStateToProps = ({ articles }) => {
 };
 
 const mapDispatchToProps = {
-  articlesLoaded
+  articlesLoaded,
+  dataRequested
 };
 
 export default compose(

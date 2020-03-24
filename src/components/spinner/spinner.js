@@ -1,15 +1,16 @@
 import React from "react";
+import { connect } from 'react-redux';
 import './spinner.scss';
 
-const Spinner = ({ spinnerVisible }) => {
+const Spinner = ({ loading }) => {
 
-  const spinnerClass = spinnerVisible ?
-    'loading-spinner visible' :
-    'loading-spinner';
+  const clazz = loading ?
+    'spinner visible' :
+    'spinner';
 
   return (
-    <div className={ spinnerClass } >
-      <div className="spinner">
+    <div className={ clazz } >
+      <div className="loading">
         <div />
         <div />
         <div />
@@ -18,4 +19,10 @@ const Spinner = ({ spinnerVisible }) => {
   );
 };
 
-export default Spinner;
+const mapStateToProps = ({ loading }) => {
+  return { loading };
+};
+
+export default connect(
+  mapStateToProps
+)(Spinner);

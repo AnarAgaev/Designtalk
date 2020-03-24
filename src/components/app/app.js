@@ -30,14 +30,12 @@ export default class App extends Component {
     slipBlocker: true,
     modalMsg: '',
     modalVisible: false,
-    spinnerVisible: false,
     hasError: false
   };
 
   onError = (error, info) => {
     this.setState({
       hasError: true,
-      spinnerVisible: false
     });
   };
 
@@ -76,13 +74,11 @@ export default class App extends Component {
       nextPage: articles.next,
       previousPage: articles.previous,
       articlesListData: newArticlesListData,
-      spinnerVisible: false
     });
   };
 
   getNexPage = () => {
     this.setState({
-      spinnerVisible: true
     });
 
     this.blogService
@@ -176,12 +172,11 @@ export default class App extends Component {
           </Switch>
         </main>
         <Footer />
+        <Spinner />
         <ModalMessage
           modalVisible={ modalVisible }
           modalMsg={ modalMsg }
           handleModalHide={ this.handleModalHide } />
-        <Spinner
-          spinnerVisible={ this.state.spinnerVisible } />
       </>
     );
   }
