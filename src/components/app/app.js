@@ -131,7 +131,7 @@ export default class App extends Component {
 
   componentDidMount() {
     this.updateLastArticle();
-    this.updatePopularArticles();
+    // this.updatePopularArticles();
   };
 
   render() {

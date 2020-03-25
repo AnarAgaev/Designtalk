@@ -19,7 +19,7 @@ const Spinner = ({ loading }) => {
   );
 };
 
-const mapStateToProps = ({ loading }) => {
+const mapStateToProps = ({ articleList: { loading }}) => {
   return { loading };
 };
 

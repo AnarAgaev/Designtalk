@@ -2,10 +2,10 @@ import fetchArticlesSuccess from "./fetch-articles-success";
 import fetchArticlesRequest from "./fetch-articles-request";
 import fetchArticlesFailure from "./fetch-articles-failure";
 
-const fetchArticles = (blogService, dispatch) => () => {
+const fetchArticles = (dispatch, blogService, url) => () => {
   dispatch(fetchArticlesRequest());
 
-  blogService.getArticles()
+  blogService.getArticles(url)
     .then((response) => {
       dispatch(fetchArticlesSuccess(response));
     })

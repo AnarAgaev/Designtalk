@@ -25,11 +25,11 @@ const Picture = ({
   );
 };
 
-const mapStateToProps = ({
+const mapStateToProps = ({ cursorOnImg: {
     cursorVisible: visible,
     cursorX: X,
     cursorY: Y
-  }) => {
+  }}) => {
   return { visible, X, Y };
 };
 

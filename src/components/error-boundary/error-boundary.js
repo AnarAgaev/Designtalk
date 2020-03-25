@@ -10,7 +10,9 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.props.error) {
+    const { articlesError } = this.props;
+
+    if (articlesError) {
       return <ErrorIndicator />;
     }
 
@@ -18,8 +20,13 @@ class ErrorBoundary extends Component {
   }
 }
 
-const mapStateToProps = ({ error }) => {
-  return { error };
+const mapStateToProps = ({
+  articleList: { error: articlesError }
+}) => {
+
+  return {
+    articlesError
+  };
 };
 
 const mapDispatchToProps = { loadingError: fetchArticlesFailure };

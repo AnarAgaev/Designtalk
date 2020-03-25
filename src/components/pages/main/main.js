@@ -19,10 +19,10 @@ export default class Main extends Component {
         <ArticleList />
         <ButtonMore />
         <Subscribe handleModalShow={ handleModalShow } />
-        <PopularList
-          popularListData={ popularListData }
-          popularListPosition={ popularListPosition }
-          toggleSlide={ toggleSlide } />
+        {/*<PopularList*/}
+        {/*  popularListData={ popularListData }*/}
+        {/*  popularListPosition={ popularListPosition }*/}
+        {/*  toggleSlide={ toggleSlide } />*/}
       </>
     );
   }

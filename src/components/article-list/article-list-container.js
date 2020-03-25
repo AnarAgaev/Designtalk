@@ -10,7 +10,16 @@ import { fetchArticles } from '../../actions';
 class ArticleListContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchData();
+    const {
+      articles,
+      next,
+      fetchArticles } = this.props;
+
+
+    const url = articles.length ?
+      next : '/articles/';
+
+    fetchArticles(url)();
   }
 
   render() {
@@ -31,13 +40,17 @@ class ArticleListContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ articles, error }) => {
-  return { articles, error };
+const mapStateToProps = ({ articleList: { next, articles }, error }) => {
+  return { next, articles, error };
 };
 
 const mapDispatchToProps = ( dispatch, { blogService } ) => {
   return {
-    fetchData: fetchArticles(blogService, dispatch)
+    fetchArticles: (url) => fetchArticles(
+      dispatch,
+      blogService,
+      url
+    )
   };
 };
 
