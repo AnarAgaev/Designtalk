@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ErrorIndicator from '../error-indicator';
-import { fetchArticlesFailure } from '../../actions';
+import {
+  fetchArticlesFailure,
+  fetchPopularFailure
+} from '../../actions';
 
 class ErrorBoundary extends Component {
 
   componentDidCatch(error, errorInfo) {
     fetchArticlesFailure(error);
+    fetchPopularFailure(error);
   }
 
   render() {
-    const { articlesError } = this.props;
+    const { articlesError, popularError } = this.props;
 
-    if (articlesError) {
+    if (articlesError || popularError) {
       return <ErrorIndicator />;
     }
 
@@ -21,15 +25,20 @@ class ErrorBoundary extends Component {
 }
 
 const mapStateToProps = ({
-  articleList: { error: articlesError }
-}) => {
+    articleList: { error: articlesError },
+    popularList: { error: popularError }
+  }) => {
 
   return {
-    articlesError
+    articlesError,
+    popularError
   };
 };
 
-const mapDispatchToProps = { loadingError: fetchArticlesFailure };
+const mapDispatchToProps = {
+  fetchArticlesFailure,
+  fetchPopularFailure
+};
 
 export default connect(
   mapStateToProps,

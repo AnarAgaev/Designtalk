@@ -40,7 +40,7 @@ class ArticleListContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ articleList: { next, articles }, error }) => {
+const mapStateToProps = ({ articleList: { next, articles, error } }) => {
   return { next, articles, error };
 };
 

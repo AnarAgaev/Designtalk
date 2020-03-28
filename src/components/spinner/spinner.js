@@ -19,8 +19,15 @@ const Spinner = ({ loading }) => {
   );
 };
 
-const mapStateToProps = ({ articleList: { loading }}) => {
-  return { loading };
+const mapStateToProps = (state) => {
+  const {
+    articleList: { loading: articlesLoading },
+    popularList: { loading: popularLoading }
+  } = state;
+
+  return {
+    loading: articlesLoading || popularLoading
+  };
 };
 
 export default connect(

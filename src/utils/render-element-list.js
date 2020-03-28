@@ -4,8 +4,8 @@ const renderElementList = (list, component) => {
     return null;
   }
 
-  return list.map((article) => {
-    return component(article);
+  return list.map((item) => {
+    return component(item);
   });
 };
 

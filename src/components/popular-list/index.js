@@ -1,3 +1,3 @@
-import PopularList from './popular-list';
+import { default as PopularList } from "./popular-list-container";
 
 export default PopularList;

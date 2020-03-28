@@ -8,10 +8,7 @@ import './main.scss';
 
 export default class Main extends Component {
   render() {
-    const {
-      popularListData, popularListPosition,
-      toggleSlide, handleModalShow, lastArticle
-    } = this.props;
+    const { handleModalShow, lastArticle } = this.props;
 
     return (
       <>
@@ -19,10 +16,7 @@ export default class Main extends Component {
         <ArticleList />
         <ButtonMore />
         <Subscribe handleModalShow={ handleModalShow } />
-        {/*<PopularList*/}
-        {/*  popularListData={ popularListData }*/}
-        {/*  popularListPosition={ popularListPosition }*/}
-        {/*  toggleSlide={ toggleSlide } />*/}
+        <PopularList />
       </>
     );
   }

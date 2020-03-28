@@ -13,7 +13,6 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import ModalMessage from "../modal-message";
 import Spinner from "../spinner";
-import ErrorIndicator from "../error-indicator";
 import Articles from "../pages/articles";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
@@ -28,7 +27,6 @@ export default class App extends Component {
     popularListData: [],
     popularListPosition: 0,
     popularListItemWidth: 332,
-
     slipBlocker: true,
 
     modalMsg: '',
@@ -48,37 +46,18 @@ export default class App extends Component {
       .catch(this.onError);
   }
 
-  onPopularArticlesLoaded = (articles) => {
-    this.setState({
-      popularListData: articles.results
-    });
-  };
+  // onPopularArticlesLoaded = (articles) => {
+  //   this.setState({
+  //     popularListData: articles.results
+  //   });
+  // };
 
-  updatePopularArticles() {
-    this.blogService
-      .getArticles(9)
-      .then(this.onPopularArticlesLoaded)
-      .catch(this.onError);
-  }
-
-  onNextPage = (articles) => {
-    const newArticlesListData = [
-      ...this.state.articlesListData,
-      ...articles.results ];
-
-    this.setState({
-      nextPage: articles.next,
-      previousPage: articles.previous,
-      articlesListData: newArticlesListData,
-    });
-  };
-
-  getNexPage = () => {
-    this.blogService
-      .getArticles(false, this.state.nextPage)
-      .then(this.onNextPage)
-      .catch(this.onError);
-  };
+  // updatePopularArticles() {
+  //   this.blogService
+  //     .getArticles(9)
+  //     .then(this.onPopularArticlesLoaded)
+  //     .catch(this.onError);
+  // }
 
   toggleSlide = (direction, right) => {
     const { popularListPosition,
@@ -121,10 +100,6 @@ export default class App extends Component {
     return (
       <Main
         lastArticle={ this.state.lastArticle }
-        popularListData={ this.state.popularListData }
-        popularListPosition={ this.state.popularListPosition }
-        getNexPage={ this.getNexPage }
-        toggleSlide={ this.toggleSlide }
         handleModalShow={ this.handleModalShow } />
     );
   };

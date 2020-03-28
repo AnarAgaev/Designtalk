@@ -1,25 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
-import PopularListItem from "../popular-list-item";
-import { renderElementList } from "../../utils";
 import './popular-list.scss';
 
-export default class PopularList extends Component {
-  popularListRef = React.createRef();
+const PopularList = ({ articles, popularListPosition }) => {
+  const popularListRef = React.createRef();
 
-  onClickLeftControl = () => {
-    const right = this.popularListRef.current.getBoundingClientRect().right;
+  const onClickLeftControl = () => {
+    const right = popularListRef.current.getBoundingClientRect().right;
     this.props.toggleSlide(1, right);
   };
 
-  onClickRightControl = () => {
-    const right = this.popularListRef.current.getBoundingClientRect().right;
+  const onClickRightControl = () => {
+    const right = popularListRef.current.getBoundingClientRect().right;
     this.props.toggleSlide(-1, right);
   };
 
-  render() {
-    const { popularListData, popularListPosition } = this.props;
-    const articles = renderElementList(popularListData, PopularListItem);
 
     return (
       <div className="popular">
@@ -29,20 +24,21 @@ export default class PopularList extends Component {
             <div
               className="popular__list"
               style={{ left: popularListPosition }}
-              ref={ this.popularListRef } >
+              ref={ popularListRef } >
               { articles }
             </div>
           </div>
           <div className="popular__controls">
             <div
-              onClick={ this.onClickLeftControl }
+              onClick={ onClickLeftControl }
               className="controller controller__left" />
             <div
-              onClick={ this.onClickRightControl }
+              onClick={ onClickRightControl }
               className="controller" />
           </div>
         </Container>
       </div>
     );
-  }
 };
+
+export default PopularList;

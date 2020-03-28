@@ -12,7 +12,8 @@ export default class BlogService {
       },
       title: article.title,
       preview: article.preview,
-      picture: article.picture
+      picture: article.picture,
+      visits: article.visits
     };
   };
 
