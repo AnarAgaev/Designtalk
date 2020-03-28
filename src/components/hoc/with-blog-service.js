@@ -9,7 +9,7 @@ const withBlogService = () => (Wrapped) => {
         {
           (blogService) => {
             return (
-              <Wrapped {...props} blogService={blogService} />
+              <Wrapped { ...props } blogService={ blogService } />
             );
           }
         }

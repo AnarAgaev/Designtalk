@@ -23,12 +23,6 @@ export default class App extends Component {
 
   state = {
     lastArticle: { picture: 'undefined.png' },
-
-    popularListData: [],
-    popularListPosition: 0,
-    popularListItemWidth: 332,
-    slipBlocker: true,
-
     modalMsg: '',
     modalVisible: false
   };
@@ -45,19 +39,6 @@ export default class App extends Component {
       .then(this.onLastArticleLoaded)
       .catch(this.onError);
   }
-
-  // onPopularArticlesLoaded = (articles) => {
-  //   this.setState({
-  //     popularListData: articles.results
-  //   });
-  // };
-
-  // updatePopularArticles() {
-  //   this.blogService
-  //     .getArticles(9)
-  //     .then(this.onPopularArticlesLoaded)
-  //     .catch(this.onError);
-  // }
 
   toggleSlide = (direction, right) => {
     const { popularListPosition,
@@ -106,7 +87,6 @@ export default class App extends Component {
 
   componentDidMount() {
     this.updateLastArticle();
-    // this.updatePopularArticles();
   };
 
   render() {

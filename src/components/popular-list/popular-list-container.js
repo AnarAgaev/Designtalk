@@ -5,7 +5,7 @@ import ErrorIndicator from "../error-indicator";
 import PopularList from "./popular-list";
 import PopularListItem from "../popular-list-item";
 import { compose, renderElementList } from "../../utils";
-import { fetchPopular } from "../../actions";
+import { fetchPopular, popularSlide } from "../../actions";
 
 
 class PopularListContainer extends Component {
@@ -15,7 +15,12 @@ class PopularListContainer extends Component {
   }
 
   render() {
-    const { popular, error } = this.props;
+    const {
+      popular,
+      currentPosition,
+      itemWidth,
+      error,
+      toggleSlide } = this.props;
 
     const popularList = renderElementList(
       popular,
@@ -27,18 +32,34 @@ class PopularListContainer extends Component {
     }
 
     return (
-      <PopularList articles={ popularList } />
+      <PopularList
+        articles={ popularList }
+        currentPosition={ currentPosition }
+        itemWidth={ itemWidth }
+        toggleSlide={ toggleSlide }
+      />
     );
   }
 }
 
-const mapStateToProps = ({ popularList: { popular, error } }) => {
-  return { popular, error };
+const mapStateToProps = ({ popularList: {
+  popular,
+  popularListPosition: currentPosition,
+  popularListItemWidth: itemWidth,
+  error
+} }) => {
+  return {
+    popular,
+    currentPosition,
+    itemWidth,
+    error
+  };
 };
 
 const mapDispatchToProps = ( dispatch, { blogService } ) => {
   return {
-    fetchPopular: fetchPopular(dispatch, blogService)
+    fetchPopular: fetchPopular(dispatch, blogService),
+    toggleSlide: popularSlide(dispatch)
   };
 };
 
