@@ -7,7 +7,8 @@ const popularSlide = (dispatch) => (
 
   dispatch(
     togglePopularSlide(
-      direction, position, currentPosition,
+      direction, position,
+      currentPosition,
       itemWidth, windowWidth
     )
   );

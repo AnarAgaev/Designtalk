@@ -5,8 +5,6 @@ import './last-article.scss';
 
 export default class LastArticle extends Component {
 
-  _baseUrl = 'https://spacebuilder.ru';
-
   state = {
     isTitleHover: false
   };
@@ -25,10 +23,11 @@ export default class LastArticle extends Component {
 
   render() {
     const { isTitleHover } = this.state;
-    const { rubric = { link: null, name: null },
-      ...article } = this.props.lastArticle;
+    const { ...article } = this.props.article;
+    const { ...rubric } = article.rubric;
+    const { picture = 'undefined.png' } = article;
     const urlArticle = '/articles/' + article.url;
-    const urlRubric = '/articles/?filter=true&rubric=' + rubric.link;
+    const urlRubric = '/articles/filter/' + rubric.link;
 
     return (
       <Container>
@@ -46,7 +45,7 @@ export default class LastArticle extends Component {
           <Col lg={6}>
             <Link to={ urlArticle } className="last-article__picture">
               <img
-                src={ this._baseUrl + '/images/' + article.picture }
+                src={ 'https://spacebuilder.ru/images/' + picture }
                 alt={ article.title }
                 onMouseOut={ this.handleTitleOut }
                 onMouseOver={ this.handleTitleOver } />

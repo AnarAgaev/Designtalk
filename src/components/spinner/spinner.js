@@ -22,11 +22,12 @@ const Spinner = ({ loading }) => {
 const mapStateToProps = (state) => {
   const {
     articleList: { loading: articlesLoading },
-    popularList: { loading: popularLoading }
+    popularList: { loading: popularLoading },
+    lastArticles: { loading: lastArticlesLoading }
   } = state;
 
   return {
-    loading: articlesLoading || popularLoading
+    loading: articlesLoading || popularLoading || lastArticlesLoading
   };
 };
 

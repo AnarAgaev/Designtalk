@@ -1,3 +1,3 @@
-import LastArticle from './last-article';
+import LastArticlesContainer from './last-articles-container';
 
-export default LastArticle;
+export default LastArticlesContainer;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LastArticle from "../../last-article";
+import LastArticlesContainer from "../../last-article";
 import ArticleList from "../../article-list";
 import ButtonMore from "../../button-more";
 import Subscribe from "../../subscribe";
@@ -8,11 +8,11 @@ import './main.scss';
 
 export default class Main extends Component {
   render() {
-    const { handleModalShow, lastArticle } = this.props;
+    const { handleModalShow } = this.props;
 
     return (
       <>
-        <LastArticle lastArticle={ lastArticle } />
+        <LastArticlesContainer />
         <ArticleList />
         <ButtonMore />
         <Subscribe handleModalShow={ handleModalShow } />

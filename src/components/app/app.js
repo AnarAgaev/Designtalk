@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import BlogService from "../../services/blog-service";
 import Header from "../header";
 import Main from "../pages/main";
 import Footer from "../footer";
@@ -19,48 +18,10 @@ import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
 
 export default class App extends Component {
-  blogService = new BlogService();
 
   state = {
-    lastArticle: { picture: 'undefined.png' },
     modalMsg: '',
     modalVisible: false
-  };
-
-  onLastArticleLoaded = (article) => {
-    this.setState({
-      lastArticle: article
-    });
-  };
-
-  updateLastArticle() {
-    this.blogService
-      .getArticle()
-      .then(this.onLastArticleLoaded)
-      .catch(this.onError);
-  }
-
-  toggleSlide = (direction, right) => {
-    const { popularListPosition,
-            popularListItemWidth,
-            slipBlocker } = this.state;
-
-    const offset = popularListPosition +
-      popularListItemWidth * direction;
-
-    if (slipBlocker) {
-      if ( direction === -1 && right > window.innerWidth ||
-           direction === 1 && popularListPosition ) {
-        this.setState({
-          popularListPosition: offset,
-          slipBlocker: false
-        });
-      }
-
-      setTimeout(()=> {
-        this.setState({ slipBlocker: true })
-      }, 300);
-    }
   };
 
   handleModalShow = (msg) => {
@@ -80,13 +41,8 @@ export default class App extends Component {
   MainPage = () => {
     return (
       <Main
-        lastArticle={ this.state.lastArticle }
         handleModalShow={ this.handleModalShow } />
     );
-  };
-
-  componentDidMount() {
-    this.updateLastArticle();
   };
 
   render() {

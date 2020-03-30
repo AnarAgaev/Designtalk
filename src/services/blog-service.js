@@ -1,7 +1,7 @@
 export default class BlogService {
   _apiBase = 'https://spacebuilder.ru';
 
-  _transformArticle = (article) => {
+  _normalizeArticle = (article) => {
     return {
       id: article.id,
       url: article.url,
@@ -29,12 +29,12 @@ export default class BlogService {
   getArticles = async (url) => {
     const articles = await this.getResource(url);
 
-    articles.results.map(article => this._transformArticle(article));
+    articles.results.map(article => this._normalizeArticle(article));
     return articles;
   };
 
-  getArticle = async (name = null) => {
-    const article = await this.getResource(`/articles/?name=${name}`);
-    return this._transformArticle(article);
-  };
+  // getArticle = async (name = null) => {
+  //   const article = await this.getResource(`/articles/?name=${name}`);
+  //   return this._normalizeArticle(article);
+  // };
 }

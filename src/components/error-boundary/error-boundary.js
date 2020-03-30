@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import ErrorIndicator from '../error-indicator';
 import {
   fetchArticlesFailure,
-  fetchPopularFailure
+  fetchPopularFailure,
+  fetchLastArticlesFailure
 } from '../../actions';
 
 class ErrorBoundary extends Component {
@@ -11,12 +12,17 @@ class ErrorBoundary extends Component {
   componentDidCatch(error, errorInfo) {
     fetchArticlesFailure(error);
     fetchPopularFailure(error);
+    fetchLastArticlesFailure(error)
   }
 
   render() {
-    const { articlesError, popularError } = this.props;
+    const {
+      articlesError,
+      popularError,
+      lastArticlesError
+    } = this.props;
 
-    if (articlesError || popularError) {
+    if (articlesError || popularError || lastArticlesError) {
       return <ErrorIndicator />;
     }
 
@@ -26,18 +32,21 @@ class ErrorBoundary extends Component {
 
 const mapStateToProps = ({
     articleList: { error: articlesError },
-    popularList: { error: popularError }
+    popularList: { error: popularError },
+    lastArticles: { error: lastArticlesError },
   }) => {
 
   return {
     articlesError,
-    popularError
+    popularError,
+    lastArticlesError
   };
 };
 
 const mapDispatchToProps = {
   fetchArticlesFailure,
-  fetchPopularFailure
+  fetchPopularFailure,
+  fetchLastArticlesFailure
 };
 
 export default connect(

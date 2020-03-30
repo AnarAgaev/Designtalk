@@ -1,9 +1,11 @@
 import cursorOverImg from "./cursor-over-img";
 import fetchArticles from "./fetch-articles";
-import fetchArticlesFailure from "./fetch-articles-failure";
-import fetchPopularFailure from "./fetch-popular-failure";
-import fetchPopular from "./fetch-popular";
+import fetchArticlesFailure from "./fetch-articles/fetch-articles-failure";
+import fetchPopular from './fetch-popular';
+import fetchPopularFailure from "./fetch-popular/fetch-popular-failure";
 import popularSlide from "./popular-slide";
+import fetchLastArticles from "./fetch-last-articles";
+import fetchLastArticlesFailure from "./fetch-last-articles/fetch-last-articles-failure";
 
 export {
   fetchArticles,
@@ -11,5 +13,7 @@ export {
   fetchPopular,
   fetchPopularFailure,
   cursorOverImg,
-  popularSlide
+  popularSlide,
+  fetchLastArticles,
+  fetchLastArticlesFailure
 };

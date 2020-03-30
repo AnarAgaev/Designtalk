@@ -7,7 +7,7 @@ const PopularList = ({ articles, currentPosition, itemWidth, toggleSlide }) => {
   const popularListRef = React.createRef();
   const windowWidth = window.innerWidth;
 
-  const onClickLeftControl = () => {
+  const onClickLeftController = () => {
     const position = popularListRef.current.getBoundingClientRect().right;
 
     // pass parameters currentPosition, itemWidth and windowWidth
@@ -15,7 +15,7 @@ const PopularList = ({ articles, currentPosition, itemWidth, toggleSlide }) => {
     toggleSlide(1, position, currentPosition, itemWidth, windowWidth);
   };
 
-  const onClickRightControl = () => {
+  const onClickRightController = () => {
     const position = popularListRef.current.getBoundingClientRect().right;
 
     // pass parameters currentPosition, itemWidth and windowWidth
@@ -37,10 +37,10 @@ const PopularList = ({ articles, currentPosition, itemWidth, toggleSlide }) => {
         </div>
         <div className="popular__controls">
           <div
-            onClick={ onClickLeftControl }
+            onClick={ onClickLeftController }
             className="controller controller__left" />
           <div
-            onClick={ onClickRightControl }
+            onClick={ onClickRightController }
             className="controller" />
         </div>
       </Container>

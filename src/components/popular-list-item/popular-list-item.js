@@ -12,7 +12,7 @@ const PopularListItem = ({ id, url, rubric, title, preview, picture }) => {
       <div>
         <Link to={ `/articles/${url}` }
           className="popular-list-item__picture"
-          style={{ backgroundImage: imageUrl}} />
+          style={{ backgroundImage: imageUrl }} />
         <Link to={ `/articles/${url}` }
               className="popular-list-item__caption">
           <span>{ title }</span>
