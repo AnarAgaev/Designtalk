@@ -3,6 +3,7 @@ const updateLastArticles = (state, action) => {
   if (state === undefined) {
     return {
       articles: [],
+      isTitleHover: false,
       loading: false,
       error: null
     };
@@ -30,6 +31,18 @@ const updateLastArticles = (state, action) => {
         ...state.lastArticles,
         loading: false,
         error: action.payload
+      };
+
+    case 'HANDLE_TITLE_OVER':
+      return {
+        ...state.lastArticles,
+        isTitleHover: true
+      };
+
+    case 'HANDLE_TITLE_OUT':
+      return {
+        ...state.lastArticles,
+        isTitleHover: false
       };
 
     default:

@@ -6,6 +6,7 @@ import fetchPopularFailure from "./fetch-popular/fetch-popular-failure";
 import popularSlide from "./popular-slide";
 import fetchLastArticles from "./fetch-last-articles";
 import fetchLastArticlesFailure from "./fetch-last-articles/fetch-last-articles-failure";
+import handleTitleHover from "./handle-title-hover";
 
 export {
   fetchArticles,
@@ -15,5 +16,6 @@ export {
   cursorOverImg,
   popularSlide,
   fetchLastArticles,
-  fetchLastArticlesFailure
+  fetchLastArticlesFailure,
+  handleTitleHover
 };
