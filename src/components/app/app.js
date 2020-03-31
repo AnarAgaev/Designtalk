@@ -10,7 +10,7 @@ import ForAdvertisers from "../pages/for-advertisers";
 import CookiePolicy from "../pages/cookie-policy";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
-import ModalMessage from "../modal-message";
+import ModalMessageContainer from "../modal-message";
 import Articles from "../pages/articles";
 import Spinner from "../spinner";
 import 'bootstrap/scss/bootstrap-reboot.scss';
@@ -19,41 +19,41 @@ import '../../scss/main.scss';
 
 export default class App extends Component {
 
-  state = {
-    modalMsg: '',
-    modalVisible: false
-  };
+  // state = {
+  //   modalMsg: '',
+  //   modalVisible: false
+  // };
+  //
+  // handleModalShow = (msg) => {
+  //   this.setState({
+  //     modalVisible: true,
+  //     modalMsg: msg
+  //   });
+  // };
+  //
+  // handleModalHide = () => {
+  //   this.setState({
+  //     modalMsg: '',
+  //     modalVisible: false
+  //   })
+  // };
 
-  handleModalShow = (msg) => {
-    this.setState({
-      modalVisible: true,
-      modalMsg: msg
-    });
-  };
-
-  handleModalHide = () => {
-    this.setState({
-      modalMsg: '',
-      modalVisible: false
-    })
-  };
-
-  MainPage = () => {
-    return (
-      <Main
-        handleModalShow={ this.handleModalShow } />
-    );
-  };
+  // MainPage = () => {
+  //   return (
+  //     <Main
+  //       handleModalShow={ this.handleModalShow } />
+  //   );
+  // };
 
   render() {
-    const { modalVisible, modalMsg } = this.state;
+    // const { modalVisible, modalMsg } = this.state;
 
     return (
       <>
         <Header />
         <main className="main">
           <Switch>
-            <Route path="/" component={ this.MainPage } exact />
+            <Route path="/" component={ Main } exact />
             <Route path="/articles/" component= { Articles } exact />
             <Route path="/articles/:id"
               render={({ match }) => {
@@ -72,10 +72,12 @@ export default class App extends Component {
         </main>
         <Footer />
         <Spinner />
-        <ModalMessage
-          modalVisible={ modalVisible }
-          modalMsg={ modalMsg }
-          handleModalHide={ this.handleModalHide } />
+        <ModalMessageContainer />
+
+        {/*<ModalMessage*/}
+        {/*  modalVisible={ modalVisible }*/}
+        {/*  modalMsg={ modalMsg }*/}
+        {/*  handleModalHide={ this.handleModalHide } />*/}
       </>
     );
   }

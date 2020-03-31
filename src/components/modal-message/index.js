@@ -1,3 +1,3 @@
-import ModalMessage from './modal-message';
+import ModalMessageContainer from './modal-message-container';
 
-export default ModalMessage;
+export default ModalMessageContainer;

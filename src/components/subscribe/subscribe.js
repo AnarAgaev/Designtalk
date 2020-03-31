@@ -6,47 +6,13 @@ import './subscribe.scss';
 export default class Subscribe extends Component {
   textInput = React.createRef();
 
-  state = {
-    email: '',
-    error: false
-  };
-
-  handleInputChange = (event) => {
-    this.setState({
-      email: event.target.value,
-      error: false
-    });
-    this.formValidate();
-  };
-
-  formValidate = () => {
-    const regular = /.+@.+\..+/i;
-    regular.test(this.state.email) ?
-      this.setState({ error: false }) :
-      this.setState({ error: true });
-  };
-
-  handleFormSubmit = (event) => {
-    event.preventDefault();
-    const { error, email } = this.state;
-
-    if (!error && email !== '') {
-      this.props.handleModalShow('Спасибо за подписку на наши новости! Будет много инетересного.');
-      this.setState({
-        email: '',
-        error: false
-      });
-    } else this.textInput.current.focus();
-  };
-
-  handleInputBlur = () => {
-    this.state.email === '' ?
-      this.setState({ error: false }) :
-      null;
-  };
-
   render() {
-    const { email, error } = this.state;
+    const {
+      email, error,
+      handleInputChange,
+      handleInputBlur,
+      handleFormSubmit } = this.props;
+
     const btnClass = error ? 'button blocked' : 'button';
 
     return (
@@ -57,12 +23,12 @@ export default class Subscribe extends Component {
             <div className="subscribe__subtitle">подписывайся на нашу рассылку</div>
           </Col>
           <Col lg={5}>
-            <form onSubmit={ this.handleFormSubmit }>
+            <form onSubmit={ (event) => handleFormSubmit(event, email, error) }>
               <input type="text"
                      placeholder="Адрес почты"
                      value={ email }
-                     onChange={ this.handleInputChange }
-                     onBlur={ this.handleInputBlur }
+                     onChange={ handleInputChange }
+                     onBlur={ () => handleInputBlur(email) }
                      ref={ this.textInput } />
               <button className={ btnClass }
                       type="submit">подписаться</button>
@@ -79,3 +45,45 @@ export default class Subscribe extends Component {
     );
   }
 };
+
+
+
+// state = {
+//   email: '',
+//   error: false
+// };
+
+// handleInputChange = (event) => {
+//   this.setState({
+//     email: event.target.value,
+//     error: false
+//   });
+//   this.formValidate();
+// };
+
+// formValidate = () => {
+//   const regular = /.+@.+\..+/i;
+//   regular.test(this.state.email) ?
+//     this.setState({ error: false }) :
+//     this.setState({ error: true });
+// };
+
+// handleInputBlur = () => {
+//   this.state.email === '' ?
+//     this.setState({ error: false }) :
+//     null;
+// };
+
+// handleFormSubmit = (event) => {
+//   event.preventDefault();
+//   const { error, email } = this.state;
+//
+//   if (!error && email !== '') {
+//     this.props.handleModalShow('Спасибо за подписку на наши новости! Будет много инетересного.');
+//     this.setState({
+//       email: '',
+//       error: false
+//     });
+//   } else this.textInput.current.focus();
+// };
+

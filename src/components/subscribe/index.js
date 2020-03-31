@@ -1,3 +1,3 @@
-import Subscribe from './subscribe';
+import SubscribeContainer from "./subscribe-container";
 
-export default Subscribe;
+export default SubscribeContainer;
