@@ -18,6 +18,7 @@ class LastArticlesContainer extends Component {
 
 
     if (error) {
+      console.log(error);
       return <ErrorIndicator />
     }
 

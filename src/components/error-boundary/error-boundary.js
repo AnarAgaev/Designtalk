@@ -16,13 +16,11 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    const {
-      articlesError,
-      popularError,
-      lastArticlesError
-    } = this.props;
+    const { articlesError, popularError, lastArticlesError } = this.props;
+    const error = articlesError || popularError || lastArticlesError;
 
-    if (articlesError || popularError || lastArticlesError) {
+    if (error) {
+      console.log( error );
       return <ErrorIndicator />;
     }
 

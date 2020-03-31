@@ -21,9 +21,14 @@ export default class BlogService {
     const response = await fetch(`${this._apiBase}${url}`);
 
     if (!response.ok) {
-      throw new Error(`Could not fetch ${url}, received ${response.status}`);
+      throw new Error(`Could not fetch data from ${url}, received ${response.status}`);
     }
-    return await response.json();
+
+    try {
+      return await response.json();
+    } catch (error) {
+      throw new TypeError(`Received data must be a JSON. An error occurred on URL: ${response.url}`);
+    }
   };
 
   getArticles = async (url) => {
