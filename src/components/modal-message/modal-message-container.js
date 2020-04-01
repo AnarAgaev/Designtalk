@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ModalMessage from "./modal-message";
+import { modalMsgHide } from "../../actions/modal-msg"
 
 class ModalMessageContainer extends Component {
  render() {
-   const { message, visible } = this.props;
+   const { message, visible, modalMsgHide } = this.props;
+
+   console.log(modalMsgHide)
 
    return <ModalMessage
      message={ message }
-     visible={ visible } />;
+     visible={ visible }
+     modalMsgHide={ modalMsgHide }/>;
  }
 }
 
@@ -19,7 +23,11 @@ const mapStateToProps = ({ modalMsg: { message, visible } }) => {
   };
 };
 
+const mapDispatchToProps = {
+  modalMsgHide
+};
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ModalMessageContainer);
