@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './subscribe.scss';
 
 export default class Subscribe extends Component {
-  textInput = React.createRef();
+  input = React.createRef();
 
   render() {
     const {
@@ -23,13 +23,13 @@ export default class Subscribe extends Component {
             <div className="subscribe__subtitle">подписывайся на нашу рассылку</div>
           </Col>
           <Col lg={5}>
-            <form onSubmit={ (event) => handleFormSubmit(event, email, error) }>
+            <form onSubmit={ (event) => handleFormSubmit(event, email, error, this.input) }>
               <input type="text"
                      placeholder="Адрес почты"
                      value={ email }
                      onChange={ handleInputChange }
                      onBlur={ () => handleInputBlur(email) }
-                     ref={ this.textInput } />
+                     ref={ this.input } />
               <button className={ btnClass }
                       type="submit">подписаться</button>
               <p className="subscribe__policy">
@@ -45,45 +45,3 @@ export default class Subscribe extends Component {
     );
   }
 };
-
-
-
-// state = {
-//   email: '',
-//   error: false
-// };
-
-// handleInputChange = (event) => {
-//   this.setState({
-//     email: event.target.value,
-//     error: false
-//   });
-//   this.formValidate();
-// };
-
-// formValidate = () => {
-//   const regular = /.+@.+\..+/i;
-//   regular.test(this.state.email) ?
-//     this.setState({ error: false }) :
-//     this.setState({ error: true });
-// };
-
-// handleInputBlur = () => {
-//   this.state.email === '' ?
-//     this.setState({ error: false }) :
-//     null;
-// };
-
-// handleFormSubmit = (event) => {
-//   event.preventDefault();
-//   const { error, email } = this.state;
-//
-//   if (!error && email !== '') {
-//     this.props.handleModalShow('Спасибо за подписку на наши новости! Будет много инетересного.');
-//     this.setState({
-//       email: '',
-//       error: false
-//     });
-//   } else this.textInput.current.focus();
-// };
-

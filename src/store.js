@@ -20,7 +20,7 @@ const logMiddleware = ({ getState }) => (dispatch) => (action) => {
 };
 
 const store = createStore(reducer, applyMiddleware(
-  logMiddleware,
+  // logMiddleware,
   blockMountingMiddleware
 ));
 

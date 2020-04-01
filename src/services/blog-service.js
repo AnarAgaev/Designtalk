@@ -17,8 +17,17 @@ export default class BlogService {
     };
   };
 
-  getResource = async (url) => {
-    const response = await fetch(`${this._apiBase}${url}`);
+  getResource = async (url, data) => {
+
+    const response = (data === undefined) ?
+      await fetch(`${this._apiBase}${url}`) :
+      await fetch(`${this._apiBase}${url}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify(data)
+      });
 
     if (!response.ok) {
       throw new Error(`Could not fetch data from ${url}, received ${response.status}`);
@@ -38,8 +47,9 @@ export default class BlogService {
     return articles;
   };
 
-  // getArticle = async (name = null) => {
-  //   const article = await this.getResource(`/articles/?name=${name}`);
-  //   return this._normalizeArticle(article);
-  // };
+  signMail = async (url, data) => {
+    const signResult = await this.getResource(url, data);
+
+    return signResult.status;
+  };
 }

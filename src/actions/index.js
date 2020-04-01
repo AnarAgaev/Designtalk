@@ -8,7 +8,7 @@ import fetchLastArticles from "./fetch-last-articles";
 import fetchLastArticlesFailure from "./fetch-last-articles/fetch-last-articles-failure";
 import handleTitleHover from "./handle-title-hover";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
-import { handleInputChange, handleInputBlur, handleFormSubmit } from './handle-subscribe';
+import { handleInputChange, handleInputBlur, handleFormSubmit } from './fetch-subscribe';
 
 export {
   fetchArticles,

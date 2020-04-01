@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Subscribe from "./subscribe";
+import withBlogService from "../hoc";
+import { compose } from "../../utils";
 import {
   handleInputChange,
   handleInputBlur,
@@ -32,15 +34,23 @@ const mapStateToProps = ({ subscribe: { email, error } }) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, { blogService }) => {
   return {
     handleInputChange: (event) => handleInputChange(dispatch, event),
     handleInputBlur: (email) => handleInputBlur(dispatch, email),
-    handleFormSubmit: (event, email, error) => handleFormSubmit(dispatch, event, email, error)
+    handleFormSubmit: (event, email, error, input) => handleFormSubmit(
+      dispatch,
+      blogService,
+      event, email,
+      error, input
+    )
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  withBlogService(),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(SubscribeContainer);

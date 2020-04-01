@@ -7,8 +7,6 @@ class ModalMessageContainer extends Component {
  render() {
    const { message, visible, modalMsgHide } = this.props;
 
-   console.log(modalMsgHide)
-
    return <ModalMessage
      message={ message }
      visible={ visible }

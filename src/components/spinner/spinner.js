@@ -23,11 +23,15 @@ const mapStateToProps = (state) => {
   const {
     articleList: { loading: articlesLoading },
     popularList: { loading: popularLoading },
-    lastArticles: { loading: lastArticlesLoading }
+    lastArticles: { loading: lastArticlesLoading },
+    subscribe: { loading: subscribeLoading }
   } = state;
 
   return {
-    loading: articlesLoading || popularLoading || lastArticlesLoading
+    loading: articlesLoading ||
+             popularLoading ||
+             lastArticlesLoading ||
+             subscribeLoading
   };
 };
 
