@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { renderElementList } from "../../utils";
 import "./socials-list.scss";
 
 // get our fontawesome imports
@@ -6,29 +7,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faVk, faOdnoklassniki, faTwitter, faTelegramPlane,
          faPinterestP, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-export default class SocialList extends Component {
-  socialItems = [ faFacebookF, faInstagram, faVk, faYoutube, faOdnoklassniki,
-                  faTwitter, faTelegramPlane, faPinterestP ];
+const socialItems = [ faFacebookF, faInstagram, faVk, faYoutube, faOdnoklassniki,
+  faTwitter, faTelegramPlane, faPinterestP ];
 
-  renderSocialItems = () => {
-    return this.socialItems.map((item) => {
-      return (
-        <li className="social__item" key={ item.iconName }>
-          <a className="social__link" target="_blank" rel="nofollow">
-            <FontAwesomeIcon icon={ item } />
-          </a>
-        </li>
-      );
-    });
-  };
+const SocialListItem = (item) => {
+  return (
+    <li className="social__item" key={ item.iconName }>
+      <a className="social__link" target="_blank" rel="nofollow">
+        <FontAwesomeIcon icon={ item } />
+      </a>
+    </li>
+  );
+};
 
-  render() {
-    const elements = this.renderSocialItems();
-
+const SocialList = () => {
     return (
       <ul className="social__list">
-        { elements }
+        { renderElementList(socialItems, SocialListItem) }
       </ul>
     );
-  }
 };
+
+export default SocialList;
