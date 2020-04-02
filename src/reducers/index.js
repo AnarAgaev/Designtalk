@@ -4,6 +4,7 @@ import updatePopularList from "./popular-list";
 import handleCursorOverImg from "./cursor-over-img";
 import handleModalMsg from "./handle-modal-msg";
 import handleSubscribe from "./subscribe";
+import handleHeader from "./handle-header"
 
 const reducer = (state, action) => {
 
@@ -13,7 +14,8 @@ const reducer = (state, action) => {
     popularList: updatePopularList(state, action),
     cursorOnImg: handleCursorOverImg(state, action),
     modalMsg: handleModalMsg(state, action),
-    subscribe: handleSubscribe(state, action)
+    subscribe: handleSubscribe(state, action),
+    header: handleHeader(state, action)
   };
 };
 

@@ -37,28 +37,24 @@
         display: block;
         position: absolute;
         bottom: 22px;
-        left: 1px;
+        left: 50%;
         width: 0;
         height: 1px;
         background: rgb(87, 88, 88);
-        background: linear-gradient(67deg, rgba(87, 88, 88, 1) 0%, rgba(155, 157, 155, 1) 50%, rgba(218, 219, 217, 1) 100%);
-        transition: width .6s ease, opacity 0s .6s;
+        background: linear-gradient(67deg, rgba(87, 88, 88, 1) 0%, rgba(155, 157, 155, 1) 50%, rgba(87, 88, 88, 1) 100%);
+        transition: width .6s ease, opacity 0s .6s, left .6s ease;
         opacity: 0;
       }
 
       &:hover::after {
         width: calc(100% - 2px);
+        left: 0;
         opacity: 1;
-        animation: scrollBg 8s linear infinite;
-        transition: width .6s ease, opacity .2s;
+        transition: width .6s ease, opacity .2s, left .6s ease;
       }
 
       &.active {
         font-weight: bold;
-      }
-
-      &.dim {
-        opacity: .77;
       }
     }
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Header from "../header";
+import HeaderContainer from "../header";
 import Main from "../pages/main";
 import Footer from "../footer";
 import About from "../pages/about";
@@ -18,39 +18,10 @@ import 'bootstrap/scss/bootstrap-grid.scss';
 import '../../scss/main.scss';
 
 export default class App extends Component {
-
-  // state = {
-  //   modalMsg: '',
-  //   modalVisible: false
-  // };
-  //
-  // handleModalShow = (msg) => {
-  //   this.setState({
-  //     modalVisible: true,
-  //     modalMsg: msg
-  //   });
-  // };
-  //
-  // handleModalHide = () => {
-  //   this.setState({
-  //     modalMsg: '',
-  //     modalVisible: false
-  //   })
-  // };
-
-  // MainPage = () => {
-  //   return (
-  //     <Main
-  //       handleModalShow={ this.handleModalShow } />
-  //   );
-  // };
-
   render() {
-    // const { modalVisible, modalMsg } = this.state;
-
     return (
       <>
-        <Header />
+        <HeaderContainer />
         <main className="main">
           <Switch>
             <Route path="/" component={ Main } exact />
@@ -73,11 +44,6 @@ export default class App extends Component {
         <Footer />
         <Spinner />
         <ModalMessageContainer />
-
-        {/*<ModalMessage*/}
-        {/*  modalVisible={ modalVisible }*/}
-        {/*  modalMsg={ modalMsg }*/}
-        {/*  handleModalHide={ this.handleModalHide } />*/}
       </>
     );
   }

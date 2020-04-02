@@ -4,26 +4,20 @@ import { Link } from "react-router-dom";
 import './last-article.scss';
 
 const LastArticle = ({
+    articles: { ...article },
     isTitleHover,
-    handleTitleHover,
-    articles: { ...article }
+    handleTitleHover
   }) => {
 
-  const { ...rubric } = article.rubric;
   const { picture = 'undefined.png' } = article;
   const urlArticle = '/articles/' + article.url;
-  const urlRubric = '/articles/filter/' + rubric.link;
 
   return (
     <Container>
       <Row>
         <Col lg={6} style={{zIndex: '1'}}>
           <div className="last-article">
-            <Link
-              to={ urlRubric }
-              className="last-article__link">
-              { rubric.name }
-            </Link>
+
             <Link
               to={ urlArticle }
               className="last-article__title">
