@@ -5,8 +5,8 @@ import Cursor from "../cursor";
 import './picture.sass';
 
 const Picture = ({
-  url, alt, visible,
-  X, Y, cursorOverImg }) => {
+  url, visible, X, Y,
+  cursorOverImg }) => {
 
   const onMouseMoveImg = (event) => {
     const { clientX, clientY } = event;
@@ -16,7 +16,9 @@ const Picture = ({
   return (
     <div onMouseOut={ cursorOverImg }
          onMouseMove={ onMouseMoveImg }>
-      <img src={ url } alt={ alt } />
+      <div className={ 'padding-huck' }
+           style={{ backgroundImage: `url(${ url })` }}
+      />
       <Cursor
         visible = { visible }
         X = { X }

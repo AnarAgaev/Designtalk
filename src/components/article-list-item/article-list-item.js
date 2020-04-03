@@ -12,11 +12,11 @@ const ArticleListItem = ({
   const urlRubric = `/articles/?filer=true&rubric=${rubric.url}`;
 
   return (
-    <Col className="article-list__item" key={ id }>
+    <Col lg={6} className="article-list__item" key={ id }>
       <Link
         to={ `/articles/${url}` }
         className="article-list__picture">
-        <Picture url={urlImage} alt={title} />
+        <Picture url={ urlImage } />
       </Link>
       <Link
         to={ `/articles/${url}` }
