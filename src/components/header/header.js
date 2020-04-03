@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import Logotype from "../logotype";
 import Nav from "../nav";
 import SocialList from "../socials-list";
+import ButtonFeedbackContainer from "../button-feedback";
 import './header.scss';
 
 const Header = ({ hide }) => {
@@ -15,6 +16,7 @@ const Header = ({ hide }) => {
         <Logotype/>
         <Nav/>
         <SocialList/>
+        <ButtonFeedbackContainer/>
       </Container>
     </header>
   );
