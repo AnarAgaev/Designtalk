@@ -5,11 +5,9 @@ import Nav from "../nav";
 import SocialList from "../socials-list";
 import './header.scss';
 
-const Header = ({ hide, painted }) => {
-
-  let clazz = 'header';
-  clazz += painted ? ' painted' : '';
-  clazz += hide ? ' hide' : '';
+const Header = ({ hide }) => {
+  const clazz = hide ?
+    'header hide' : 'header';
 
   return (
     <header className={ clazz }>

@@ -10,35 +10,28 @@ class HeaderContainer extends Component {
       'scroll',
       () => {
         const { headerScrollProcessing,
-                scrolled, painted } = this.props;
+                scrolled } = this.props;
 
-        return headerScrollProcessing(scrolled, painted);
+        return headerScrollProcessing(scrolled);
       }
     );
   }
 
   render() {
-    const { hide, painted } = this.props;
-
     return (
-      <Header
-        hide={ hide }
-        painted={ painted } />
+      <Header hide={ this.props.hide } />
     );
   }
 }
 
-const mapStateToProps = ({ header:
-    { hide, painted, scrolled }
-  }) => {
-
-  return { hide, painted, scrolled };
+const mapStateToProps = ({ header: { hide, scrolled } }) => {
+  return { hide, scrolled };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    headerScrollProcessing: (scrolled, painted) =>
-      headerScrollProcessing(dispatch, scrolled, painted)
+    headerScrollProcessing: (scrolled ) =>
+      headerScrollProcessing(dispatch, scrolled )
   };
 };
 

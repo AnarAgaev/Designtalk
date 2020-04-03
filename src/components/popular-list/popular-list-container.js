@@ -64,7 +64,6 @@ const mapDispatchToProps = ( dispatch, { blogService } ) => {
   };
 };
 
-
 export default compose(
   withBlogService(),
   connect(

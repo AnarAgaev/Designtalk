@@ -11,9 +11,9 @@ import store from "./store";
 const blogService = new BlogService();
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <ErrorBoundary>
-      <BlogServiceProvider value={blogService}>
+      <BlogServiceProvider value={ blogService }>
         <Router>
           <App />
         </Router>

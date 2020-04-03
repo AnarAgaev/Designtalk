@@ -6,6 +6,7 @@ import fetchPopularFailure from "./fetch-popular/fetch-popular-failure";
 import popularSlide from "./popular-slide";
 import fetchLastArticles from "./fetch-last-articles";
 import fetchLastArticlesFailure from "./fetch-last-articles/fetch-last-articles-failure";
+import fetchSubscribeFailure from "./fetch-subscribe/fetch-subscribe-failure";
 import handleTitleHover from "./handle-title-hover";
 import headerScrollProcessing from "./handle-header";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
@@ -26,5 +27,6 @@ export {
   handleInputChange,
   handleInputBlur,
   handleFormSubmit,
-  headerScrollProcessing
+  headerScrollProcessing,
+  fetchSubscribeFailure
 };

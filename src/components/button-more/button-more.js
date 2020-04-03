@@ -8,7 +8,7 @@ import './button-more.scss';
 
 const ButtonMore = ({ fetchArticles, visible, url }) => {
 
-  const styleButton = visible ?
+  const style = visible ?
     { display: 'block' } :
     { display: 'none' };
 
@@ -20,7 +20,7 @@ const ButtonMore = ({ fetchArticles, visible, url }) => {
     <Container>
       <div className="d-flex mb-5 justify-content-center">
         <button
-          style={ styleButton }
+          style={ style }
           className="button px-5 py-4"
           onClick={ onFetchArticles }>
           Показать больше интересного

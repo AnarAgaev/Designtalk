@@ -8,9 +8,10 @@
 
   &__link {
     cursor: pointer;
-    font-size: 0.81rem;
+    font-size: 0.875rem;
     transition: all .5s;
     text-transform: uppercase;
+    white-space: nowrap;
 
     &::before {
       content: none;
@@ -23,34 +24,34 @@
     flex: 1 0 auto;
 
     &__list {
-      margin-left: 0.7rem;
+      margin-left: 2rem;
     }
 
     &__link {
-      line-height: 70px;
-      height: 70px;
+      line-height: 3.5rem;
+      height: 3.5rem;
       margin-left: 1rem;
+      margin-right: 1rem;
       letter-spacing: 0.37px;
 
       &::after {
         content: '';
         display: block;
         position: absolute;
-        bottom: 22px;
+        bottom: 16px;
         left: 50%;
         width: 0;
         height: 1px;
         background: rgb(87, 88, 88);
         background: linear-gradient(67deg, rgba(87, 88, 88, 1) 0%, rgba(155, 157, 155, 1) 50%, rgba(87, 88, 88, 1) 100%);
-        transition: width .6s ease, opacity 0s .6s, left .6s ease;
+        transition: all .3s ease-in-out;
         opacity: 0;
       }
 
       &:hover::after {
-        width: calc(100% - 2px);
+        width: 100%;
         left: 0;
         opacity: 1;
-        transition: width .6s ease, opacity .2s, left .6s ease;
       }
 
       &.active {

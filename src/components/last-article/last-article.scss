@@ -15,7 +15,7 @@
     right: -108px;
     top: 0;
     width: 100vw;
-    min-height: calc(100vh);
+    min-height: calc(100vh - 3.5rem);
     backdrop-filter: blur(7px);
     background: rgba(0,0,0,.1);
     background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.5));
@@ -26,7 +26,6 @@
   }
 
   &__title {
-    margin-top: 5px;
     padding-top: 0;
     padding-bottom: 1.3rem;
     word-spacing: 2px;
@@ -67,10 +66,10 @@
   }
 
   &__picture {
-    min-height: calc(100vh);
+    min-height: calc(100vh - 3.5rem);
 
     img {
-      min-height: calc(100vh);
+      min-height: calc(100vh - 3.5rem);
       width: auto;
       max-width: none;
       transform: translateX(-33%);

@@ -9,7 +9,7 @@
 
   .container {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -20,20 +20,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
+    height: 100%;
     background: hsla(0, 0%, 98%, .5);
     background-blend-mode: multiply;
     backdrop-filter: blur(25px);
-    opacity: 0;
+    opacity: 1;
     transition: all .3s;
   }
 
   &.hide {
     transform: translateY(-100%);
-  }
-
-  &.painted::before {
-    height: 100%;
-    opacity: 1;
   }
 }

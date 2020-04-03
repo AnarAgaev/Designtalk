@@ -36,7 +36,7 @@ class ArticleListContainer extends Component {
     }
 
     return (
-      <ArticleList articles={articleList} />
+      <ArticleList articles={ articleList } />
     );
   }
 }

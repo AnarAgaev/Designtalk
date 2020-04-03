@@ -1,34 +1,24 @@
 @import '../../scss/variables';
 
 .logo {
-  width: 115px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 0.93em;
+  width: 50px;
+  height: 3.5rem;
+  top: -1px;
   cursor: pointer;
   color: $color-primary-font;
-  text-transform: uppercase;
   font-weight: 700;
   letter-spacing: -.05em;
 
-  &__letter {
-    display: block;
-    position: absolute;
-    color: $color-d;
-    font-size: 3.1rem;
-    font-weight: 700;
-    left: 50%;
-    transform: translate(-52%, -2px);
-    text-transform: none;
-    background: linear-gradient(67deg,#575858,#9b9d9b 50%,#dadbd9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &__letters {
+    font-size: 2.3rem;
+    font-family: 'Titillium Web', sans-serif;
   }
 
-  &__caption {
-    z-index: 1;
+  &__point {
+    font-size: 3.3rem;
+    line-height: 0;
+    left: 2px;
+    position: relative;
   }
 
   &::before {
@@ -37,5 +27,5 @@
 }
 
 .footer .logo {
-  margin-top: 50px;
+  margin-top: 1rem;
 }

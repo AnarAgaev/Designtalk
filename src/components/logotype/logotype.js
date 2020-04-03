@@ -5,8 +5,8 @@ import './logotype.scss';
 const Logotype = () => {
   return (
     <Link className="logo" to="/">
-      <span className="logo__caption">Spacebuilder</span>
-      <span className="logo__letter">Sb</span>
+      <span className="logo__letters">dt</span>
+      <span className="logo__point">.</span>
     </Link>
   )
 };

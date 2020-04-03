@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import HeaderContainer from "../header";
 import Main from "../pages/main";
 import Footer from "../footer";
 import About from "../pages/about";
@@ -12,6 +11,7 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import Articles from "../pages/articles";
 import ModalMessageContainer from "../modal-message";
+import HeaderContainer from "../header";
 import Spinner from "../spinner";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
