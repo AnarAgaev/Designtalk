@@ -9,6 +9,7 @@ import fetchLastArticlesFailure from "./fetch-last-articles/fetch-last-articles-
 import fetchSubscribeFailure from "./fetch-subscribe/fetch-subscribe-failure";
 import handleTitleHover from "./handle-title-hover";
 import headerScrollProcessing from "./handle-header";
+import showHeader from "./handle-header/show-header";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { handleInputChange, handleInputBlur, handleFormSubmit } from './fetch-subscribe';
 
@@ -28,5 +29,6 @@ export {
   handleInputBlur,
   handleFormSubmit,
   headerScrollProcessing,
+  showHeader,
   fetchSubscribeFailure
 };
