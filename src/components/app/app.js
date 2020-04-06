@@ -6,7 +6,7 @@ import About from "../pages/about";
 import PublishProject from "../pages/publish-project";
 import Contacts from "../pages/contacts";
 import ForAdvertisers from "../pages/for-advertisers";
-import CookiePolicy from "../pages/cookie-policy";
+import TermsOfUse from "../pages/terms-of-use";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import Articles from "../pages/articles";
@@ -37,7 +37,7 @@ export default class App extends Component {
             <Route path="/for-advertisers" component={ ForAdvertisers } />
             <Route path="/policy-personal-data" component={ PolicyPersonalData } />
             <Route path="/privacy-policy" component={ PrivacyPolicy } />
-            <Route path="/cookie-policy" component= { CookiePolicy } />
+            <Route path="/terms-of-use" component= { TermsOfUse } />
             <Redirect to="/404" />
           </Switch>
         </main>

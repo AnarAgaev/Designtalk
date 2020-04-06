@@ -12,7 +12,7 @@ const PrivacyList = () => {
         <Link to="/privacy-policy" className="privacy__link">политика конфиденциальности</Link>
       </li>
       <li className="privacy__item">
-        <Link to="/cookie-policy" className="privacy__link">политика использования файлов cookie</Link>
+        <Link to="/terms-of-use" className="privacy__link">пользовательское соглашение</Link>
       </li>
     </ul>
   );
