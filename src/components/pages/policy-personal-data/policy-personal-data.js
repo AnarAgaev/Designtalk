@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import jumpToTop from "../../../utils/jump-to-top";
+import { jumpToTop } from "../../../utils";
 import './policy-personal-data.scss';
 
 export default class PolicyPersonalData extends Component {

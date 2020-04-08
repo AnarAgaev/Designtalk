@@ -9,6 +9,7 @@ import ForAdvertisers from "../pages/for-advertisers";
 import TermsOfUse from "../pages/terms-of-use";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
+import PolicyModalContainer from "../policy-modal";
 import Articles from "../pages/articles";
 import ModalMessageContainer from "../modal-message";
 import HeaderContainer from "../header";
@@ -42,6 +43,7 @@ export default class App extends Component {
           </Switch>
         </main>
         <Footer />
+        <PolicyModalContainer />
         <Spinner />
         <ModalMessageContainer />
       </>

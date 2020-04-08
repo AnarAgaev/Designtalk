@@ -12,6 +12,7 @@ import headerScrollProcessing from "./handle-header";
 import showHeader from "./handle-header/show-header";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { handleInputChange, handleInputBlur, handleFormSubmit } from './fetch-subscribe';
+import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy-modal";
 
 export {
   fetchArticles,
@@ -30,5 +31,8 @@ export {
   handleFormSubmit,
   headerScrollProcessing,
   showHeader,
-  fetchSubscribeFailure
+  fetchSubscribeFailure,
+  hidePolicyModal,
+  showPolicyModal,
+  setCookiePolicyModal
 };

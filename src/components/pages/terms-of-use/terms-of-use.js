@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import jumpToTop from "../../../utils/jump-to-top";
+import { jumpToTop } from "../../../utils";
 import './terms-of-use.scss';
-
 
 export default class TermsOfUse extends Component {
 
@@ -21,11 +20,9 @@ export default class TermsOfUse extends Component {
             </h1>
 
             <p>
-              <span>Пожалуйста, просмотрите внимательно следующее Пользовательское соглашение, перед пользованием нашим сайтом. Вам также необходимо ознакомиться с </span>
-              <Link to="/privacy-policy" >Политикой Конфиденциальности ООО "Цифровое медиа "Дизайнталк"</Link>
-              <span> и </span>
-              <Link to="/policy-personal-data" >Политикой в отношении обработки персональных данных ООО "Цифровое медиа "Дизайнталк"</Link>
-              <span>.</span>
+              Пожалуйста, просмотрите внимательно следующее Пользовательское соглашение, перед пользованием нашим сайтом.
+              Вам также необходимо ознакомиться с <Link to="/privacy-policy" >Политикой Конфиденциальности ООО "Цифровое медиа "Дизайнталк"</Link> и
+              <Link to="/policy-personal-data" >Политикой в отношении обработки персональных данных ООО "Цифровое медиа "Дизайнталк"</Link>.
             </p>
 
             <h3 className={"h3"}>1. Введение</h3>
