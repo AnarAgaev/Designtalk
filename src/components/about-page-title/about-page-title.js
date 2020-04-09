@@ -1,16 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import './main-page-title.scss';
+import './about-page-title.scss';
 
-const MainPageTitle = () => {
+const AboutPageTitle = () => {
   return (
     <Container>
-      <h1 className="main-page-title">
-        Spacebuilder
+      <h1 className="about-page-title">
+        Designtalk.ru
         <span> &#8212; цифровой блог о дизайне пространства</span>
       </h1>
     </Container>
   );
 };
 
-export default MainPageTitle;
+export default AboutPageTitle;

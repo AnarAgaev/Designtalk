@@ -26,12 +26,6 @@ export default class App extends Component {
         <main className="main">
           <Switch>
             <Route path="/" component={ Main } exact />
-            <Route path="/articles/" component= { Articles } exact />
-            <Route path="/articles/:id"
-              render={({ match }) => {
-                const { id } = match.params;
-                return <Articles articleId={ id } />;
-              }} />
             <Route path="/about" component={ About } />
             <Route path="/publish-project" component={ PublishProject } />
             <Route path="/contacts" component={ Contacts } />
@@ -39,6 +33,12 @@ export default class App extends Component {
             <Route path="/policy-personal-data" component={ PolicyPersonalData } />
             <Route path="/privacy-policy" component={ PrivacyPolicy } />
             <Route path="/terms-of-use" component= { TermsOfUse } />
+            <Route path="/articles/" component= { Articles } exact />
+            <Route path="/articles/:id"
+                   render={({ match }) => {
+                     const { id } = match.params;
+                     return <Articles articleId={ id } />;
+                   }} />
             <Redirect to="/404" />
           </Switch>
         </main>
