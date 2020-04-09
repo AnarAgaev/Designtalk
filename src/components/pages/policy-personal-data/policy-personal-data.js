@@ -11,7 +11,7 @@ export default class PolicyPersonalData extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className={"policy-personal-data"}>
         <Row>
           <Col lg={12}>
             <h1 className={"h1"}>

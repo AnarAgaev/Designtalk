@@ -17,7 +17,7 @@ const Copyright = () => {
       </p>
       <p>
         По вопросам соблюдения интеллектуальных прав обращайтесь по адресу&nbsp;
-        <a href="mailto:intellectualrights@designtalk.ru">
+        <a className={"link"} href="mailto:intellectualrights@designtalk.ru">
           intellectualrights@designtalk.ru
         </a>
       </p>

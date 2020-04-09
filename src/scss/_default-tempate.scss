@@ -118,10 +118,14 @@ p {
   font-style: normal;
 }
 
+.policy-personal-data p,
+.privacy-policy p,
+.terms-of-use p {
+  font-size: 0.83rem;
+}
+
 // Links
-a,
-.link {
-  display: inline-block;
+a {
   position: relative;
   color: $color-primary-font;
   text-decoration: none;
@@ -130,24 +134,25 @@ a,
     color: $color-primary-font;
     text-decoration: none;
   }
+}
 
-  &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 77%;
-      height: 37%;
-      opacity: .17;
-      bottom: 2px;
-      background-color: $color-d;
-      transition: all .2s ease-in-out;
-  }
+.link {
+  position: relative;
+  color: $color-primary-font;
+  text-decoration: none;
+  padding-bottom: 1px;
+  background-image: linear-gradient($link, $link);
+  background-repeat: no-repeat;
+  transition: background-size .3s ease;
+  background-size: 100% 45%;
+  background-position: left bottom;
 
-  &:hover::before {
-      height: 1px;
-      opacity: .3;
+  &:hover {
+    background-size: 100% 1px;
   }
 }
+
+
 
 // Forms
 form {

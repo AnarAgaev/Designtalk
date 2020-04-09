@@ -25,7 +25,7 @@ const ArticleListItem = ({
       </Link>
       <Link
         to={ urlRubric }
-        className="article-list__rubric">
+        className="article-list__rubric link">
         { rubric.name }
       </Link>
     </Col>

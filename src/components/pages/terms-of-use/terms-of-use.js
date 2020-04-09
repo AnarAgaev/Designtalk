@@ -12,7 +12,7 @@ export default class TermsOfUse extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className={"terms-of-use"}>
         <Row>
           <Col lg={12}>
             <h1 className={"h1"}>
@@ -21,8 +21,9 @@ export default class TermsOfUse extends Component {
 
             <p>
               Пожалуйста, просмотрите внимательно следующее Пользовательское соглашение, перед пользованием нашим сайтом.
-              Вам также необходимо ознакомиться с <Link to="/privacy-policy" >Политикой Конфиденциальности ООО "Цифровое медиа "Дизайнталк"</Link> и
-              <Link to="/policy-personal-data" >Политикой в отношении обработки персональных данных ООО "Цифровое медиа "Дизайнталк"</Link>.
+              Вам также необходимо ознакомиться с <Link className={"link"} to="/privacy-policy" >Политикой Конфиденциальности ООО "Цифровое медиа "Дизайнталк"</Link>
+              &nbsp;и&nbsp;
+              <Link className={"link"} to="/policy-personal-data" >Политикой в отношении обработки персональных данных ООО "Цифровое медиа "Дизайнталк"</Link>.
             </p>
 
             <h3 className={"h3"}>1. Введение</h3>
