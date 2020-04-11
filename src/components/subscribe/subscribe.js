@@ -32,15 +32,8 @@ export default class Subscribe extends Component {
                      ref={ this.input } />
               <button className={ btnClass }
                       type="submit">подписаться</button>
-              <p className="subscribe__policy">
-                Нажимая на кнопку «Подписаться», Вы даёте согласие на
-                обработку персональных данных согласно &nbsp;
-                <Link className={"link"} to="/privacy-policy">
-                  Политике конфиденциальности
-                </Link> и &nbsp;
-                <Link className={"link"} to="/policy-personal-data">
-                  Политике обработки персональных данных
-                </Link>.
+              <p className="attention-policy">
+                Нажимая на кнопку "Подписаться", Вы даёте согласие на обработку персональных данных согласно <Link className={"link"} to="/privacy-policy">Политике конфиденциальности</Link> и <Link className={"link"} to="/policy-personal-data">Политике обработки персональных данных</Link>.
               </p>
             </form>
           </Col>

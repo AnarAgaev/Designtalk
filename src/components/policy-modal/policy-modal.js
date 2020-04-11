@@ -11,8 +11,8 @@ const PolicyModal = ({ hidePolicyModal, clazz }) => {
           <Col lg={10}>
             <p className={"policy-modal__content"}>
               Для того чтобы сделать сайт designtalk.ru удобнее и безопаснее мы используем файлы cookies.
-              Продолжая использование сайта, вы соглашаетесь с этим. Понять, зачем нам нужны файлы cookies
-              и как прекратить сбор данных, можно <Link className={"link"} to="/terms-of-use">на этой странице</Link>.
+              Продолжая использование сайта, вы соглашаетесь с этим. Подробнее об использовании нами файлов
+              cookies <Link className={"link"} to="/terms-of-use">на этой странице</Link>.
               Также посещая страницы сайта, вы соглашаетесь с <Link className={"link"} to="/privacy-policy">Политикой конфиденциальности</Link>,&nbsp;
               <Link className={"link"} to="/policy-personal-data">Политикой обработки персональных данных и передачей файлов cookies третьим лицам</Link>.
             </p>

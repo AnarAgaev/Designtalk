@@ -154,54 +154,6 @@ a {
 
 
 
-// Forms
-form {
-  input {
-    padding: .962em 1em;
-  }
-
-  .button,
-  input.button,
-  button.button {
-    padding: 1.375rem 3rem;
-  }
-
-  p {
-    a::before {
-      bottom: 0;
-    }
-  }
-}
-input {
-  outline: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  background-color: $color-secondary-font;
-  text-align: left;
-  border: 1px solid $color-primary-font;
-  color: $color-primary-font;
-  padding: .7rem 1rem;
-  width: 100%;
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
-
-  &::-webkit-input-placeholder       { opacity: 1; transition: opacity 0.3s ease; }
-  &::-moz-placeholder                { opacity: 1; transition: opacity 0.3s ease; }
-  &:-moz-placeholder                 { opacity: 1; transition: opacity 0.3s ease; }
-  &:-ms-input-placeholder            { opacity: 1; transition: opacity 0.3s ease; }
-  &:focus::-webkit-input-placeholder { opacity: 0; transition: opacity 0.3s ease; }
-  &:focus::-moz-placeholder          { opacity: 0; transition: opacity 0.3s ease; }
-  &:focus:-moz-placeholder           { opacity: 0; transition: opacity 0.3s ease; }
-  &:focus:-ms-input-placeholder      { opacity: 0; transition: opacity 0.3s ease; }
-
-  &:active, &:hover, &:focus {
-    outline: 0;
-    outline-offset: 0;
-  }
-}
-
 // Buttons
 .button,
 a.button,
