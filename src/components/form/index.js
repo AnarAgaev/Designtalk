@@ -1,3 +1,3 @@
-import From from "./form";
+import FromContainer from "./form-container";
 
-export default From;
+export default FromContainer;

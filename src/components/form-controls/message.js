@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Message = ({ register, errors, required = false }) => {
+const Message = ({ register, errors, required }) => {
   return (
     <Form.Group className={ errors.msg ? 'has-error' : null }>
       <Form.Control

@@ -10,6 +10,7 @@ import fetchSubscribeFailure from "./fetch-subscribe/fetch-subscribe-failure";
 import handleTitleHover from "./handle-title-hover";
 import headerScrollProcessing from "./handle-header";
 import showHeader from "./handle-header/show-header";
+import sendForm from "./send-form";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { handleInputChange, handleInputBlur, handleFormSubmit } from './fetch-subscribe';
 import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy-modal";
@@ -34,5 +35,6 @@ export {
   fetchSubscribeFailure,
   hidePolicyModal,
   showPolicyModal,
-  setCookiePolicyModal
+  setCookiePolicyModal,
+  sendForm
 };

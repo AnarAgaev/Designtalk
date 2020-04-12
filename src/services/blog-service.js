@@ -1,3 +1,5 @@
+import { objectToFormData } from "../utils";
+
 export default class BlogService {
   _apiBase = 'https://spacebuilder.ru';
 
@@ -19,15 +21,13 @@ export default class BlogService {
 
   getResource = async (url, data) => {
 
-    const response = (data === undefined) ?
-      await fetch(`${this._apiBase}${url}`) :
-      await fetch(`${this._apiBase}${url}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify(data)
-      });
+    const response = (data === undefined)
+      ? await fetch(`${this._apiBase}${url}`)
+      : await fetch(`${this._apiBase}${url}`, {
+          method: 'POST',
+          cache  : 'no-cache',
+          body: objectToFormData(data)
+        });
 
     if (!response.ok) {
       throw new Error(`Could not fetch data from ${url}, received ${response.status}`);
@@ -47,9 +47,9 @@ export default class BlogService {
     return articles;
   };
 
-  signMail = async (url, data) => {
-    const signResult = await this.getResource(url, data);
+  sendForm = async (url, data) => {
+    const result = await this.getResource(url, data);
 
-    return signResult.status;
+    return result.status;
   };
 }

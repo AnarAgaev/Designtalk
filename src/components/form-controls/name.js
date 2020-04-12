@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Name = ({ register, errors, required = false }) => {
+const Name = ({ register, errors, required }) => {
   return (
     <Form.Group className={ errors.name ? 'has-error' : null }>
       <Form.Control

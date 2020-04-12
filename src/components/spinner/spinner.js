@@ -24,14 +24,14 @@ const mapStateToProps = (state) => {
     articleList: { loading: articlesLoading },
     popularList: { loading: popularLoading },
     lastArticles: { loading: lastArticlesLoading },
-    subscribe: { loading: subscribeLoading }
+    sendForm: { loading: sendFormLoading }
   } = state;
 
   return {
-    loading: articlesLoading ||
-             popularLoading ||
-             lastArticlesLoading ||
-             subscribeLoading
+    loading: articlesLoading
+      || popularLoading
+      || lastArticlesLoading
+      || sendFormLoading
   };
 };
 

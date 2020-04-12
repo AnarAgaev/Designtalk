@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Phone = ({ register, errors, required = false }) => {
+const Phone = ({ register, errors, required }) => {
   return (
     <Form.Group className={ errors.phone ? 'has-error' : null }>
       <Form.Control
@@ -11,7 +11,7 @@ const Phone = ({ register, errors, required = false }) => {
         ref={ register({
           required: required ? 'Необходимо указать Телефон' : false,
           minLength: {
-            value: 6,
+            value: 5,
             message: 'Телефонный номер слишком короткий'
           },
           maxLength: {
@@ -19,7 +19,7 @@ const Phone = ({ register, errors, required = false }) => {
             message: 'Телефонный номер слишком длинный'
           },
           pattern: {
-            value: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i,
+            value: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,10}$/i,
             message: 'Некорректный формат телефонного номера'
           }
         })} />

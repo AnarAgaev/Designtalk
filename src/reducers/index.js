@@ -6,6 +6,7 @@ import handleModalMsg from "./handle-modal-msg";
 import handleSubscribe from "./subscribe";
 import handleHeader from "./handle-header"
 import policyModal from "./policy-modal";
+import sendForm from "./send-form";
 
 const reducer = (state, action) => {
 
@@ -17,7 +18,8 @@ const reducer = (state, action) => {
     modalMsg: handleModalMsg(state, action),
     subscribe: handleSubscribe(state, action),
     header: handleHeader(state, action),
-    policyModal: policyModal(state, action)
+    policyModal: policyModal(state, action),
+    sendForm: sendForm(state, action)
   };
 };
 
