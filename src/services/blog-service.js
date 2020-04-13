@@ -48,8 +48,6 @@ export default class BlogService {
   };
 
   sendForm = async (url, data) => {
-    const result = await this.getResource(url, data);
-
-    return result.status;
+    return await this.getResource(url, data);
   };
 }

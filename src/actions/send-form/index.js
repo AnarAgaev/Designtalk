@@ -8,7 +8,7 @@ const sendForm = (dispatch, blogService, data, url, successMessage, failureMessa
 
   blogService.sendForm(url, data)
     .then((response) => {
-      if (response) {
+      if (response.status) {
         dispatch(sendFormResult());
         dispatch(modalMsgShow(successMessage));
       }
