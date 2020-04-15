@@ -1,0 +1,22 @@
+@import 'variables';
+
+%text-underline {
+  width: 100%;
+  background-image: linear-gradient(transparent calc(100% - 1px), $color-d 1px);
+  background-repeat: no-repeat;
+  transition: background-size .6s ease;
+  background-size: 0 100%;
+
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+%rubric {
+  font-weight: 400;
+  font-size: .73rem;
+  opacity: .9;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 1.7px;
+}

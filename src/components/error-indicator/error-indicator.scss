@@ -1,0 +1,18 @@
+.error-indicator {
+  width: 100%;
+  max-width: 400px;
+  margin: 3rem auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__msg {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__picture {
+    max-width: 77%;
+  }
+}

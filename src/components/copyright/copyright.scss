@@ -1,0 +1,15 @@
+.copy {
+  display: inline-block;
+  padding-top: 3rem;
+
+  p {
+    text-align: left;
+    font-size: 0.87rem;
+    line-height: 1.3rem;
+    margin: 0;
+  }
+
+  a::before {
+    bottom: 0;
+  }
+}
