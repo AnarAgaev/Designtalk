@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-
 import './modal-message.scss';
 
 class ModalMessage extends Component {
   btnClose = React.createRef();
 
   componentDidUpdate() {
-    const node = this.btnClose.current;
+    const node = this
+      .btnClose
+      .current;
 
     this.props.visible
       ? node.focus()
@@ -16,27 +17,23 @@ class ModalMessage extends Component {
   render() {
     const {
       message,
-      visible,
+      clazz,
       modalMsgHide
     } = this.props;
 
-    const modalClass = visible
-      ? 'modal visible'
-      : 'modal';
-
     return (
-      <div className={modalClass}>
+      <div className={ clazz }>
         <div className="modal__dialog">
           <div className="modal__content">
             <div className="modal__body">
-              <p>{message}</p>
+              <p>{ message }</p>
             </div>
             <div className="modal__footer">
               <button
                 ref={ this.btnClose }
                 type="button"
                 className="button"
-                onClick={modalMsgHide}>
+                onClick={ modalMsgHide }>
                 Закрыть
               </button>
             </div>

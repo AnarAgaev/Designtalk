@@ -10,7 +10,8 @@ const From = ({
   }) => {
 
   return (
-    <Form className="form" onSubmit={ onSubmit }>
+    <Form className="form"
+          onSubmit={ onSubmit } >
 
       { controls }
 

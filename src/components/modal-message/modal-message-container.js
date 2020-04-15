@@ -11,16 +11,23 @@ class ModalMessageContainer extends Component {
      modalMsgHide
    } = this.props;
 
+   const clazz = visible
+     ? 'modal visible'
+     : 'modal';
+
    return <ModalMessage
+     modalMsgHide={ modalMsgHide }
      message={ message }
-     visible={ visible }
-     modalMsgHide={ modalMsgHide } />;
+     clazz={ clazz }
+     visible={ visible } />;
  }
 }
 
 const mapStateToProps = ({
-    modalMsg: { message, visible }
-  }) => {
+  modalMsg: {
+    message,
+    visible
+  }}) => {
 
   return {
     message,
