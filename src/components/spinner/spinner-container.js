@@ -4,9 +4,9 @@ import Spinner from "./spinner";
 
 const SpinnerContainer = ({ loading }) => {
 
-  const clazz = loading ?
-    'spinner visible' :
-    'spinner';
+  const clazz = loading
+    ? 'spinner visible'
+    : 'spinner';
 
   return <Spinner clazz={ clazz } />;
 };

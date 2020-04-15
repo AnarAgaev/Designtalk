@@ -8,9 +8,9 @@ const handleInputChange = (dispatch, event) => {
   const email = event.target.value;
   const regular = /.+@.+\..+/i;
 
-  regular.test(email) ?
-    dispatch(onInputChange(email, false)) :
-    dispatch(onInputChange(email, true));
+  regular.test(email)
+    ? dispatch(onInputChange(email, false))
+    : dispatch(onInputChange(email, true));
 };
 
 const handleInputBlur = (dispatch, email) => {

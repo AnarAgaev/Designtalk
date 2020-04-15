@@ -30,9 +30,9 @@ class PolicyModalContainer extends Component {
       hidePolicyModal
     } = this.props;
 
-    const clazz = visible ?
-      "policy-modal visible" :
-      "policy-modal";
+    const clazz = visible
+      ? "policy-modal visible"
+      : "policy-modal";
 
     return <PolicyModal
       hidePolicyModal={ hidePolicyModal }

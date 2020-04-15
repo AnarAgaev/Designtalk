@@ -13,11 +13,13 @@ class ArticleListContainer extends Component {
     const {
       articles,
       next,
-      fetchArticles } = this.props;
+      fetchArticles
+    } = this.props;
 
 
-    const url = articles.length ?
-      next : '/articles/';
+    const url = articles.length
+      ? next
+      : '/articles/';
 
     fetchArticles(url)();
   }

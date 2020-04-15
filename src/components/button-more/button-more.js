@@ -8,9 +8,9 @@ import './button-more.scss';
 
 const ButtonMore = ({ fetchArticles, visible, url }) => {
 
-  const style = visible ?
-    { display: 'block' } :
-    { display: 'none' };
+  const style = visible
+    ? { display: 'block' }
+    : { display: 'none' };
 
   const onFetchArticles = () => {
     fetchArticles(url)();

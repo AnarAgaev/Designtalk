@@ -1,7 +1,8 @@
 const cursorOverImg = (visible, X, Y) => {
 
-  visible = typeof visible !== 'boolean' ?
-    false : visible;
+  visible = typeof visible !== 'boolean'
+    ? false
+    : visible;
 
   return {
     type: 'HANDLE_CURSOR_OVER_IMG',

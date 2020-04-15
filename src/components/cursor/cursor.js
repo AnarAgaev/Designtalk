@@ -3,15 +3,13 @@ import './cursor.scss';
 
 const Cursor = ({ visible, X, Y }) => {
 
-  const clazz = visible ?
-    'cursor visible' :
-    'cursor';
+  const clazz = visible
+    ? 'cursor visible'
+    : 'cursor';
 
-  const style = visible ?
-    {
-      left: X,
-      top: Y
-    } : {};
+  const style = visible
+    ? { left: X, top: Y }
+    : {};
 
   return <div
     className={ clazz }
