@@ -1,2 +1,2 @@
-# Designtalk
-Design megazine
+# Designtalk.ru
+Interior design megazine
