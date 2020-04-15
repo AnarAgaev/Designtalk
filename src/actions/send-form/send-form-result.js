@@ -1,7 +1,7 @@
-const sendFormRequest = () => {
+const sendFormResult = () => {
   return {
-    type: 'SEND_FORM_REQUEST'
+    type: 'SEND_FORM_RESULT'
   };
 };
 
-export default sendFormRequest;
+export default sendFormResult;

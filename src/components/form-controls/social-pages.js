@@ -7,7 +7,7 @@ const SocialPages = ({ register, errors, required }) => {
       <Form.Control
         as="textarea"
         rows={4}
-        placeholder="Страница бюро или автора в социальных сетях"
+        placeholder="Страницы бюро или автора в социальных сетях"
         name="socials"
         ref={ register({
           required: required ? 'Необходимо указать аккаунты соц. сетей' : false

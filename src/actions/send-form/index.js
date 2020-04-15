@@ -1,24 +1,32 @@
-import sendFormRequest from "./send-form-result";
-import sendFormResult from "./send-form-request";
+import sendFormRequest from "./send-form-request";
+import sendFormResult from "./send-form-result";
 import { modalMsgShow } from "../modal-msg";
 
-const sendForm = (dispatch, blogService, data, url, successMessage, failureMessage) => {
+const sendForm = (
+    dispatch,
+    blogService,
+    data,
+    url,
+    successMessage,
+    failureMessage
+  ) => {
 
   dispatch(sendFormRequest());
 
   blogService.sendForm(url, data)
     .then((response) => {
-      if (response.status) {
-        dispatch(sendFormResult());
-        dispatch(modalMsgShow(successMessage));
-      }
+      dispatch(sendFormResult());
+
+      response.status
+        ? dispatch(modalMsgShow(successMessage))
+        : dispatch(modalMsgShow(failureMessage));
     })
     .catch((error) => {
       console.log(error);
+
       dispatch(sendFormResult());
       dispatch(modalMsgShow(failureMessage));
     });
-
 };
 
 export default sendForm;

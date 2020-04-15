@@ -9,13 +9,11 @@ const confirmSubscription = (dispatch, blogService, url) => () => {
       response.status
         ? dispatch(confirmSubscriptionSuccess())
         : dispatch(confirmSubscriptionFailure());
-
     })
     .catch((error) => {
-
       console.log(error);
-      dispatch(confirmSubscriptionFailure());
 
+      dispatch(confirmSubscriptionFailure());
     });
 };
 
