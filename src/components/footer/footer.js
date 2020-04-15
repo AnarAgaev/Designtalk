@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Nav from "../nav";
-import PrivacyList from "../privacy-list";
-import Logotype from "../logotype";
+import NavContainer from "../nav";
+import PrivacyListContainer from "../privacy-list";
+import LogotypeContainer from "../logotype";
 import Copyright from "../copyright";
 import SocialList from "../socials-list";
 import SocialTitle from "../social-title";
@@ -13,14 +13,14 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg={3}><Nav/></Col>
-          <Col lg={5}><PrivacyList/></Col>
+          <Col lg={3}><NavContainer/></Col>
+          <Col lg={5}><PrivacyListContainer/></Col>
           <Col lg={3}>
             <SocialTitle/>
             <SocialList/>
           </Col>
           <Col lg={8}><Copyright/></Col>
-          <Col lg={12}><Logotype/></Col>
+          <Col lg={12}><LogotypeContainer/></Col>
         </Row>
       </Container>
     </footer>

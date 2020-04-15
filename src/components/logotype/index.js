@@ -1,3 +1,3 @@
-import Logotype from './logotype';
+import LogotypeContainer from "./lototype-container";
 
-export default Logotype;
+export default LogotypeContainer;

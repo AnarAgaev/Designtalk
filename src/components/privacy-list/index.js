@@ -1,3 +1,3 @@
-import PrivacyList from './privacy-list';
+import PrivacyListContainer from "./privacy-list-container";
 
-export default PrivacyList;
+export default PrivacyListContainer;

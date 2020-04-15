@@ -15,6 +15,7 @@ import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { handleInputChange, handleInputBlur, handleFormSubmit } from './fetch-subscribe';
 import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy-modal";
 import confirmSubscription from "./confirm-subscription";
+import handleNavClick from "./handle-nav-click"
 
 export {
   fetchArticles,
@@ -38,5 +39,6 @@ export {
   showPolicyModal,
   setCookiePolicyModal,
   sendForm,
-  confirmSubscription
+  confirmSubscription,
+  handleNavClick
 };

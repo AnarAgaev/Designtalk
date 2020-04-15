@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Logotype from "../logotype";
-import Nav from "../nav";
+import LogotypeContainer from "../logotype";
+import NavContainer from "../nav";
 import SocialList from "../socials-list";
 import ButtonFeedbackContainer from "../button-feedback";
 import './header.scss';
@@ -13,8 +13,8 @@ const Header = ({ hide }) => {
   return (
     <header className={ clazz }>
       <Container>
-        <Logotype/>
-        <Nav/>
+        <LogotypeContainer/>
+        <NavContainer/>
         <SocialList/>
         <ButtonFeedbackContainer/>
       </Container>

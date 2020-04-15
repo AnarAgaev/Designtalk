@@ -1,3 +1,3 @@
-import Nav from './nav';
+import NavContainer from "./nav-container";
 
-export default Nav;
+export default NavContainer;
