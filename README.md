@@ -1,2 +1,2 @@
-# Spacebuilder
+# Designtalk
 Design megazine
