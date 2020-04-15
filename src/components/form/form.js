@@ -5,6 +5,7 @@ import "./form.scss";
 
 const From = ({
     onSubmit,
+    handleSubmitClick,
     controls,
     btnText
   }) => {
@@ -16,6 +17,7 @@ const From = ({
       { controls }
 
       <Button
+        onClick={ handleSubmitClick }
         className="button"
         type="submit">
         { btnText }

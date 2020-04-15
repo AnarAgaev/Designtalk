@@ -5,17 +5,22 @@ import { getFormControl } from "../../utils";
 import { sendForm } from "../../actions";
 import { compose } from "../../utils";
 import withBlogService from "../hoc";
+import ShowHeader from "../../actions/handle-header/show-header";
 import Form from "./form";
 import "./form.scss";
 
 const FromContainer = (props) => {
 
   const {
-    register, handleSubmit,
-    errors } = useForm();
+    register,
+    handleSubmit,
+    errors
+  } = useForm();
 
   const {
-    sendForm, url,
+    sendForm,
+    ShowHeader,
+    url,
 
     // Default values
     btnText = 'Отправить',
@@ -46,22 +51,41 @@ const FromContainer = (props) => {
     );
   }
 
+  const handleSubmitClick = () => {
+    ShowHeader(window.pageYOffset);
+  };
+
   return (
     <Form
       onSubmit={ handleSubmit(onSubmit) }
+      handleSubmitClick={ handleSubmitClick }
       controls={ formControls }
-      btnText={ btnText }/>
+      btnText={ btnText } />
   );
 };
 
-const mapDispatchToProps = (dispatch, { blogService }) => {
+const mapDispatchToProps = (
+    dispatch,
+    { blogService }
+  ) => {
+
   return {
-    sendForm: (data, url, successMessage, failureMessage, btnText) =>
-      sendForm(
-        dispatch, blogService,
-        data, url, successMessage,
-        failureMessage, btnText
-      )
+    sendForm: (
+      data, url,
+      successMessage,
+      failureMessage,
+      btnText
+    ) => sendForm (
+      dispatch, blogService,
+      data, url, successMessage,
+      failureMessage, btnText
+    ),
+
+    ShowHeader: (
+      scrollHeight
+    ) => dispatch (
+      ShowHeader(scrollHeight)
+    )
   };
 };
 
