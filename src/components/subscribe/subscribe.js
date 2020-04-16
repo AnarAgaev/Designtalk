@@ -15,7 +15,7 @@ const Subscribe = () => {
           <FromContainer
             email={{required: true}}
 
-            url={'/scripts/sign-mail.php'}
+            url={'/scripts/handle-form-subscribe.php'}
 
             btnText={'Подписаться'}
 

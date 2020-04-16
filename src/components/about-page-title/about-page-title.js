@@ -6,8 +6,8 @@ const AboutPageTitle = () => {
   return (
     <Container>
       <h1 className="about-page-title">
-        Designtalk.ru
-        <span> &#8212; цифровой блог о дизайне пространства</span>
+        Designtalk
+        <span> &#8212; цифровое издание о дизайне пространства</span>
       </h1>
     </Container>
   );

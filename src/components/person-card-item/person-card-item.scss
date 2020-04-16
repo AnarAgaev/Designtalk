@@ -1,0 +1,26 @@
+.person-card {
+  &__item {
+    padding-bottom: 3rem;
+  }
+
+  &__position {
+    display: block;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: -5px;
+  }
+
+  &__name {
+    display: block;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 2rem;
+    margin-bottom: 3px;
+  }
+
+  &__email {
+    font-weight: 300;
+  }
+}

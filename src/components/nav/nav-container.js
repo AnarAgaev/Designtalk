@@ -1,15 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { handleNavClick } from "../../actions";
 import Nav from "./nav";
 import NavItem from "../nav-item";
-
-const navItems = [
-  ["about", "о нас"],
-  ["publish-project", "опубликовать проект"],
-  ["contacts", "контакты"],
-  ["for-advertisers", "рукламодателям"],
-];
+import navItems from "./nav-items-data";
 
 const renderNavItemList = (
     activeItem,
@@ -27,31 +21,30 @@ const renderNavItemList = (
   });
 };
 
-class NavContainer extends Component {
+const NavContainer = ({
+    activeItem,
+    onNavClick
+  }) => {
 
-  componentDidMount() {
-    const url = window.location.href;
-    const activate = this.props.onNavClick;
+  const url = window.location.href;
+  const activate = onNavClick;
 
-    navItems.forEach((item) => {
-      return url.includes(item[0])
-        ? activate(item[0])
-        : null;
-    });
-  }
+  navItems.forEach((item) => {
+    return url.includes(item[0])
+      ? activate(item[0])
+      : null;
+  });
 
-  render() {
-    const elements = renderNavItemList(
-      this.props.activeItem,
-      this.props.onNavClick,
-      navItems
-    );
+  const elements = renderNavItemList(
+    activeItem,
+    onNavClick,
+    navItems
+  );
 
-    return (
-      <Nav elements={ elements } />
-    );
-  };
-}
+  return (
+    <Nav elements={ elements } />
+  );
+};
 
 const masStateToProps = (
     { navigation: { activeItem } }

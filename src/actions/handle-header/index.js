@@ -4,7 +4,7 @@ import hideHeader from "./hide-header";
 const headerScrollProcessing = (dispatch, scrolled) => {
   const scrollHeight = window.pageYOffset;
 
-  if (scrollHeight > 700) {
+  if (scrollHeight > 500) {
 
     if (scrollHeight < scrolled) {
       dispatch(showHeader(scrollHeight));
