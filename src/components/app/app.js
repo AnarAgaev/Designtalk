@@ -13,7 +13,7 @@ import PolicyModalContainer from "../policy-modal";
 import Articles from "../pages/articles";
 import ConfirmSubscriptionContainer from "../pages/confirm-subscription";
 import ModalMessageContainer from "../modal-message";
-import HeaderContainer from "../header";
+import Header from "../header";
 import SpinnerContainer from "../spinner";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
@@ -23,7 +23,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <HeaderContainer />
+        <Header />
         <main className="main">
           <Switch>
             <Route path="/" component={ Main } exact />

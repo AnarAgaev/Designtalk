@@ -6,12 +6,9 @@ import SocialList from "../socials-list";
 import ButtonFeedbackContainer from "../button-feedback";
 import './header.scss';
 
-const Header = ({ hide }) => {
-  const clazz = hide ?
-    'header hide' : 'header';
-
+const Header = () => {
   return (
-    <header className={ clazz }>
+    <header className="header" >
       <Container>
         <LogotypeContainer/>
         <NavContainer/>

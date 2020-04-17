@@ -5,7 +5,6 @@ import { getFormControl } from "../../utils";
 import { sendForm } from "../../actions";
 import { compose } from "../../utils";
 import withBlogService from "../hoc";
-import ShowHeader from "../../actions/handle-header/show-header";
 import Form from "./form";
 import "./form.scss";
 
@@ -19,7 +18,6 @@ const FromContainer = (props) => {
 
   const {
     sendForm,
-    ShowHeader,
     url,
 
     // Default values
@@ -51,14 +49,9 @@ const FromContainer = (props) => {
     );
   }
 
-  const handleSubmitClick = () => {
-    ShowHeader(window.pageYOffset);
-  };
-
   return (
     <Form
       onSubmit={ handleSubmit(onSubmit) }
-      handleSubmitClick={ handleSubmitClick }
       controls={ formControls }
       btnText={ btnText } />
   );
@@ -80,12 +73,6 @@ const mapDispatchToProps = (
       data, url, successMessage,
       failureMessage, btnText
     ),
-
-    ShowHeader: (
-      scrollHeight
-    ) => dispatch (
-      ShowHeader(scrollHeight)
-    )
   };
 };
 

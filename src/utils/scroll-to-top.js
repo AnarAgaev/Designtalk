@@ -1,6 +1,3 @@
-import store from "../store";
-import { showHeader } from "../actions";
-
 const scrollToTop = () => {
 
   const offsetTop = Math.max(
@@ -13,8 +10,6 @@ const scrollToTop = () => {
   if (offsetTop > 0) {
     window.scrollBy(0,( (offsetTop + scrollSpeed)/-10 ));
     setTimeout(scrollToTop,20);
-  } else {
-    store.dispatch(showHeader(0));
   }
 
   return false;
