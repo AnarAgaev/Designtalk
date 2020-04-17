@@ -1,0 +1,53 @@
+@import '../../scss/variables';
+
+.social {
+  &__item {
+    &:last-child {
+      a { padding-right: 0; }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    line-height: 32px;
+    padding: 0 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+    font-size: 1.13rem;
+    margin: 0;
+
+    svg path {
+      fill: $color-d;
+      transition: fill .3s;
+    }
+
+    &:hover {
+      svg path { fill:$color-primary-font; }
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.footer {
+  .social {
+    &__item {
+      &:first-child {
+        a { padding-left: 0; }
+      }
+
+      &:last-child {
+        a { padding-right: 0; }
+      }
+    }
+
+    &__link {
+      font-size: 1.23rem;
+      padding: 0 13px;
+
+    }
+  }
+}
