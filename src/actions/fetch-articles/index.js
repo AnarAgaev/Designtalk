@@ -2,6 +2,7 @@ import fetchArticlesSuccess from "./fetch-articles-success";
 import fetchArticlesRequest from "./fetch-articles-request";
 import fetchArticlesFailure from "./fetch-articles-failure";
 import handleShowArticlesItem from "./handle-show-articles-item";
+import trimArticlesHash from "./trim-articles-hash";
 
 const fetchArticles = (dispatch, blogService, url) => () => {
   dispatch(fetchArticlesRequest());
@@ -16,14 +17,15 @@ const fetchArticles = (dispatch, blogService, url) => () => {
 };
 
 const showArticleItem = (
-  dispatch,
-  itemId
-) => {
+    dispatch,
+    itemId
+  ) => {
 
   dispatch(handleShowArticlesItem(itemId));
 };
 
 export {
   fetchArticles,
-  showArticleItem
+  showArticleItem,
+  trimArticlesHash,
 };

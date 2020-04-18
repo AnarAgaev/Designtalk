@@ -41,16 +41,32 @@ const updateArticleList = (state, action) => {
       const articlesWithShownItems = state
         .articleList
         .articles
-        .filter((item) => {
-            if (item.id === action.payload) {
-              item.visible = true
+        .filter((article) => {
+            if (article.id === action.payload) {
+              article.visible = true
             }
-            return item;
+            return article;
           }
         );
       return {
         ...state.articleList,
         articles: articlesWithShownItems
+      };
+
+    case 'TRIM_ARTICLES_HASH':
+      const croppedArticles = state
+        .articleList
+        .articles
+        .slice(0, 6);
+      croppedArticles.forEach((article) => {
+        article.visible = false;
+        return article;
+      });
+      return {
+        ...state.articleList,
+        next: action.payload,
+        previous: null,
+        articles: croppedArticles
       };
 
     default:

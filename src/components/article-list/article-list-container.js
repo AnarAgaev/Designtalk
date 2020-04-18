@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import ArticleListItem from "../article-list-item";
 import withBlogService from "../hoc";
 import ErrorIndicator from "../error-indicator";
 import ArticleList from "./article-list";
 import { compose, renderElementList } from "../../utils";
-import { fetchArticles } from '../../actions';
+import { fetchArticles } from "../../actions";
+import { trimArticlesHash } from "../../actions";
 
 class ArticleListContainer extends Component {
 
@@ -13,15 +14,20 @@ class ArticleListContainer extends Component {
     const {
       articles,
       next,
-      fetchArticles
+      previous,
+      fetchArticles,
+      trimArticles
     } = this.props;
 
+    if (previous === null && !articles.length) {
+      const url = articles.length
+        ? next
+        : '/articles/';
 
-    const url = articles.length
-      ? next
-      : '/articles/';
-
-    fetchArticles(url)();
+      fetchArticles(url)();
+    } else {
+      trimArticles('/articles/?page=2');
+    }
   }
 
   render() {
@@ -43,8 +49,15 @@ class ArticleListContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ articleList: { next, articles, error } }) => {
-  return { next, articles, error };
+const mapStateToProps = ({
+    articleList: {
+    next,
+    previous,
+    articles,
+    error
+  } }) => {
+
+  return { next, previous, articles, error };
 };
 
 const mapDispatchToProps = ( dispatch, { blogService } ) => {
@@ -53,7 +66,9 @@ const mapDispatchToProps = ( dispatch, { blogService } ) => {
       dispatch,
       blogService,
       url
-    )
+    ),
+    trimArticles: (nextPageUrl) =>
+      dispatch(trimArticlesHash(nextPageUrl))
   };
 };
 

@@ -1,6 +1,7 @@
 import cursorOverImg from "./cursor-over-img";
 import { fetchArticles } from "./fetch-articles";
 import { showArticleItem } from "./fetch-articles";
+import { trimArticlesHash } from "./fetch-articles";
 import fetchArticlesFailure from "./fetch-articles/fetch-articles-failure";
 import fetchPopular from './fetch-popular';
 import fetchPopularFailure from "./fetch-popular/fetch-popular-failure";
@@ -17,6 +18,7 @@ import handleNavClick from "./handle-nav-click"
 export {
   fetchArticles,
   showArticleItem,
+  trimArticlesHash,
   fetchArticlesFailure,
   fetchPopular,
   fetchPopularFailure,
