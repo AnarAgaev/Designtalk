@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import FromContainer from "../../form"
 import { jumpToTop } from "../../../utils";
+import PersonCardItem from "../../person-card-item";
 import './contacts.scss';
 
 class Contacts extends Component {
@@ -37,6 +38,20 @@ class Contacts extends Component {
             />
           </Col>
         </Row>
+
+        <Row>
+          <Col lg={10}>
+            <h3 className="mt-5">
+              или напишите письмо издателю
+            </h3>
+
+            <PersonCardItem
+              position={'издатель'}
+              name={'Наталья Кабанова'}
+              email={'n.kabanova'} />
+          </Col>
+        </Row>
+
       </Container>
     );
   }
