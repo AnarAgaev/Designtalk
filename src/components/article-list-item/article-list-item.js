@@ -11,23 +11,21 @@ class ArticleListItem extends Component {
   articleNode = React.createRef();
 
   componentDidMount() {
-    const { visible, showItem } = this.props;
+    const { showItem } = this.props;
     const node = this.articleNode.current;
 
     listenerShowArticleListItems(
       node,
-      showItem,
+      showItem
     );
 
-    if (!visible) {
-      window.addEventListener('scroll',
-        () => listenerShowArticleListItems(
-          node,
-          showItem,
-        ),
-        true
-      );
-    }
+    window.addEventListener('scroll',
+      () => listenerShowArticleListItems(
+        node,
+        showItem
+      ),
+      true
+    );
   }
 
   componentWillUnmount() {

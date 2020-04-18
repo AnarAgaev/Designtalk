@@ -1,18 +1,22 @@
 const listenerShowArticleListItems = (
-  node,
-  showItem
-) => {
+    node,
+    showItem
+  ) => {
 
-  const screenHeight = document
-    .documentElement
-    .clientHeight;
+  const shown = node.classList.contains('visible');
 
-  const clientY = node
-    .getBoundingClientRect()
-    .y;
+  if (!shown) {
+    const screenHeight = document
+      .documentElement
+      .clientHeight;
 
-  if (clientY < screenHeight) {
-    showItem(node.id);
+    const clientY = node
+      .getBoundingClientRect()
+      .y;
+
+    if (clientY < screenHeight) {
+      showItem(node.id);
+    }
   }
 };
 
