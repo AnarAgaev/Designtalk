@@ -37,6 +37,22 @@ const updateArticleList = (state, action) => {
         error: action.payload
       };
 
+    case 'SHOW_ARTICLES_ITEM':
+      const articlesWithShownItems = state
+        .articleList
+        .articles
+        .filter((item) => {
+            if (item.id === action.payload) {
+              item.visible = true
+            }
+            return item;
+          }
+        );
+      return {
+        ...state.articleList,
+        articles: articlesWithShownItems
+      };
+
     default:
       return state.articleList;
   }
