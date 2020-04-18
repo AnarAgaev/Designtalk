@@ -16,8 +16,13 @@
       padding-left: 4rem;
     }
 
+    &:first-child {
+      padding-right: 15px;
+    }
+
     .padding-huck {
       background-size: cover;
+      background-position: center;
 
       &::before {
         display: block;

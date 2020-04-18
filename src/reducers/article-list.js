@@ -57,7 +57,7 @@ const updateArticleList = (state, action) => {
       const croppedArticles = state
         .articleList
         .articles
-        .slice(0, 6);
+        .slice(0, 7);
       croppedArticles.forEach((article) => {
         article.visible = false;
         return article;

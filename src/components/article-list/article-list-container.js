@@ -7,6 +7,7 @@ import ArticleList from "./article-list";
 import { compose, renderElementList } from "../../utils";
 import { fetchArticles } from "../../actions";
 import { trimArticlesHash } from "../../actions";
+import Sidebar from "../sidebar";
 
 class ArticleListContainer extends Component {
 
@@ -38,13 +39,24 @@ class ArticleListContainer extends Component {
       ArticleListItem
     );
 
+    let articlesWithAdd;
+
+    if (articles.length) {
+      articlesWithAdd = [
+        articleList[0],
+        <Sidebar key={"sidebar"} />,
+        articleList.slice(1)
+      ];
+    }
+
+
     if (error) {
       console.log(error);
       return <ErrorIndicator />
     }
 
     return (
-      <ArticleList articles={ articleList } />
+      <ArticleList articles={ articlesWithAdd } />
     );
   }
 }
