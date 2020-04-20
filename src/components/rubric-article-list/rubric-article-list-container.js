@@ -1,48 +1,43 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ArticleListItem from "../article-list-item";
+import ArticleList from "../article-list/article-list";
 import withBlogService from "../hoc";
 import ErrorIndicator from "../error-indicator";
-import ArticleList from "./article-list";
 import { compose, renderElementList } from "../../utils";
-import { fetchArticles, trimArticlesHash } from "../../actions";
+import { fetchRubricArticles } from "../../actions";
 import ArticleListBanner from "../article-list-banner";
 
-class ArticleListContainer extends Component {
+class RubricArticleListContainer extends Component {
 
   componentDidMount() {
     const {
       articles,
       next,
-      previous,
-      fetchArticles,
-      trimArticles
+      rubric,
+      fetchRubricArticles
     } = this.props;
 
-    if (previous === null && !articles.length) {
-      const url = articles.length
-        ? next
-        : '/articles/';
+    const url = articles.length
+      ? next
+      : '/rubric-articles/?rubric=' + rubric;
 
-      fetchArticles(url)();
-    } else {
-      trimArticles('/articles/?page=2');
-    }
+    fetchRubricArticles(url)();
   }
 
   render() {
-    const { articles, error } = this.props;
+    const { rubricName, articles, error } = this.props;
 
-    const articleList = renderElementList(
+    const articleList = renderElementList (
       articles,
       ArticleListItem,
-      'main-page'
+      'rubric-page'
     );
 
     const articlesWithAdvBanner = articles.length
       ? [ articleList[0],
-          <ArticleListBanner key={'article-list-banner'}/>,
-          articleList.slice(1) ]
+        <ArticleListBanner key={'article-list-banner'} />,
+        articleList.slice(1) ]
       : null;
 
     if (error) {
@@ -53,31 +48,30 @@ class ArticleListContainer extends Component {
     return (
       <ArticleList
         articles={ articlesWithAdvBanner }
-        articleListTitle={ 'последине публикации' }/>
+        articleListTitle={ `последине публикации в рубрике ${rubricName}` } />
     );
   }
 }
 
 const mapStateToProps = ({
-    articleList: {
+  rubricArticleList: {
     next,
-    previous,
+    rubricName,
     articles,
     error
   } }) => {
 
-  return { next, previous, articles, error };
+  return { next, rubricName, articles, error };
 };
 
 const mapDispatchToProps = ( dispatch, { blogService } ) => {
   return {
-    fetchArticles: (url) => fetchArticles(
-      dispatch,
-      blogService,
-      url
-    ),
-    trimArticles: (nextPageUrl) =>
-      dispatch(trimArticlesHash(nextPageUrl))
+    fetchRubricArticles: (url) =>
+      fetchRubricArticles (
+        dispatch,
+        blogService,
+        url
+      )
   };
 };
 
@@ -87,4 +81,4 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   )
-)(ArticleListContainer);
+)(RubricArticleListContainer);

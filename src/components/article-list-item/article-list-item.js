@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { showArticleItem } from "../../actions";
+import { showRubricArticleItem } from "../../actions";
 import Picture from "../picture"
 import listenerShowArticleListItems from "./listener-show-article-list-item";
 import './article-list-item.scss';
@@ -11,18 +12,28 @@ class ArticleListItem extends Component {
   articleNode = React.createRef();
 
   componentDidMount() {
-    const { showItem } = this.props;
+    const {
+      showRubricArticleItem,
+      showArticleItem,
+      payload
+    } = this.props;
+
     const node = this.articleNode.current;
+    const showFunc = payload === 'main-page'
+      ? showArticleItem
+      : payload === 'rubric-page'
+        ? showRubricArticleItem
+        : null;
 
     listenerShowArticleListItems(
       node,
-      showItem
+      showFunc
     );
 
     window.addEventListener('scroll',
       () => listenerShowArticleListItems(
         node,
-        showItem
+        showFunc
       ),
       true
     );
@@ -69,8 +80,11 @@ class ArticleListItem extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showItem: (itemId) =>
+    showArticleItem: (itemId) =>
       showArticleItem(dispatch, itemId),
+
+    showRubricArticleItem: (itemId) =>
+      showRubricArticleItem(dispatch, itemId),
   };
 };
 

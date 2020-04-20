@@ -14,6 +14,7 @@ import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy
 import confirmSubscription from "./confirm-subscription";
 import handleNavClick from "./handle-nav-click";
 import { fetchLastRubricArticle, handleRubricTitleHover } from "./fetch-last-rubric-article";
+import  { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData } from "./fetch-rubric-articles";
 
 export {
   fetchArticles,
@@ -36,5 +37,8 @@ export {
   confirmSubscription,
   handleNavClick,
   fetchLastRubricArticle,
-  handleRubricTitleHover
+  handleRubricTitleHover,
+  fetchRubricArticles,
+  showRubricArticleItem,
+  resetRubricArticlesData
 };

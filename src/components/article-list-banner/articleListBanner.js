@@ -1,8 +1,8 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-import "./sidebar.scss";
+import "./article-list-banner.scss";
 
-const Sidebar = () => {
+const ArticleListBanner = () => {
   return (
     <Col lg={6} className="sidebar">
       <a target="_blank" rel="noopener noreferrer"
@@ -13,4 +13,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default ArticleListBanner;

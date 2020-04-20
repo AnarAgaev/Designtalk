@@ -34,15 +34,15 @@
 
     &.visible {
       .article-list__picture {
-        animation: pictureAnimate .7s ease-out .5s forwards;
+        animation: pictureAnimate 1s ease .3s forwards;
       }
 
       .article-list__rubric {
-        animation: rubricAnimate 1s ease-out .7s forwards;
+        animation: rubricAnimate 1s ease-out .6s forwards;
       }
 
       .article-list__caption {
-        animation: captionAnimate 1s ease-out 1s forwards;
+        animation: captionAnimate 1s ease-out .9s forwards;
       }
     }
   }

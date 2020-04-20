@@ -1,13 +1,13 @@
 import React from "react";
 
-const renderElementList = (list, Component) => {
+const renderElementList = (list, Component, payload) => {
 
   if (!list.length) {
     return null;
   }
 
   return list.map((props) => {
-    return <Component key={ props.id } { ...props } />;
+    return <Component key={ props.id } payload={ payload } { ...props } />;
   });
 };
 

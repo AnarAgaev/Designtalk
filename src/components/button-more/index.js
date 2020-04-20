@@ -1,3 +1,3 @@
-import ButtonMore from './button-more';
+import ButtonMore from "./button-more";
 
 export default ButtonMore;

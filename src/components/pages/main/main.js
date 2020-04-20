@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LastArticlesContainer from "../../last-article";
-import ArticleList from "../../article-list";
-import ButtonMore from "../../button-more";
+import ArticleListContainer from "../../article-list";
+import ShowMoreArticles from "../../show-more-articles";
 import PopularList from "../../popular-list";
 import Subscribe from "../../subscribe";
 import { jumpToTop } from "../../../utils";
@@ -17,8 +17,8 @@ export default class Main extends Component {
     return (
       <>
         <LastArticlesContainer />
-        <ArticleList />
-        <ButtonMore />
+        <ArticleListContainer />
+        <ShowMoreArticles />
         <Subscribe />
         <PopularList />
       </>
