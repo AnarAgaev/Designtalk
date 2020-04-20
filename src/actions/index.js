@@ -6,14 +6,14 @@ import fetchArticlesFailure from "./fetch-articles/fetch-articles-failure";
 import fetchPopular from './fetch-popular';
 import fetchPopularFailure from "./fetch-popular/fetch-popular-failure";
 import popularSlide from "./popular-slide";
-import fetchLastArticles from "./fetch-last-articles";
+import { handleTitleHover, fetchLastArticles } from "./fetch-last-articles";
 import fetchLastArticlesFailure from "./fetch-last-articles/fetch-last-articles-failure";
-import handleTitleHover from "./handle-title-hover";
 import sendForm from "./send-form";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy-modal";
 import confirmSubscription from "./confirm-subscription";
-import handleNavClick from "./handle-nav-click"
+import handleNavClick from "./handle-nav-click";
+import { fetchLastRubricArticle, handleRubricTitleHover } from "./fetch-last-rubric-article";
 
 export {
   fetchArticles,
@@ -34,5 +34,7 @@ export {
   setCookiePolicyModal,
   sendForm,
   confirmSubscription,
-  handleNavClick
+  handleNavClick,
+  fetchLastRubricArticle,
+  handleRubricTitleHover
 };

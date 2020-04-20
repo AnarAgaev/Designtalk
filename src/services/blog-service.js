@@ -47,6 +47,10 @@ export default class BlogService {
     return articles;
   };
 
+  getLastRubricArticle = async (url) => {
+    return await this.getResource(url);
+  };
+
   sendForm = async (url, data) => {
     return await this.getResource(url, data);
   };

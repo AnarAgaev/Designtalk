@@ -7,6 +7,7 @@ import policyModal from "./policy-modal";
 import sendForm from "./send-form";
 import confirmSubscription from "./confirm-subscription";
 import navigation from "./navigation";
+import updateLastRubricArticle from "./last-rubric-article";
 
 const reducer = (state, action) => {
 
@@ -19,7 +20,8 @@ const reducer = (state, action) => {
     policyModal: policyModal(state, action),
     sendForm: sendForm(state, action),
     confirmSubscription: confirmSubscription(state, action),
-    navigation: navigation(state, action)
+    navigation: navigation(state, action),
+    lastRubricArticle: updateLastRubricArticle(state, action)
   };
 };
 

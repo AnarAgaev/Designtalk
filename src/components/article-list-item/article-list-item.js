@@ -36,7 +36,7 @@ class ArticleListItem extends Component {
   render() {
     const { id, url, rubric, title, picture, visible } = this.props;
     const urlImage = `https://designtalk.ru/images/${picture}`;
-    const urlRubric = `/articles/?filer=true&rubric=${rubric.url}`;
+    const urlRubric = `/rubrics/${rubric.link}`;
 
     const clazz = visible
       ? "article-list__item visible"

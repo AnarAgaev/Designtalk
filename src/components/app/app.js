@@ -11,6 +11,7 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import PolicyModalContainer from "../policy-modal";
 import Articles from "../pages/articles";
+import Rubric from "../pages/rubric";
 import ConfirmSubscriptionContainer from "../pages/confirm-subscription";
 import ModalMessageContainer from "../modal-message";
 import Header from "../header";
@@ -39,6 +40,11 @@ export default class App extends Component {
                    render={({ match }) => {
                      const { id } = match.params;
                      return <Articles articleId={ id } />;
+                   }} />
+            <Route path="/rubrics/:id"
+                   render={({ match }) => {
+                     const { id } = match.params;
+                     return <Rubric rubric={ id } />;
                    }} />
             <Route path="/confirm-subscription/:id"
                    render={({ match }) => {

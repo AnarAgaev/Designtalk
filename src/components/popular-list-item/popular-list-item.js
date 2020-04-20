@@ -5,7 +5,7 @@ import './popular-list-item.scss';
 const PopularListItem = ({ id, url, rubric, title, preview, picture }) => {
 
   const imageUrl = `url(https://designtalk.ru/images/${ picture })`;
-  const rubricUrl = `/articles/?filter=true&rubric=${rubric.url}`;
+  const rubricUrl = `/rubrics/${rubric.link}`;
 
   return (
     <article className="popular-list-item" key={id}>

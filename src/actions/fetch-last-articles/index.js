@@ -1,6 +1,8 @@
 import fetchLastArticlesRequest from "./fetch-last-articles-request";
 import fetchLastArticlesSuccess from "./fetch-last-articles-success";
 import fetchLastArticlesFailure from "./fetch-last-articles-failure";
+import handleTitleOver from "./handle-title-over";
+import handleTitleOut from "./handle-title-out";
 
 const fetchLastArticles = (dispatch, blogService) => {
 
@@ -15,4 +17,15 @@ const fetchLastArticles = (dispatch, blogService) => {
     });
 };
 
-export default fetchLastArticles;
+const handleTitleHover = (dispatch, event) => {
+  if (event) {
+    dispatch(handleTitleOver());
+  } else {
+    dispatch(handleTitleOut());
+  }
+};
+
+export {
+  handleTitleHover,
+  fetchLastArticles
+};
