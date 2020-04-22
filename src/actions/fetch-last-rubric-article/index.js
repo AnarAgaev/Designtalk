@@ -8,7 +8,7 @@ const fetchLastRubricArticle = (dispatch, blogService, rubric) => {
 
   dispatch(fetchLastRubricArticleRequest());
 
-  blogService.getLastRubricArticle('/last-rubric-article/?rubric=' + rubric)
+  blogService.getData(`/last-rubric-article/?rubric=${rubric}`)
     .then((response) => {
       dispatch(fetchLastRubricArticleSuccess(response));
     })

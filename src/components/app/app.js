@@ -10,7 +10,7 @@ import TermsOfUse from "../pages/terms-of-use";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
 import PolicyModalContainer from "../policy-modal";
-import Articles from "../pages/articles";
+import ArticleContainer from "../pages/articles";
 import Rubric from "../pages/rubric";
 import ConfirmSubscriptionContainer from "../pages/confirm-subscription";
 import ModalMessageContainer from "../modal-message";
@@ -35,11 +35,11 @@ export default class App extends Component {
             <Route path="/policy-personal-data" component={ PolicyPersonalData } />
             <Route path="/privacy-policy" component={ PrivacyPolicy } />
             <Route path="/terms-of-use" component= { TermsOfUse } />
-            <Route path="/articles/" component= { Articles } exact />
-            <Route path="/articles/:id"
+            <Route path="/articles/" component= { ArticleContainer } exact />
+            <Route path="/articles/:url"
                    render={({ match }) => {
-                     const { id } = match.params;
-                     return <Articles articleId={ id } />;
+                     const { url } = match.params;
+                     return <ArticleContainer url={ url } />;
                    }} />
             <Route path="/rubrics/:id"
                    render={({ match }) => {

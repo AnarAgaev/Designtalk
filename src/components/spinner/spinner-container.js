@@ -17,6 +17,7 @@ const mapStateToProps = (state) => {
     popularList: { loading: popularLoading },
     lastArticles: { loading: lastArticlesLoading },
     lastRubricArticle: { loading: lastRubricArticlesLoading },
+    article: { loading: articleLoading },
     sendForm: { loading: sendFormLoading }
   } = state;
 
@@ -26,6 +27,7 @@ const mapStateToProps = (state) => {
       || lastArticlesLoading
       || sendFormLoading
       || lastRubricArticlesLoading
+      || articleLoading
   };
 };
 

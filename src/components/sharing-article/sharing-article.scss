@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.sharing-article {
+  &__caption {
+    display: inline-block;
+    margin-right: 1rem;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__social-list {
+    display: inline-flex;
+
+    .social__link {
+      svg path {
+        fill: $color-primary-font;
+      }
+
+      &:hover {
+        svg path {
+          fill: $color-d;
+        }
+      }
+    }
+  }
+}

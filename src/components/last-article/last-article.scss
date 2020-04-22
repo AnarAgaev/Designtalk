@@ -2,7 +2,7 @@
 @import "../../scss/extends";
 
 .last-article {
-  height: 100%;
+  height: calc(100vh - 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,7 @@
     right: -108px;
     top: 0;
     width: 100vw;
-    min-height: calc(100vh - 3.5rem);
+    height: calc(100vh - 3.5rem);
     backdrop-filter: blur(7px);
     background: rgba(0,0,0,.1);
     background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.5));

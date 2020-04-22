@@ -3,7 +3,7 @@ import confirmSubscriptionFailure from "./confirm-subscription-failure";
 
 const confirmSubscription = (dispatch, blogService, url) => () => {
 
-  blogService.confirmSubscription(url)
+  blogService.getData(url)
     .then((response) => {
 
       response.status

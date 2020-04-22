@@ -1,3 +1,3 @@
-import Articles from './articles';
+import ArticleContainer from "./article-container";
 
-export default Articles;
+export default ArticleContainer;

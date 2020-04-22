@@ -5,6 +5,7 @@ import scrollToTop from "./scroll-to-top";
 import getCookie from "./get-cookie";
 import getFormControl from "./get-form-controls";
 import objectToFormData from "./object-to-form-data";
+import createMarkup from "./create-markup";
 
 export {
   compose,
@@ -13,5 +14,6 @@ export {
   scrollToTop,
   getCookie,
   getFormControl,
-  objectToFormData
+  objectToFormData,
+  createMarkup
 };

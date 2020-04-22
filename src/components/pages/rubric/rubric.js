@@ -35,11 +35,11 @@ class Rubric extends Component {
   }
 }
 
-const padDispatchToProps = {
+const mapDispatchToProps = {
   resetRubricArticlesData
 };
 
 export default connect(
   undefined,
-  padDispatchToProps
+  mapDispatchToProps
 )(Rubric);
