@@ -1,12 +1,9 @@
 import React from "react";
 import { connect } from 'react-redux';
-import cursorOverImg from "../../actions/cursor-over-img";
-import Cursor from "../cursor";
+import { handleCursorOverImg } from "../../actions";
 import './picture.sass';
 
-const Picture = ({
-  url, visible, X, Y,
-  cursorOverImg }) => {
+const Picture = ({ url, cursorOverImg, cursorOutImg }) => {
 
   const onMouseMoveImg = (event) => {
     const { clientX, clientY } = event;
@@ -14,32 +11,26 @@ const Picture = ({
   };
 
   return (
-    <div onMouseOut={ cursorOverImg }
+    <div onMouseOut={ () => cursorOutImg() }
          onMouseMove={ onMouseMoveImg }>
-      <div className={ 'padding-huck' }
-           style={{ backgroundImage: `url(${ url })` }}
-      />
-      <Cursor
-        visible = { visible }
-        X = { X }
-        Y = { Y } />
+
+      <div style={{ backgroundImage: `url(${ url })` }}
+           className={ 'padding-huck cross-cursor' }  />
+
     </div>
   );
 };
 
-const mapStateToProps = ({ cursorOnImg: {
-    cursorVisible: visible,
-    cursorX: X,
-    cursorY: Y
-  }}) => {
-  return { visible, X, Y };
-};
-
-const mapDispatchToProps = {
-  cursorOverImg
+const mapDispatchToProps = (dispatch) => {
+  return {
+    cursorOverImg: (visible, X, Y) =>
+      handleCursorOverImg(dispatch, visible, X, Y),
+    cursorOutImg: () =>
+      handleCursorOverImg(dispatch, false)
+  };
 };
 
 export default connect(
-  mapStateToProps,
+  undefined,
   mapDispatchToProps
 )(Picture);

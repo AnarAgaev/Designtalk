@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import './cursor.scss';
 
 const Cursor = ({ visible, X, Y }) => {
@@ -7,13 +8,26 @@ const Cursor = ({ visible, X, Y }) => {
     ? 'cursor visible'
     : 'cursor';
 
-  const style = visible
-    ? { left: X, top: Y }
-    : {};
-
-  return <div
-    className={ clazz }
-    style={ style } />
+  return (
+    <div
+      style={{ left: X, top: Y }}
+      className={ clazz } />
+  );
 };
 
-export default Cursor;
+const mapStateToProps = ({ cursorOnImg : {
+    cursorVisible,
+    cursorX,
+    cursorY
+  }}) => {
+
+  return {
+    visible: cursorVisible,
+    X: cursorX,
+    Y: cursorY
+  };
+};
+
+export default connect(
+  mapStateToProps
+)(Cursor);

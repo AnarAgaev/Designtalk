@@ -1,4 +1,4 @@
-const handleCursorOverImg = (state, action) => {
+const updateCursor = (state, action) => {
 
   if (state === undefined) {
     return {
@@ -8,16 +8,25 @@ const handleCursorOverImg = (state, action) => {
     };
   }
 
-  if (action.type === 'HANDLE_CURSOR_OVER_IMG') {
-    const {cursorVisible, cursorX, cursorY} = action;
-    return {
-      cursorVisible,
-      cursorX,
-      cursorY
-    };
-  }
+  switch (action.type) {
+    case 'HANDLE_CURSOR_OVER_IMG':
+      return {
+        cursorVisible : true,
+        cursorX : action.cursorX,
+        cursorY : action.cursorY,
+      };
 
-  return state.cursorOnImg;
+    case 'HANDLE_CURSOR_OUT_IMG':
+      return {
+        ...state.cursorOnImg,
+        cursorVisible : false
+      };
+
+    default:
+      return {
+        ...state.cursorOnImg
+      }
+  }
 };
 
-export default handleCursorOverImg;
+export default updateCursor;

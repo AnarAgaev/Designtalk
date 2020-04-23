@@ -1,7 +1,7 @@
 import updateLastArticles from "./last-articles";
 import updateArticleList from "./article-list";
 import updatePopularList from "./popular-list";
-import handleCursorOverImg from "./cursor-over-img";
+import updateCursor from "./cursor-over-img";
 import handleModalMsg from "./handle-modal-msg";
 import policyModal from "./policy-modal";
 import sendForm from "./send-form";
@@ -18,7 +18,7 @@ const reducer = (state, action) => {
     lastArticles: updateLastArticles(state, action),
     articleList: updateArticleList(state, action),
     popularList: updatePopularList(state, action),
-    cursorOnImg: handleCursorOverImg(state, action),
+    cursorOnImg: updateCursor(state, action),
     modalMsg: handleModalMsg(state, action),
     policyModal: policyModal(state, action),
     sendForm: sendForm(state, action),

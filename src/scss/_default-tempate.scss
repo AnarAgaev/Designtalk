@@ -136,8 +136,6 @@ a {
   }
 }
 
-
-
 // Buttons
 .button,
 a.button,
@@ -237,9 +235,13 @@ input.button {
   }
 }
 
-
 // Sticky container
 .sticky {
   position: sticky;
   top: 7rem;
+}
+
+// Cursors
+.cross-cursor:hover {
+  cursor: crosshair;
 }

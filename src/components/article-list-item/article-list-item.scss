@@ -31,10 +31,9 @@
       }
     }
 
-
     &.visible {
       .article-list__picture {
-        animation: pictureAnimate 1s ease .3s forwards;
+        animation: pictureAnimate 1s ease-out .3s forwards;
       }
 
       .article-list__rubric {
@@ -50,6 +49,7 @@
   &__picture {
     width: 100%;
     opacity: 0;
+    transform: translateY(15px);
 
     &::before {
       content: none;
@@ -67,7 +67,7 @@
     margin-left: 1rem;
     font-size: 0.75rem;
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(15px);
   }
 
   &__caption {
@@ -76,7 +76,7 @@
     position: relative;
     line-height: 1.25;
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(15px);
 
     &::before {
       content: none;
@@ -95,6 +95,7 @@
 @keyframes pictureAnimate {
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

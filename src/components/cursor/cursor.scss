@@ -3,9 +3,9 @@
   width: 0;
   height: 0;
   background-color: transparent;
-  transform: translate(80px, 80px);
+  transform: translate(70px, 70px);
   border-radius: 50%;
-  box-shadow: -80px -80px 0 0 rgba(255, 255, 255, 0.37);
+  box-shadow: -70px -70px 0 0 rgba(255, 255, 255, 0.7);
   opacity: 0;
   z-index: 20;
   transition:
@@ -15,10 +15,10 @@
           transform 0s .1s;
 
   &.visible {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     opacity: 1;
-    transform: translate(40px, 40px);
+    transform: translate(35px, 35px);
     transition:
             opacity 0s 0s,
             width .3s 0s,

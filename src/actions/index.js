@@ -1,4 +1,3 @@
-import cursorOverImg from "./cursor-over-img";
 import { fetchArticles } from "./fetch-articles";
 import { showArticleItem } from "./fetch-articles";
 import { trimArticlesHash } from "./fetch-articles";
@@ -17,6 +16,7 @@ import { fetchLastRubricArticle, handleRubricTitleHover } from "./fetch-last-rub
 import fetchArticle from "./fetch-article";
 import { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData } from "./fetch-rubric-articles";
 import { fetchLastRubricArticleList, showRubricArticleListItem } from "./fetch-last-rubric-article-list";
+import handleCursorOverImg from "./handle-cursor-over-img";
 
 export {
   fetchArticles,
@@ -25,7 +25,6 @@ export {
   fetchArticlesFailure,
   fetchPopular,
   fetchPopularFailure,
-  cursorOverImg,
   popularSlide,
   fetchLastArticles,
   fetchLastArticlesFailure,
@@ -45,5 +44,6 @@ export {
   resetRubricArticlesData,
   fetchArticle,
   fetchLastRubricArticleList,
-  showRubricArticleListItem
+  showRubricArticleListItem,
+  handleCursorOverImg
 };

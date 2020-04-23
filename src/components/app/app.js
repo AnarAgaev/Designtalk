@@ -19,6 +19,7 @@ import Header from "../header";
 import SpinnerContainer from "../spinner";
 import 'bootstrap/scss/bootstrap-reboot.scss';
 import 'bootstrap/scss/bootstrap-grid.scss';
+import Cursor from "../cursor";
 import '../../scss/main.scss';
 
 const App = () => {
@@ -73,6 +74,7 @@ const App = () => {
       <PolicyModalContainer />
       <SpinnerContainer />
       <ModalMessageContainer />
+      <Cursor />
     </>
   );
 };
