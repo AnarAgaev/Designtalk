@@ -6,6 +6,7 @@ import { resetRubricArticlesData } from "../../../actions/";
 import { connect } from "react-redux";
 import { jumpToTop } from "../../../utils";
 import Subscribe from "../../subscribe";
+import AbsoluteWrapper from "../../absolute-wrapper";
 import "./rubric.scss";
 
 class Rubric extends Component {
@@ -21,7 +22,7 @@ class Rubric extends Component {
   render() {
     const { rubric } = this.props;
     return (
-      <>
+      <AbsoluteWrapper>
         <LastRubricArticleContainer
           rubric={ rubric } />
 
@@ -30,7 +31,7 @@ class Rubric extends Component {
 
         <ShowMoreRubricArticles />
         <Subscribe />
-      </>
+      </AbsoluteWrapper>
     );
   }
 }

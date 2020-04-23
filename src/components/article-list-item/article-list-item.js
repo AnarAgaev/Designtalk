@@ -4,6 +4,7 @@ import { Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { showArticleItem } from "../../actions";
 import { showRubricArticleItem } from "../../actions";
+import { showRubricArticleListItem } from "../../actions";
 import Picture from "../picture"
 import listenerShowArticleListItems from "./listener-show-article-list-item";
 import './article-list-item.scss';
@@ -15,15 +16,28 @@ class ArticleListItem extends Component {
     const {
       showRubricArticleItem,
       showArticleItem,
+      showRubricArticleListItem,
       payload
     } = this.props;
 
     const node = this.articleNode.current;
-    const showFunc = payload === 'main-page'
-      ? showArticleItem
-      : payload === 'rubric-page'
-        ? showRubricArticleItem
-        : null;
+
+    const getShowFunc = (payload) => {
+      switch(payload) {
+        case 'main-page':
+          return showArticleItem;
+
+        case 'rubric-page':
+          return showRubricArticleItem;
+
+        case 'article-page':
+          return showRubricArticleListItem;
+
+        default:
+          return;
+      }
+    };
+    const showFunc = getShowFunc(payload);
 
     listenerShowArticleListItems(
       node,
@@ -85,6 +99,9 @@ const mapDispatchToProps = (dispatch) => {
 
     showRubricArticleItem: (itemId) =>
       showRubricArticleItem(dispatch, itemId),
+
+    showRubricArticleListItem: (itemId) =>
+      showRubricArticleListItem(dispatch, itemId)
   };
 };
 

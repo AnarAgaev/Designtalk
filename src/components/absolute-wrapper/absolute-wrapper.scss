@@ -1,0 +1,9 @@
+@import "../../scss/variables";
+
+.absolute-wrapper {
+  position: absolute;
+  width: 100%;
+  margin-bottom: $footer-height;
+  padding-bottom: 6rem;
+  background-color: white;
+}

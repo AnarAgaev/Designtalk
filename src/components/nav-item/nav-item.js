@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavItem = (
     activeItem,
@@ -18,12 +18,12 @@ const NavItem = (
       }
     >
 
-      <Link
+      <NavLink
         to={`/${item}`}
         className="nav__link"
         onClick={ () => onNavClick(item) } >
         { description }
-      </Link>
+      </NavLink>
     </li>
   );
 };

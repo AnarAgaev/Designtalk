@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { jumpToTop } from "../../../utils";
 import AboutPageTitle from "../../about-page-title";
+import AbsoluteWrapper from "../../absolute-wrapper";
 import './about.scss';
 
 export default class About extends Component {
@@ -12,7 +13,7 @@ export default class About extends Component {
 
   render() {
     return (
-      <>
+      <AbsoluteWrapper>
         <AboutPageTitle />
         <Container className={"about"}>
           <Row>
@@ -46,7 +47,7 @@ export default class About extends Component {
             </Col>
           </Row>
         </Container>
-      </>
+      </AbsoluteWrapper>
     );
   }
 }

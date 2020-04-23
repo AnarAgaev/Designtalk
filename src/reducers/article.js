@@ -1,6 +1,6 @@
 const updateArticle = (state, action) => {
 
-  const getCleanState = () => {
+  if (state === undefined) {
     return {
       id: null,
       url: null,
@@ -20,10 +20,6 @@ const updateArticle = (state, action) => {
       loading: false,
       error: null
     };
-  };
-
-  if (state === undefined) {
-    return getCleanState();
   }
 
   switch ( action.type ) {
@@ -46,9 +42,6 @@ const updateArticle = (state, action) => {
         loading: false,
         error: action.payload
       };
-
-    case 'RESET_ARTICLE_DATA':
-      return getCleanState();
 
     default:
       return state.article;

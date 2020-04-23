@@ -10,6 +10,7 @@ import navigation from "./navigation";
 import updateLastRubricArticle from "./last-rubric-article";
 import updateRubricArticleList from "./rubric-article-list";
 import updateArticle from "./article";
+import updateLastRubricArticleList from "./last-rubric-article-list";
 
 const reducer = (state, action) => {
 
@@ -25,7 +26,8 @@ const reducer = (state, action) => {
     navigation: navigation(state, action),
     lastRubricArticle: updateLastRubricArticle(state, action),
     rubricArticleList: updateRubricArticleList(state, action),
-    article: updateArticle(state, action)
+    article: updateArticle(state, action),
+    lastRubricArticleList: updateLastRubricArticleList(state, action)
   };
 };
 

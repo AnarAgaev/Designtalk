@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import withBlogService from "../../hoc";
 import ErrorIndicator from "../../error-indicator";
 import { compose } from "../../../utils";
-import { fetchArticle, resetArticleData } from "../../../actions";
+import { fetchArticle } from "../../../actions";
 import Article from "./article";
 
 class ArticleContainer extends Component {
@@ -14,10 +14,6 @@ class ArticleContainer extends Component {
     } = this.props;
 
     fetchArticle(url)();
-  }
-
-  componentWillUnmount() {
-    this.props.resetArticle();
   }
 
   render() {
@@ -43,9 +39,6 @@ const mapDispatchToProps = ( dispatch, { blogService } ) => {
   return {
     fetchArticle: (url) =>
       fetchArticle(dispatch, blogService, url),
-
-    resetArticle: () =>
-      dispatch(resetArticleData())
   };
 };
 

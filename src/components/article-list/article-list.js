@@ -2,9 +2,9 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./article-list.scss";
 
-const ArticleList = ({ articles, articleListTitle }) => {
+const ArticleList = ({ articles, articleListTitle, parentClass }) => {
   return (
-    <Container>
+    <Container className={ parentClass ? parentClass : null }>
       <Row className="article-list__title" >
         <Col xs={12}>
           <h3>{ articleListTitle }</h3>

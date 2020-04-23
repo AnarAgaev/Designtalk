@@ -5,6 +5,7 @@ import ShowMoreArticles from "../../show-more-articles";
 import PopularList from "../../popular-list";
 import Subscribe from "../../subscribe";
 import { jumpToTop } from "../../../utils";
+import AbsoluteWrapper from "../../absolute-wrapper";
 import './main.scss';
 
 export default class Main extends Component {
@@ -15,13 +16,13 @@ export default class Main extends Component {
 
   render() {
     return (
-      <>
+      <AbsoluteWrapper>
         <LastArticlesContainer />
         <ArticleListContainer />
         <ShowMoreArticles />
         <Subscribe />
         <PopularList />
-      </>
+      </AbsoluteWrapper>
     );
   }
 }

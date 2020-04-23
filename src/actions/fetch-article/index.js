@@ -1,7 +1,6 @@
 import fetchArticleSuccess from "./fetch-article-success";
 import fetchArticleRequest from "./fetch-article-request";
 import fetchArticleFailure from "./fetch-article-failure";
-import resetArticleData from "./reset-article-data";
 
 const fetchArticle = (dispatch, blogService, url) => () => {
 
@@ -16,7 +15,4 @@ const fetchArticle = (dispatch, blogService, url) => () => {
     });
 };
 
-export {
-  fetchArticle,
-  resetArticleData
-};
+export default fetchArticle;

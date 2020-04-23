@@ -11,7 +11,7 @@ $color-l                : rgba(182, 183, 181, 1);   // #b6b7b5;
 $color-m                : rgba(155, 157, 155, 1);   // #9b9d9b;
 $color-d                : rgba(117, 118, 117, 1);   // #757675;
 $color-xd               : rgba(87, 88, 88, 1);      // #575858;
-$color-back             : rgba(245, 245, 246, 1);   // #f5f5f6
+$color-back             : rgba(252, 252, 252, 1);   // #fcfcfc;
 $link                   : rgba(117, 118, 117, .17); // #e8e8e8
 $link-d                 : rgba(117, 118, 117, .2);  // #e3e4e3
 $danger                 : rgba(220, 53, 69, 1);     // #dc3545;
@@ -23,3 +23,5 @@ $font-primary           : 'Montserrat', sans-serif;
 $mq-lg                  : 1440px;
 $mq-md                  : 1024px;
 $mq-sm                  : 768px;
+
+$footer-height          : 520px;

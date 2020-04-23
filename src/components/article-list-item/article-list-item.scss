@@ -88,6 +88,10 @@
   }
 }
 
+.article-page .article-list__item:first-child {
+  padding-right: 4rem;
+}
+
 @keyframes pictureAnimate {
   to {
     opacity: 1;
