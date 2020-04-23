@@ -7,7 +7,10 @@ const renderElementList = (list, Component, payload) => {
   }
 
   return list.map((props) => {
-    return <Component key={ props.id } payload={ payload } { ...props } />;
+    return <Component
+      key={ props.id }
+      payload={ payload }
+      { ...props } />;
   });
 };
 

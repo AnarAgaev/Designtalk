@@ -59,13 +59,15 @@ class ArticleListItem extends Component {
   }
 
   render() {
-    const { id, url, rubric, title, picture, visible } = this.props;
+    const { id, url, rubric, title, picture, visible, payload } = this.props;
     const urlImage = `https://designtalk.ru/images/${picture}`;
     const urlRubric = `/rubrics/${rubric.link}`;
 
-    const clazz = visible
+    let clazz = visible
       ? "article-list__item visible"
       : "article-list__item";
+
+    if (payload) clazz += ` ${payload}`;
 
     return (
       <Col

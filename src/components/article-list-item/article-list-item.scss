@@ -74,7 +74,7 @@
     max-width: 80%;
     margin: 0.3rem 0 0 1rem;
     position: relative;
-    line-height: 1.25;
+    line-height: 1.45;
     opacity: 0;
     transform: translateY(15px);
 
@@ -111,4 +111,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.rubric-page .article-list__rubric {
+  cursor: default;
+  background: none;
+  color: rgba(0, 0, 0, .5);
 }
