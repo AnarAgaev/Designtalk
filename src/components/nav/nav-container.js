@@ -1,57 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleNavClick } from "../../actions";
 import Nav from "./nav";
-import NavItem from "../nav-item";
+import renderNavItemList from "./render-nav-item-list";
 import navItems from "./nav-items-data";
 
-const renderNavItemList = (
-    activeItem,
-    onNavClick,
-    navItemList
-  ) => {
+class NavContainer extends Component {
 
-  return navItemList.map((item) => {
-    return NavItem(
+  componentDidMount() {
+    const url = window.location.href;
+
+    /*
+     * There's two dispatches because navigation has render
+     * at the header and at the footer components
+    */
+    navItems.forEach((item) => {
+      if ( url.includes(item[0]) ) {
+        this.props.onNavClick(item[0])
+      }
+    });
+  }
+
+  render() {
+    const { activeItem, onNavClick } = this.props;
+
+    const elements = renderNavItemList(
       activeItem,
       onNavClick,
-      item[0],
-      item[1]
+      navItems
     );
-  });
-};
 
-const NavContainer = ({
-    activeItem,
-    onNavClick
-  }) => {
+    return (
+      <Nav elements={ elements } />
+    );
+  }
+}
 
-  const url = window.location.href;
-  const activate = onNavClick;
-
-  navItems.forEach((item) => {
-    return url.includes(item[0])
-      ? activate(item[0])
-      : null;
-  });
-
-  const elements = renderNavItemList(
-    activeItem,
-    onNavClick,
-    navItems
-  );
-
-  return (
-    <Nav elements={ elements } />
-  );
-};
-
-const masStateToProps = (
-    { navigation: { activeItem } }
-  ) => {
-
+const masStateToProps = ({ navigation }) => {
   return {
-    activeItem
+    activeItem : navigation.activeItem
   };
 };
 
