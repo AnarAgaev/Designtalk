@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './last-article.scss';
+import './last-articles.scss';
 
-const LastArticle = ({
+const LastArticles = ({
     articles,
     isTitleHover,
     handleTitleHover
@@ -52,4 +52,4 @@ const LastArticle = ({
   );
 };
 
-export default LastArticle;
+export default LastArticles;

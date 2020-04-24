@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import withBlogService from "../hoc";
 import ErrorIndicator from "../error-indicator";
-import LastArticle from "./last-article";
+import LastArticles from "./last-articles";
 import { compose } from "../../utils";
-import {
-  fetchLastArticles,
-  handleTitleHover
-} from "../../actions";
+import { fetchLastArticles, handleTitleHover } from "../../actions";
 
 class LastArticlesContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchLastArticles();
+    const { articles, fetchLastArticles } = this.props;
+
+    if (articles.length === 0) {
+      fetchLastArticles();
+    }
   }
 
   render() {
@@ -30,7 +31,7 @@ class LastArticlesContainer extends Component {
 
     // At the moment, in the properties we pass only the first element from the list of articles.
     // When the half-article on the main page is changed to a slider, transfer the list.
-    return <LastArticle
+    return <LastArticles
       articles={ articles }
       isTitleHover={ isTitleHover }
       handleTitleHover={ handleTitleHover } />;

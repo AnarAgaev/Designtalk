@@ -14,18 +14,17 @@ class ArticleListContainer extends Component {
     const {
       articles,
       next,
-      previous,
       fetchArticles,
       trimArticles
     } = this.props;
 
-    if (previous === null && !articles.length) {
+    if (articles.length === 0) {
       const url = articles.length
         ? next
         : '/articles/';
 
       fetchArticles(url)();
-    } else {
+    } else if (articles.length > 7) {
       trimArticles('/articles/?page=2');
     }
   }

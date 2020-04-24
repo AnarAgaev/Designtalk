@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LastArticlesContainer from "../../last-article";
+import LastArticlesContainer from "../../last-articles";
 import ArticleListContainer from "../../article-list";
 import ShowMoreArticles from "../../show-more-articles";
 import PopularList from "../../popular-list";

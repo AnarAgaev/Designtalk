@@ -11,7 +11,11 @@ import { fetchPopular, popularSlide } from "../../actions";
 class PopularListContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchPopular();
+    const { popular, fetchPopular } = this.props;
+
+    if (popular.length === 0) {
+      fetchPopular();
+    }
   }
 
   render() {
