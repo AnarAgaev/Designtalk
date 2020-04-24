@@ -18,7 +18,8 @@ const updateArticle = (state, action) => {
       stylist: [],
       content: null,
       loading: false,
-      error: null
+      error: null,
+      notFound: false
     };
   }
 
@@ -41,6 +42,19 @@ const updateArticle = (state, action) => {
         ...state.article,
         loading: false,
         error: action.payload
+      };
+
+    case 'SET_REDIRECT_TO_NOT_FOUND':
+      return {
+        ...state.article,
+        notFound: true,
+        loading: false,
+      };
+
+    case 'RESET_REDIRECT_TO_NOT_FOUND':
+      return {
+        ...state.article,
+        notFound: false
       };
 
     default:

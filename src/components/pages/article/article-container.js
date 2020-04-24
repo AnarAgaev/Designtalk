@@ -4,6 +4,7 @@ import withBlogService from "../../hoc";
 import ErrorIndicator from "../../error-indicator";
 import { compose } from "../../../utils";
 import { fetchArticle } from "../../../actions";
+import { Redirect } from "react-router-dom";
 import Article from "./article";
 
 class ArticleContainer extends Component {
@@ -25,9 +26,11 @@ class ArticleContainer extends Component {
       return <ErrorIndicator />
     }
 
-    return (
-      <Article article={ article } />
-    );
+    if (article.notFound) {
+      return <Redirect to="/page-not-found" />;
+    } else {
+      return <Article article={ article } />;
+    }
   }
 }
 

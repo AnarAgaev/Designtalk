@@ -3,13 +3,28 @@ import { Container, Row, Col } from "react-bootstrap";
 import FromContainer from "../../form"
 import { jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { connect } from "react-redux";
+import { resetRedirectToNotFound } from "../../../actions";
 import "./page-not-found.scss";
 import {Link} from "react-router-dom";
 import image from "../../../images/giphy.webp";
 
 class PageNotFound extends Component {
 
+  /*
+   * At the componentDidMount we well reset Not Found
+   * parameters of all dir with not found pages.
+  */
   componentDidMount() {
+    const {
+      articleNotFound,
+      resetRedirectToNotFound
+    } = this.props;
+
+    if (articleNotFound) {
+      resetRedirectToNotFound();
+    }
+
     jumpToTop();
   }
 
@@ -61,6 +76,19 @@ class PageNotFound extends Component {
       </AbsoluteWrapper>
     );
   }
+}
+
+const mapStateToProps = ({ article }) => {
+  return {
+    articleNotFound: article.notFound
+  };
 };
 
-export default PageNotFound;
+const mapDispatchToProps = {
+  resetRedirectToNotFound
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PageNotFound);

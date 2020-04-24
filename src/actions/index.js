@@ -13,7 +13,7 @@ import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy
 import confirmSubscription from "./confirm-subscription";
 import handleNavClick from "./handle-nav-click";
 import { fetchLastRubricArticle, handleRubricTitleHover } from "./fetch-last-rubric-article";
-import fetchArticle from "./fetch-article";
+import { fetchArticle, resetRedirectToNotFound } from "./fetch-article";
 import { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData } from "./fetch-rubric-articles";
 import { fetchLastRubricArticleList, showRubricArticleListItem } from "./fetch-last-rubric-article-list";
 import handleCursorOverImg from "./handle-cursor-over-img";
@@ -43,6 +43,7 @@ export {
   showRubricArticleItem,
   resetRubricArticlesData,
   fetchArticle,
+  resetRedirectToNotFound,
   fetchLastRubricArticleList,
   showRubricArticleListItem,
   handleCursorOverImg
