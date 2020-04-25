@@ -7,6 +7,7 @@ import ErrorIndicator from "../error-indicator";
 import { compose, renderElementList } from "../../utils";
 import { fetchRubricArticles } from "../../actions";
 import ArticleListBanner from "../article-list-banner";
+import { Redirect } from "react-router-dom";
 
 class RubricArticleListContainer extends Component {
 
@@ -26,7 +27,7 @@ class RubricArticleListContainer extends Component {
   }
 
   render() {
-    const { rubricName, articles, error } = this.props;
+    const { rubricName, articles, error, notFound } = this.props;
 
     const articleList = renderElementList (
       articles,
@@ -45,23 +46,30 @@ class RubricArticleListContainer extends Component {
       return <ErrorIndicator />
     }
 
-    return (
-      <ArticleList
-        articles={ articlesWithAdvBanner }
-        articleListTitle={ `последине публикации в рубрике ${rubricName}` } />
-    );
+    if (notFound) {
+      return <Redirect to="/page-not-found" />;
+    } else {
+      return (
+        <ArticleList
+          articles={ articlesWithAdvBanner }
+          articleListTitle={ `последине публикации в рубрике ${rubricName}` } />
+      );
+    }
   }
 }
 
 const mapStateToProps = ({
   rubricArticleList: {
-    next,
-    rubricName,
-    articles,
-    error
+    next, rubricName,
+    articles, error,
+    notFound
   } }) => {
 
-  return { next, rubricName, articles, error };
+  return {
+    next, rubricName,
+    articles, error,
+    notFound
+  };
 };
 
 const mapDispatchToProps = ( dispatch, { blogService } ) => {

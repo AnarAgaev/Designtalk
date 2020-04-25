@@ -27,9 +27,6 @@ class LastRubricArticleContainer extends Component {
       notFound
     } = this.props;
 
-
-    console.log(this.props)
-
     if (error) {
       console.log(error);
       return <ErrorIndicator />

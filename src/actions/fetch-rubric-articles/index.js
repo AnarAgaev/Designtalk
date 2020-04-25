@@ -3,6 +3,8 @@ import fetchRubricArticlesRequest from "./fetch-rubric-articles-request";
 import fetchRubricArticlesFailure from "./fetch-rubric-articles-failure";
 import handleShowRubricArticlesItem from "./handle-show-rubric-articles-item";
 import resetRubricArticlesData from "./reset-rubric-articles-data";
+import resetRedirectToNotFoundAtRubricList from "./reset-redirect-to-not-found";
+import setRedirectToNotFoundAtRubricList from "./set-redirect-to-not-found";
 
 const fetchRubricArticles = (dispatch, blogService, url) => () => {
 
@@ -10,7 +12,13 @@ const fetchRubricArticles = (dispatch, blogService, url) => () => {
 
   blogService.getArticles(url)
     .then((response) => {
-      dispatch(fetchRubricArticlesSuccess(response));
+
+      if (response === false) {
+        dispatch(setRedirectToNotFoundAtRubricList());
+      } else {
+        dispatch(fetchRubricArticlesSuccess(response));
+      }
+
     })
     .catch((error) => {
       dispatch(fetchRubricArticlesFailure(error));
@@ -24,5 +32,6 @@ const showRubricArticleItem = ( dispatch, itemId ) => {
 export {
   fetchRubricArticles,
   showRubricArticleItem,
-  resetRubricArticlesData
+  resetRubricArticlesData,
+  resetRedirectToNotFoundAtRubricList
 };

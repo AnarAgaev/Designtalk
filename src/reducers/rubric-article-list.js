@@ -9,7 +9,8 @@ const updateRubricArticleList = (state, action) => {
       rubricName: null,
       articles: [],
       loading: false,
-      error: null
+      error: null,
+      notFound: false
     };
   };
 
@@ -69,6 +70,19 @@ const updateRubricArticleList = (state, action) => {
 
     case 'RESET_RUBRIC_ARTICLES_DATA':
       return getCleanState();
+
+    case 'SET_REDIRECT_TO_NOT_FOUND_AT_RUBRIC_LIST':
+      return {
+        ...state.rubricArticleList,
+        notFound: true,
+        loading: false,
+      };
+
+    case 'RESET_REDIRECT_TO_NOT_FOUND_AT_RUBRIC_LIST':
+      return {
+        ...state.rubricArticleList,
+        notFound: false
+      };
 
     default:
       return state.rubricArticleList;

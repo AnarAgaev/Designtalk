@@ -43,7 +43,10 @@ export default class BlogService {
   getArticles = async (url) => {
     const articles = await this.getResource(url);
 
-    articles.results.map(article => this._normalizeArticle(article));
+    if (articles) {
+      articles.results.map(article => this._normalizeArticle(article));
+    }
+
     return articles;
   };
 

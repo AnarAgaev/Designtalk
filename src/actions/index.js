@@ -14,7 +14,7 @@ import confirmSubscription from "./confirm-subscription";
 import handleNavClick from "./handle-nav-click";
 import { fetchLastRubricArticle, handleRubricTitleHover, resetRedirectToNotFoundAtRubric } from "./fetch-last-rubric-article";
 import { fetchArticle, resetRedirectToNotFound } from "./fetch-article";
-import { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData } from "./fetch-rubric-articles";
+import { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData, resetRedirectToNotFoundAtRubricList } from "./fetch-rubric-articles";
 import { fetchLastRubricArticleList, showRubricArticleListItem } from "./fetch-last-rubric-article-list";
 import handleCursorOverImg from "./handle-cursor-over-img";
 
@@ -41,6 +41,7 @@ export {
   resetRedirectToNotFoundAtRubric,
   handleRubricTitleHover,
   fetchRubricArticles,
+  resetRedirectToNotFoundAtRubricList,
   showRubricArticleItem,
   resetRubricArticlesData,
   fetchArticle,
