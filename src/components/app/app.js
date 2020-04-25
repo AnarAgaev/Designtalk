@@ -10,7 +10,7 @@ import ForAdvertisers from "../pages/for-advertisers";
 import TermsOfUse from "../pages/terms-of-use";
 import PrivacyPolicy from "../pages/privacy-policy";
 import PolicyPersonalData from "../pages/policy-personal-data";
-import PageNotFound from "../pages/page-not-found";
+import PageNotFoundContainer from "../pages/page-not-found";
 import PolicyModalContainer from "../policy-modal";
 import ArticleContainer from "../pages/article";
 import Rubric from "../pages/rubric";
@@ -66,7 +66,7 @@ const App = () => {
                        const { id } = match.params;
                        return <ConfirmSubscriptionContainer subscriptionId={ id } />;
                      }} />
-              <Route path="/page-not-found" component={ PageNotFound } />
+              <Route path="/page-not-found" component={ PageNotFoundContainer } />
               <Redirect to="/page-not-found" />
             </Switch>
           </animated.div>

@@ -1,3 +1,3 @@
-import PageNotFound from "./page-not-found";
+import PageNotFoundContainer from "./page-not-found-container";
 
-export default PageNotFound;
+export default PageNotFoundContainer;
