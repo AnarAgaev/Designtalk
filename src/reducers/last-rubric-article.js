@@ -8,7 +8,8 @@ const updateLastRubricArticle = (state, action) => {
       rubricTitle: null,
       isTitleHover: false,
       loading: false,
-      error: null
+      error: null,
+      notFound: false
     };
   }
 
@@ -53,6 +54,19 @@ const updateLastRubricArticle = (state, action) => {
       return {
         ...state.lastRubricArticle,
         isTitleHover: false
+      };
+
+    case 'SET_REDIRECT_TO_NOT_FOUND_AT_RUBRIC':
+      return {
+        ...state.lastRubricArticle,
+        notFound: true,
+        loading: false,
+      };
+
+    case 'RESET_REDIRECT_TO_NOT_FOUND_AT_RUBRIC':
+      return {
+        ...state.lastRubricArticle,
+        notFound: false
       };
 
     default:

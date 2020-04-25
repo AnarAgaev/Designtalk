@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import withBlogService from "../hoc";
 import ErrorIndicator from "../error-indicator";
 import LastRubricArticle from "./last-rubric-article";
@@ -22,21 +23,29 @@ class LastRubricArticleContainer extends Component {
       rubricTitle,
       isTitleHover,
       handleTitleHover,
-      error
+      error,
+      notFound
     } = this.props;
+
+
+    console.log(this.props)
 
     if (error) {
       console.log(error);
       return <ErrorIndicator />
     }
 
-    return (
-      <LastRubricArticle
-        article={ article }
-        rubricTitle={ rubricTitle }
-        isTitleHover={ isTitleHover }
-        handleTitleHover={ handleTitleHover } />
-    );
+    if (notFound) {
+      return <Redirect to="/page-not-found" />;
+    } else {
+      return (
+        <LastRubricArticle
+          article={ article }
+          rubricTitle={ rubricTitle }
+          isTitleHover={ isTitleHover }
+          handleTitleHover={ handleTitleHover } />
+      );
+    }
   }
 }
 
@@ -45,14 +54,16 @@ const mapStateToProps = ({
     article,
     rubricTitle,
     isTitleHover,
-    error
+    error,
+    notFound
   }}) => {
 
   return {
     article,
     rubricTitle,
     isTitleHover,
-    error
+    error,
+    notFound
   };
 };
 

@@ -4,7 +4,7 @@ import FromContainer from "../../form"
 import { jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
 import { connect } from "react-redux";
-import { resetRedirectToNotFound } from "../../../actions";
+import { resetRedirectToNotFound, resetRedirectToNotFoundAtRubric } from "../../../actions";
 import "./page-not-found.scss";
 import {Link} from "react-router-dom";
 import image from "../../../images/giphy.webp";
@@ -17,12 +17,18 @@ class PageNotFound extends Component {
   */
   componentDidMount() {
     const {
+      resetRedirectToNotFound,
       articleNotFound,
-      resetRedirectToNotFound
+      resetRedirectToNotFoundAtRubric,
+      lastRubricArticle
     } = this.props;
 
     if (articleNotFound) {
       resetRedirectToNotFound();
+    }
+
+    if (lastRubricArticle) {
+      resetRedirectToNotFoundAtRubric();
     }
 
     jumpToTop();
@@ -78,14 +84,16 @@ class PageNotFound extends Component {
   }
 }
 
-const mapStateToProps = ({ article }) => {
+const mapStateToProps = ({ article, lastRubricArticle }) => {
   return {
-    articleNotFound: article.notFound
+    articleNotFound: article.notFound,
+    lastRubricArticle: lastRubricArticle.notFound
   };
 };
 
 const mapDispatchToProps = {
-  resetRedirectToNotFound
+  resetRedirectToNotFound,
+  resetRedirectToNotFoundAtRubric
 };
 
 export default connect(

@@ -12,7 +12,7 @@ import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy-modal";
 import confirmSubscription from "./confirm-subscription";
 import handleNavClick from "./handle-nav-click";
-import { fetchLastRubricArticle, handleRubricTitleHover } from "./fetch-last-rubric-article";
+import { fetchLastRubricArticle, handleRubricTitleHover, resetRedirectToNotFoundAtRubric } from "./fetch-last-rubric-article";
 import { fetchArticle, resetRedirectToNotFound } from "./fetch-article";
 import { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData } from "./fetch-rubric-articles";
 import { fetchLastRubricArticleList, showRubricArticleListItem } from "./fetch-last-rubric-article-list";
@@ -38,6 +38,7 @@ export {
   confirmSubscription,
   handleNavClick,
   fetchLastRubricArticle,
+  resetRedirectToNotFoundAtRubric,
   handleRubricTitleHover,
   fetchRubricArticles,
   showRubricArticleItem,
