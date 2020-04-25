@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { jumpToTop } from "../../../utils";
 import Subscribe from "../../subscribe";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import HorizontalAdBanner from "../../horizontal-ad-banner";
 import "./rubric.scss";
 
 class Rubric extends Component {
@@ -25,6 +26,8 @@ class Rubric extends Component {
       <AbsoluteWrapper>
         <LastRubricArticleContainer
           rubric={ rubric } />
+
+        <HorizontalAdBanner />
 
         <RubricArticleListContainer
           rubric={ rubric } />

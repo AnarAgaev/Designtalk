@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import VerticalAdvBanner from "../../vertical-adv-banner";
+import VerticalAdBanner from "../../vertical-ad-banner";
 import ArticleCreators from "../../article-creators";
 import SharingArticle from "../../sharing-article";
 import Subscribe from "../../subscribe";
 import { createMarkup, jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
 import LastRubricArticleListContainer from "../../last-rubric-article-list";
+import HorizontalAdBanner from "../../horizontal-ad-banner";
 import './article.scss';
 
 class Article extends Component {
@@ -29,6 +30,10 @@ class Article extends Component {
       <AbsoluteWrapper>
         <Container className="article">
           <Row>
+            <Col lg={12}>
+              <HorizontalAdBanner />
+            </Col>
+
             <Col lg={12}>
               <Link to={urlRubric} className="article__rubric">
                 { rubric.name }
@@ -59,7 +64,7 @@ class Article extends Component {
 
             <Col lg={4} className="article__sidebar">
               <div className="sticky adv-banner">
-                <VerticalAdvBanner />
+                <VerticalAdBanner />
               </div>
             </Col>
           </Row>
