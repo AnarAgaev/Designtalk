@@ -6,7 +6,7 @@ import handleModalMsg from "./handle-modal-msg";
 import policyModal from "./policy-modal";
 import sendForm from "./send-form";
 import confirmSubscription from "./confirm-subscription";
-import navigation from "./navigation";
+import updateNavigation from "./update-navigation";
 import updateLastRubricArticle from "./last-rubric-article";
 import updateRubricArticleList from "./rubric-article-list";
 import updateArticle from "./article";
@@ -23,7 +23,7 @@ const reducer = (state, action) => {
     policyModal: policyModal(state, action),
     sendForm: sendForm(state, action),
     confirmSubscription: confirmSubscription(state, action),
-    navigation: navigation(state, action),
+    navigation: updateNavigation(state, action),
     lastRubricArticle: updateLastRubricArticle(state, action),
     rubricArticleList: updateRubricArticleList(state, action),
     article: updateArticle(state, action),

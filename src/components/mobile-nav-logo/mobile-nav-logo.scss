@@ -1,0 +1,35 @@
+@import "../../scss/variables";
+
+.mobile-nav-logo {
+
+  margin-top: 3rem;
+  font-weight: 400;
+  letter-spacing: -.05em;
+  opacity: 0;
+  transition-delay: 0s;
+  transition: opacity 1s;
+
+  @media (max-width: $m - 1) {
+    margin-top: 2rem;
+  }
+
+  .logo__letters {
+    font-size: 2rem;
+    font-family: 'Titillium Web', sans-serif;
+    color: $color-secondary-font;
+  }
+
+  .logo__point {
+    font-size: 3rem;
+    line-height: 0;
+    left: 3px;
+    top: 1px;
+    position: relative;
+    color: $color-secondary-font;
+  }
+}
+
+nav.visible .mobile-nav-logo {
+  opacity: 1;
+  transition-delay: .3s;
+}

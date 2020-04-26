@@ -3,6 +3,8 @@
 .social {
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    position: relative;
   }
 }
 

@@ -11,7 +11,7 @@ import sendForm from "./send-form";
 import { modalMsgShow, modalMsgHide } from "./modal-msg";
 import { hidePolicyModal, showPolicyModal, setCookiePolicyModal } from "./policy-modal";
 import confirmSubscription from "./confirm-subscription";
-import handleNavClick from "./handle-nav-click";
+import { handleNavClick, toggleVisibleMenu } from "./handle-nav-click";
 import { fetchLastRubricArticle, handleRubricTitleHover, resetRedirectToNotFoundAtRubric } from "./fetch-last-rubric-article";
 import { fetchArticle, resetRedirectToNotFound } from "./fetch-article";
 import { fetchRubricArticles, showRubricArticleItem, resetRubricArticlesData, resetRedirectToNotFoundAtRubricList } from "./fetch-rubric-articles";
@@ -37,6 +37,7 @@ export {
   sendForm,
   confirmSubscription,
   handleNavClick,
+  toggleVisibleMenu,
   fetchLastRubricArticle,
   resetRedirectToNotFoundAtRubric,
   handleRubricTitleHover,

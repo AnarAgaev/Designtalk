@@ -3,7 +3,8 @@ import NavItem from "../nav-item";
 const renderNavItemList = (
   activeItem,
   onNavClick,
-  navItemList
+  navItemList,
+  hideMenu
 ) => {
 
   return navItemList.map((item) => {
@@ -11,7 +12,8 @@ const renderNavItemList = (
       activeItem,
       onNavClick,
       item[0],
-      item[1]
+      item[1],
+      hideMenu
     );
   });
 };

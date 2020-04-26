@@ -4,7 +4,7 @@ import socialItems from "./social-list-data";
 import { renderElementList } from "../../utils";
 import "./socials-list.scss";
 
-const SocialList = () => {
+const SocialList = ({ visible }) => {
 
   const iconList = renderElementList(
     socialItems,
@@ -12,7 +12,7 @@ const SocialList = () => {
   );
 
   return (
-    <ul className="social__list">
+    <ul className={ `social__list ${visible}` } >
       { iconList }
     </ul>
   );

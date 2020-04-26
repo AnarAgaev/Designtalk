@@ -5,8 +5,14 @@ const NavItem = (
     activeItem,
     onNavClick,
     item,
-    description
+    description,
+    hideMenu
   ) => {
+
+  const onClick = () => {
+    onNavClick(item);
+    hideMenu();
+  };
 
   return (
     <li
@@ -21,7 +27,7 @@ const NavItem = (
       <NavLink
         to={`/${item}`}
         className="nav__link"
-        onClick={ () => onNavClick(item) } >
+        onClick={ onClick } >
         { description }
       </NavLink>
     </li>

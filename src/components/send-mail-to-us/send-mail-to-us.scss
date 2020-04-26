@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+
+.send-mail-to-us {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition-delay: 0s;
+  transition: transform 1s $animation-primary, opacity 2s $animation-primary;
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 200;
+    color: white;
+    max-width: 67%;
+    line-height: 1.7;
+    text-transform: uppercase;
+
+    @media (max-width: $m - 1) {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-transform: none;
+    }
+  }
+
+  &__link {
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: $color-d;
+    max-width: 67%;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    transition: color .3s;
+
+    @media (max-width: $m - 1) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+nav.visible .send-mail-to-us {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: .3s;
+}

@@ -27,17 +27,6 @@ body {
   color: $color-primary-font;
   line-height: 1.5;
   overflow-x: hidden;
-  //background-image: repeating-linear-gradient(150deg,rgba(96,74,160,.06),rgba(96,74,160,.06) 1px,rgba(0,0,0,0) 0,rgba(0,0,0,0) 41px),repeating-linear-gradient(-150deg,rgba(96,74,160,.06),rgba(96,74,160,.06) 1px,rgba(0,0,0,0) 0,rgba(0,0,0,0) 41px);
-  //background-size: 82px 47px;
-  //background-attachment: fixed;
-}
-
-// For more xl screens
-.container {
-    @media (min-width: 1366px) {
-        width: 100%;
-        max-width: 77%;
-    }
 }
 
 // Lists
@@ -248,3 +237,23 @@ input.button {
 .cross-cursor:hover {
   cursor: crosshair;
 }
+
+// For more xl screens
+@media (min-width: $xxl) {
+  .container {
+    width: 100%;
+    max-width: 77%;
+  }
+
+  .big-screen-hide {
+    display: none;
+  }
+}
+
+@media (max-width: $xxl - 1) {
+  .big-screen-visible {
+    display: none;
+  }
+}
+
+

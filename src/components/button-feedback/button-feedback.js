@@ -7,9 +7,9 @@ import "./button-feedback.scss";
 
 const ButtonFeedback = () => {
   return (
-    <button className={ 'btn-envelope' }>
+    <a className="btn-envelope big-screen-visible" href="mailto: hi@designtalk.ru" >
       <FontAwesomeIcon icon={ faEnvelope } />
-    </button>
+    </a>
   );
 };
 

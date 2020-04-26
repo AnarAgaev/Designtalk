@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleNavClick } from "../../actions";
-import Nav from "./nav";
 import renderNavItemList from "./render-nav-item-list";
+import { toggleVisibleMenu } from "../../actions";
+import Nav from "./nav";
 import navItems from "./nav-items-data";
 
 class NavContainer extends Component {
@@ -22,30 +23,43 @@ class NavContainer extends Component {
   }
 
   render() {
-    const { activeItem, onNavClick } = this.props;
+    const {
+      activeItem, visible, onNavClick,
+      mobileNavSocial, sendMailToUs,
+      mobileNavLogo, btnHideMenu,
+      hideMenu
+    } = this.props;
 
     const elements = renderNavItemList(
-      activeItem,
-      onNavClick,
-      navItems
+      activeItem, onNavClick, navItems, hideMenu
     );
 
     return (
-      <Nav elements={ elements } />
+      <Nav elements={ elements }
+           mobileNavSocial={ mobileNavSocial }
+           sendMailToUs={ sendMailToUs }
+           mobileNavLogo={ mobileNavLogo }
+           btnHideMenu={ btnHideMenu }
+           hideMenu={ hideMenu }
+           visible={ visible } />
     );
   }
 }
 
 const masStateToProps = ({ navigation }) => {
   return {
-    activeItem : navigation.activeItem
+    activeItem : navigation.activeItem,
+    visible: navigation.visible
   };
 };
 
 const mapDispatchToPros = (dispatch) => {
   return {
     onNavClick: (activeItem) =>
-      handleNavClick(dispatch, activeItem)
+      handleNavClick(dispatch, activeItem),
+
+    hideMenu: () =>
+      dispatch(toggleVisibleMenu())
   };
 };
 

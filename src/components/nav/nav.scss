@@ -42,13 +42,28 @@
         transition: opacity .3s ease-in-out;
       }
 
-      &.active::before {
-        opacity: .5;
+      @media (min-width: $xxl) {
+        &.active::before {
+          opacity: .5;
+        }
+      }
+
+      @media (max-width: $xxl - 1) {
+        transform: translateX(-2rem);
+        opacity: 0;
+        transition: transform 1s $animation-primary, opacity 2s $animation-primary;
+        transition-delay: 0s;
       }
     }
 
     &__list {
       margin-left: 2rem;
+      @media (max-width: $xxl - 1) {
+        display: flex;
+        flex-direction: column;
+        margin: 4rem 0;
+        padding: 0 1rem;
+      }
     }
 
     &__link {
@@ -70,12 +85,71 @@
         background: linear-gradient(67deg, rgba(87, 88, 88, 1) 0%, rgba(155, 157, 155, 1) 50%, rgba(87, 88, 88, 1) 100%);
         transition: all .3s ease-in-out;
         opacity: 0;
+
+        @media (max-width: $xxl - 1) {
+          height: 2px;
+          background: $color-secondary-font;
+          bottom: 10px;
+          left: 0;
+          opacity: 1;
+        }
+
+        @media (max-width: $m - 1) {
+          display: none;
+        }
+        
       }
 
       &:hover::after {
         width: 100%;
         left: 0;
         opacity: 1;
+      }
+
+      @media (max-width: $xxl - 1) {
+        margin: 0;
+        color: $color-secondary-font;
+        font-size: 3rem;
+        line-height: 1.8;
+        height: auto;
+      }
+
+      @media (max-width: $m - 1) {
+        font-size: 1.1rem;
+        line-height: 2;
+      }
+
+    }
+
+    @media (max-width: $xxl - 1) {
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      background: black;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      overflow-x: hidden;
+      left: -100%;
+      transition: left .3s ease;
+
+      &.visible {
+        left: 0;
+
+        .nav__item {
+          transform: translateX(0px);
+          opacity: 1;
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+              transition-delay: #{0.1 * $i+0.1}s;
+            }
+          }
+        }
       }
     }
   }

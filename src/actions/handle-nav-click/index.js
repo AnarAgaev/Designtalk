@@ -1,4 +1,5 @@
 import activeNavItem from "./active-nav-item";
+import toggleVisibleMenu from "./toggle-visible-menu";
 
 const handleNavClick = (
     dispatch,
@@ -10,4 +11,7 @@ const handleNavClick = (
   );
 };
 
-export default handleNavClick;
+export {
+  handleNavClick,
+  toggleVisibleMenu
+};
