@@ -8,6 +8,24 @@
   justify-content: center;
   align-items: flex-start;
 
+  @media (max-width: $l - 1) {
+    height: auto;
+    padding: 3rem 0 6rem;
+  }
+
+  @media (max-width: $s - 1) {
+    padding: 4rem 0;
+  }
+
+  &__picture-wrap {
+    @media (max-width: $l - 1) {
+      position: relative !important;
+      height: auto;
+      width: auto !important;
+      padding: 0 !important;
+    }
+  }
+
   &::before {
     content: '';
     display: block;
@@ -19,6 +37,14 @@
     backdrop-filter: blur(7px);
     background: rgba(0,0,0,.1);
     background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.5));
+
+    @media (max-width: $l - 1) {
+      width: 200vw;
+      right: auto;
+      left: -50%;
+      height: 100%;
+      background: #000;
+    }
   }
 
   &__link {
@@ -36,6 +62,18 @@
     font-size: 4.3vw;
     color: $color-secondary-font ;
 
+    @media (max-width: $xl - 1) {
+      font-size: 3.3rem;
+    }
+
+    @media (max-width: $l - 1) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: $s - 1) {
+      font-size: 2rem;
+    }
+
     &::before {
       content: none;
     }
@@ -47,6 +85,10 @@
     span {
       @extend %text-underline;
       background-image: linear-gradient(transparent calc(100% - 3px),#fff 3px);
+
+      @media (max-width: $l - 1) {
+        background: none;
+      }
 
       &.hover {
         background-size: 100% 100%;
@@ -63,6 +105,10 @@
     color: $color-secondary-font ;
     font-weight: 200;
     z-index: 1;
+
+    @media (max-width: $s - 1) {
+      max-width: 100%;
+    }
   }
 
   &__picture {
@@ -72,7 +118,27 @@
       min-height: calc(100vh - 3.5rem);
       width: auto;
       max-width: none;
-      transform: translateX(-33%);
+      transform: translateX(-30%);
+
+      @media (max-width: $xxl - 1) {
+        max-height: calc(100vh - 3.5rem);
+      }
+
+      @media (max-width: $l - 1) {
+        min-height: auto;
+        max-height: none;
+        width: 100%;
+        transform: none;
+        top: -3rem;
+        position: relative;
+        z-index: 9;
+        margin-bottom: -2rem;
+      }
+
+      @media (max-width: $s - 1) {
+        top: 0;
+        margin-bottom: 0;
+      }
     }
 
     &::before {

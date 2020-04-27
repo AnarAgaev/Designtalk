@@ -36,7 +36,7 @@ const LastArticles = ({
             </Link>
           </div>
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="last-article__picture-wrap" >
           <Link
             to={ urlArticle }
             className="last-article__picture">

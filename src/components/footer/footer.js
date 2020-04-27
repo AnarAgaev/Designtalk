@@ -15,11 +15,11 @@ const Footer = () => {
         <Row>
           <Col lg={3}><NavContainer/></Col>
           <Col lg={5}><PrivacyListContainer/></Col>
-          <Col lg={3}>
+          <Col lg={4}>
             <SocialTitle/>
             <SocialList/>
           </Col>
-          <Col lg={8}><Copyright/></Col>
+          <Col lg={12}><Copyright/></Col>
           <Col lg={12}><LogotypeContainer/></Col>
         </Row>
       </Container>

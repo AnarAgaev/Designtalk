@@ -4,6 +4,10 @@
   position: absolute;
   width: 100%;
   margin-bottom: $footer-height;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
   background-color: white;
+
+  @media (max-width: $l - 1) {
+    margin-bottom: 100vh;
+  }
 }

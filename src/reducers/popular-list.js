@@ -3,7 +3,7 @@ const updatePopularList = (state, action) => {
     return {
       popular: [],
       popularListPosition: 0,
-      popularListItemWidth: 332,
+      popularListItemWidth: 305, // from .popular-list-item as width + margin-right
       actionBlocker: true,
       loading: false,
       error: null
@@ -41,7 +41,7 @@ const updatePopularList = (state, action) => {
 
       const offset = currentPosition + itemWidth * direction;
 
-      const move = (direction === -1 && position > windowWidth)
+      const move = (direction === -1 && position > windowWidth + 15)
         || (direction === 1 && currentPosition);
 
       if (move) {

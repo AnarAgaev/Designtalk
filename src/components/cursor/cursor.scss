@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .cursor {
   position: fixed;
   width: 0;
@@ -24,5 +26,10 @@
             width .3s 0s,
             height .3s 0s,
             transform .3s 0s;
+  }
+
+
+  @media (max-width: $l - 1) {
+    display: none;
   }
 }

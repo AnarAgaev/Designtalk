@@ -8,7 +8,7 @@ const PolicyModal = ({ hidePolicyModal, clazz }) => {
     <div className={ clazz }>
       <Container>
         <Row>
-          <Col lg={10}>
+          <Col lg={9} xl={10}>
             <p className={"policy-modal__content"}>
               Для того чтобы сделать сайт designtalk.ru удобнее и безопаснее мы используем файлы cookies.
               Продолжая использование сайта, вы соглашаетесь с этим. Подробнее об использовании нами файлов
@@ -17,7 +17,7 @@ const PolicyModal = ({ hidePolicyModal, clazz }) => {
               <Link className={"link"} to="/policy-personal-data">Политикой обработки персональных данных и передачей файлов cookies третьим лицам</Link>.
             </p>
           </Col>
-          <Col lg={2}>
+          <Col lg={3} xl={2}>
             <button
               className={"button policy-modal__btn"}
               onClick={ () => hidePolicyModal() } >

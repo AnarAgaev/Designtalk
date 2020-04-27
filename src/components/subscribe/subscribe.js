@@ -7,11 +7,11 @@ const Subscribe = () => {
   return (
     <Container>
       <Row className="subscribe">
-        <Col lg={7}>
+        <Col xs={12}>
           <div className="subscribe__title">самое интересное в твоей почте.</div>
           <div className="subscribe__subtitle">подписывайся на нашу рассылку</div>
         </Col>
-        <Col lg={5}>
+        <Col xs={12}>
           <FromContainer
             email={{required: true}}
 

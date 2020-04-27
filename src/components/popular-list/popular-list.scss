@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .popular {
   padding-top: 2rem;
   overflow: hidden;
@@ -12,8 +14,8 @@
 
   &__list__wrap {
     position: relative;
-    height: 410px;
-    margin-bottom: 33px;
+    height: 400px;
+    margin-bottom: 2rem;
   }
 
   &__list {

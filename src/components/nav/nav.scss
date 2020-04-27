@@ -6,6 +6,11 @@
     display: flex;
   }
 
+  &__item:first-of-type,
+  .close-nav + li {
+    display: none;
+  }
+
   &__link {
     display: inline-block;
     cursor: pointer;
@@ -23,6 +28,12 @@
 .header {
   .nav {
     flex: 1 0 auto;
+
+    @media (max-width: $xxl - 1) {
+      .close-nav + li {
+        display: block;
+      }
+    }
 
     &__item {
       position: relative;
@@ -157,6 +168,10 @@
 
 .footer {
   .nav {
+    
+    @media (max-width: $l - 1) {
+      display: none;
+    }
 
     &__list {
       flex-direction: column;

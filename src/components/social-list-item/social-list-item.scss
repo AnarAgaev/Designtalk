@@ -51,6 +51,9 @@
       font-size: 1.23rem;
       padding: 0 13px;
 
+      @media (max-width: $s - 1) {
+        padding: 0 11px;
+      }
     }
   }
 }

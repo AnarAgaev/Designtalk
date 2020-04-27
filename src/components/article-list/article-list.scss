@@ -1,8 +1,14 @@
+@import "../../scss/variables";
+
 .article-list {
   justify-content: space-between;
 
   &__title {
     padding-bottom: 1rem;
+
+    @media (max-width: $l - 1) {
+      padding-top: 2rem;
+    }
   }
 }
 

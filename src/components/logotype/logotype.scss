@@ -29,4 +29,8 @@
 
 .footer .logo {
   margin-top: 1rem;
+
+  @media (max-width: $s - 1) {
+    display: none;
+  }
 }

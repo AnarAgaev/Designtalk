@@ -2,8 +2,27 @@
 @import "../../scss/extends";
 
 .privacy {
+
+  &__list {
+    @media (max-width: $l - 1) {
+      margin-bottom: 2rem;
+    }
+
+    @media (max-height: 400px) {
+      display: none;
+    }
+  }
+
   &__item {
     margin-bottom: 20px;
+
+    @media (max-width: $l - 1) {
+      margin-bottom: 7px;
+    }
+
+    @media (max-width: $s - 1) {
+      margin-bottom: 3px;
+    }
   }
 
   &__link {
@@ -21,6 +40,10 @@
 
     &::first-letter {
       text-transform: uppercase;
+    }
+
+    @media (max-width: $s - 1) {
+      font-size: 0.8rem;
     }
   }
 }
