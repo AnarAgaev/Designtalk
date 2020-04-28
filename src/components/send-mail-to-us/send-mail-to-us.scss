@@ -14,7 +14,7 @@
     line-height: 1.7;
     text-transform: uppercase;
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 1rem;
       line-height: 1.5;
       text-transform: none;
@@ -30,7 +30,7 @@
     margin-bottom: 1.5rem;
     transition: color .3s;
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 1.3rem;
     }
   }

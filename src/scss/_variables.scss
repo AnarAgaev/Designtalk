@@ -19,16 +19,11 @@ $danger                 : rgba(220, 53, 69, 1);     // #dc3545;
 // Fonts
 $font-primary           : 'Montserrat', sans-serif;
 
-// Media queries
-$mq-lg                  : 1440px;
-$mq-md                  : 1024px;
-$mq-sm                  : 768px;
-
 $footer-height          : 520px;
 
-// Screen sizes
-$xxl: 1366px;
-$xl:  1200px;
-$l:   992px;
-$m:   768px;
-$s:   576px;
+// Media queries Screen sizes
+$xxl                    : 1366px;
+$xl                     : 1200px;
+$lg                     : 992px;
+$md                     : 768px;
+$sm                     : 576px;

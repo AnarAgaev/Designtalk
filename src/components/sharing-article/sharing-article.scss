@@ -18,9 +18,11 @@
         fill: $color-primary-font;
       }
 
-      &:hover {
-        svg path {
-          fill: $color-d;
+      @media (min-width: $lg) {
+        &:hover {
+          svg path {
+            fill: $color-d;
+          }
         }
       }
     }

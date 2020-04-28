@@ -24,9 +24,10 @@
       fill: $color-d;
       transition: fill .3s;
     }
-
-    &:hover {
-      svg path { fill:$color-primary-font; }
+    @media (min-width: $lg) {
+      &:hover {
+        svg path { fill:$color-primary-font; }
+      }
     }
 
     &::before {
@@ -51,7 +52,7 @@
       font-size: 1.23rem;
       padding: 0 13px;
 
-      @media (max-width: $s - 1) {
+      @media (max-width: $sm - 1) {
         padding: 0 11px;
       }
     }

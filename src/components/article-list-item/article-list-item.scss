@@ -20,7 +20,11 @@
       padding-right: 15px;
     }
 
-    @media (max-width: $l - 1) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $lg - 1) {
       padding: 0 15px !important;
     }
 
@@ -59,8 +63,10 @@
       content: none;
     }
 
-    &:hover + .article-list__rubric + .article-list__caption span {
-      background-size: 100% 100%;
+    @media (min-width: $lg) {
+      &:hover + .article-list__rubric + .article-list__caption span {
+        background-size: 100% 100%;
+      }
     }
   }
 
@@ -72,6 +78,10 @@
     font-size: 0.75rem;
     opacity: 0;
     transform: translateY(15px);
+
+    &::before {
+      content: "#";
+    }
   }
 
   &__caption {

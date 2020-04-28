@@ -13,11 +13,11 @@
   transform: translateY(100%);
   transition: transform .3s;
 
-  @media (max-width: $l - 1) {
+  @media (max-width: $lg - 1) {
     padding: 3rem 0 2rem;
   }
 
-  @media (max-width: $s - 1) {
+  @media (max-width: $sm - 1) {
     padding: 2rem 0 2rem;
   }
 
@@ -28,11 +28,11 @@
   &__content {
     font-size: 1rem;
 
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       font-size: 0.875rem;
     }
 
-    @media (max-width: $s - 1) {
+    @media (max-width: $sm - 1) {
       font-size: 0.75rem;
     }
   }

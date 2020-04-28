@@ -4,11 +4,11 @@
 .privacy {
 
   &__list {
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       margin-bottom: 2rem;
     }
 
-    @media (max-height: $s) {
+    @media (max-height: $sm) {
       display: none;
     }
   }
@@ -16,11 +16,11 @@
   &__item {
     margin-bottom: 20px;
 
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       margin-bottom: 7px;
     }
 
-    @media (max-width: $s - 1) {
+    @media (max-width: $sm - 1) {
       margin-bottom: 3px;
     }
   }
@@ -42,7 +42,7 @@
       text-transform: uppercase;
     }
 
-    @media (max-width: $s - 1) {
+    @media (max-width: $sm - 1) {
       font-size: 0.8rem;
     }
   }

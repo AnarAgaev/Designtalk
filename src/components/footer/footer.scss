@@ -11,16 +11,16 @@
   height: $footer-height;
   background-color: $color-back;
 
-  @media (max-width: $l - 1) {
+  @media (max-width: $lg - 1) {
     padding-top: 0;
   }
 
-  @media (max-width: $l - 1) {
+  @media (max-width: $lg - 1) {
     height: 100vh;
     padding-top: 3.5rem;
   }
 
-  @media (max-height: $s - 1) {
+  @media (max-height: $sm - 1) {
     padding-top: 2rem;
   }
 }

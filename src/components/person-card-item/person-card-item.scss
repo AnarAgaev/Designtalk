@@ -1,6 +1,10 @@
 .person-card {
   &__item {
     padding-bottom: 3rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   &__position {

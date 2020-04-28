@@ -7,7 +7,7 @@
   transition-delay: 0s;
   transition: transform 1s $animation-primary, opacity 2s $animation-primary;
 
-  @media (max-width: $m - 1) {
+  @media (max-width: $md - 1) {
     margin-bottom: 2rem;
   }
 
@@ -20,7 +20,7 @@
     margin-bottom: 1.5rem;
 
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 1rem;
       line-height: 1.5;
       text-transform: none;
@@ -32,7 +32,7 @@
     font-size: 1.5rem;
     padding: 0 16px;
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 1.3rem;
       padding: 0 11px;
     }

@@ -4,7 +4,7 @@
   display: inline-block;
   padding-top: 3rem;
 
-  @media (max-width: $l - 1) {
+  @media (max-width: $lg - 1) {
     padding-top: 2rem;
   }
 
@@ -14,7 +14,7 @@
     line-height: 1.3rem;
     margin: 0;
 
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       font-size: 0.7rem;
       line-height: 1.3;
     }

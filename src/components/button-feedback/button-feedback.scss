@@ -18,8 +18,10 @@
     transition: fill .3s;
   }
 
-  &:hover {
-    svg path { fill:$color-l; }
+  @media (min-width: $lg) {
+    &:hover {
+      svg path { fill:$color-l; }
+    }
   }
 
   &:link,

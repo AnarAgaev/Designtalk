@@ -9,6 +9,10 @@
     width: auto;
     @extend %text-underline;
 
+    &::before {
+      content: "#";
+    }
+
     &::first-letter {
       text-transform: uppercase;
     }

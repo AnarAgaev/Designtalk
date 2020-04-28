@@ -15,11 +15,11 @@
     }
   }
 
-  @media (max-width: $l - 1) {
+  @media (max-width: $lg - 1) {
     padding: 3rem;
   }
 
-  @media (max-width: $s - 1) {
+  @media (max-width: $sm - 1) {
     padding: 2rem 0 1rem;
     margin: 5rem 0 1rem !important;
   }
@@ -32,12 +32,12 @@
     text-transform: uppercase;
     margin-bottom: 0.7rem;
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 3rem;
       line-height: 1.5;
     }
 
-    @media (max-width: $s - 1) {
+    @media (max-width: $sm - 1) {
       font-size: 2rem;
     }
   }
@@ -50,13 +50,13 @@
     text-transform: uppercase;
     margin-bottom: 1rem;
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 2rem;
       font-weight: 200;
       line-height: 1.6;
     }
 
-    @media (max-width: $s - 1) {
+    @media (max-width: $sm - 1) {
       font-size: 1.2rem;
       font-weight: 400;
     }

@@ -6,17 +6,17 @@
   &__title {
     padding-bottom: 1rem;
 
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       padding-top: 2rem;
     }
 
     h3 {
-      @media (max-width: $l - 1) {
+      @media (max-width: $lg - 1) {
         font-size: 2rem;
         line-height: 3.5rem;
       }
 
-      @media (max-width: $m - 1) {
+      @media (max-width: $md - 1) {
         font-size: 1.5rem;
         line-height: 1.5;
       }
@@ -25,5 +25,5 @@
 }
 
 .article-page .article-list__title {
-  padding: 0 0 1rem;
+  padding: 2rem 0 0;
 }

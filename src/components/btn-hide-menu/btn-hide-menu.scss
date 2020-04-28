@@ -20,7 +20,7 @@
     height: 4px;
     background-color: $color-secondary-font;
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       height: 3px;
     }
   }
@@ -32,7 +32,7 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  @media (max-width: $m - 1) {
+  @media (max-width: $md - 1) {
     width: 30px;
     height: 30px;
   }

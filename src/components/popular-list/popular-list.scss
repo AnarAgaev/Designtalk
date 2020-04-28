@@ -13,12 +13,12 @@
   }
 
   &__title {
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       font-size: 2rem;
       line-height: 3.5rem;
     }
 
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       font-size: 1.5rem;
       line-height: 1.5;
     }

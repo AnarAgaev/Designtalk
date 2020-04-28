@@ -5,13 +5,13 @@
   line-height: 1.13;
   padding-bottom: 4.7rem;
 
-  @media (max-width: $l - 1) {
+  @media (max-width: $lg - 1) {
     font-size: 3rem;
     padding-bottom: 3rem;
 
   }
 
-  @media (max-width: $m - 1) {
+  @media (max-width: $md - 1) {
     font-size: 2rem;
     padding-bottom: 2rem;
   }

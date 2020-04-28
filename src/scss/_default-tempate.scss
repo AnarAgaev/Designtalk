@@ -86,7 +86,7 @@ h3, .h3 {
   }
 }
 
-@media (max-width: $l - 1) {
+@media (max-width: $lg - 1) {
   h1, .h1 {
     font-size: 2rem;
     padding-bottom: 1rem;
@@ -98,7 +98,7 @@ h3, .h3 {
   }
 }
 
-@media (max-width: $m - 1) {
+@media (max-width: $md - 1) {
   h1, .h1 {
     font-size: 1.25rem;
     padding-top: 2rem;
@@ -108,7 +108,7 @@ h3, .h3 {
   }
 }
 
-@media (max-width: $s - 1) {
+@media (max-width: $sm - 1) {
 }
 
 
@@ -116,10 +116,10 @@ h3, .h3 {
 .offset {
   &_3 {
     padding-left: 3rem;
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       padding-left: 2rem;
     }
-    @media (max-width: $m - 1) {
+    @media (max-width: $md - 1) {
       padding-left: 1rem;
     }
   }
@@ -132,7 +132,7 @@ p {
   font-weight: normal;
   font-style: normal;
 
-  @media (max-width: $m - 1) {
+  @media (max-width: $md - 1) {
     font-size: 0.875rem;
   }
 }
@@ -166,8 +166,10 @@ a {
   background-size: 100% 45%;
   background-position: left bottom;
 
-  &:hover {
-    background-size: 100% 1px;
+  @media (min-width: $lg) {
+    &:hover {
+      background-size: 100% 1px;
+    }
   }
 }
 
@@ -195,7 +197,7 @@ input.button {
   letter-spacing: 2px;
   color: $color-l;
 
-  @media (min-width: $l) {
+  @media (min-width: $lg) {
     &:link,
     &:visited,
     &:focus {

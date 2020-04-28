@@ -105,16 +105,17 @@
           opacity: 1;
         }
 
-        @media (max-width: $m - 1) {
+        @media (max-width: $md - 1) {
           display: none;
         }
-        
       }
 
-      &:hover::after {
-        width: 100%;
-        left: 0;
-        opacity: 1;
+      @media (min-width: $lg){
+        &:hover::after {
+          width: 100%;
+          left: 0;
+          opacity: 1;
+        }
       }
 
       @media (max-width: $xxl - 1) {
@@ -125,7 +126,7 @@
         height: auto;
       }
 
-      @media (max-width: $m - 1) {
+      @media (max-width: $md - 1) {
         font-size: 1.1rem;
         line-height: 2;
       }
@@ -169,7 +170,7 @@
 .footer {
   .nav {
     
-    @media (max-width: $l - 1) {
+    @media (max-width: $lg - 1) {
       display: none;
     }
 

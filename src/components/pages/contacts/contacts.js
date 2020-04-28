@@ -43,7 +43,7 @@ class Contacts extends Component {
 
           <Row>
             <Col lg={10}>
-              <h3 className="mt-5">
+              <h3 className="mt-4">
                 или напишите письмо издателю
               </h3>
 

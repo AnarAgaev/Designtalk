@@ -37,7 +37,7 @@ class ForAdvertisers extends Component {
           </Row>
 
           <Row>
-            <Col lg={10}>
+            <Col lg={10} className="mb-5">
               <h3 className="mt-5">
                 по вопросам стоимости и форматов
                 размещения рекламы пишите на

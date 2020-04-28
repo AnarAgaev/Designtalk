@@ -30,11 +30,11 @@
 .footer .logo {
   margin-top: 1rem;
 
-  @media (max-width: $s - 1) {
+  @media (max-width: $sm - 1) {
     display: none;
   }
 
-  @media (max-height: $s) {
+  @media (max-height: $sm) {
     display: none;
   }
 }

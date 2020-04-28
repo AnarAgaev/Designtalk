@@ -25,7 +25,7 @@ const LastRubricArticle = ({
           <RubricTitle title={ rubricTitle } />
         </Col>
 
-        <Col lg={4}>
+        <Col lg={5}>
           <div className="last-rubric-article">
             <Link
               to={ urlArticle }
@@ -45,7 +45,7 @@ const LastRubricArticle = ({
           </div>
         </Col>
 
-        <Col lg={8} className={"my-5"}>
+        <Col lg={7} className={"my-5"}>
           <Link to={ urlArticle } >
             <img
               src={ 'https://designtalk.ru/images/' + picture }
