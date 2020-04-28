@@ -6,6 +6,7 @@
   margin-bottom: $footer-height;
   padding-bottom: 4rem;
   background-color: white;
+  overflow-x: hidden;
 
   @media (max-width: $l - 1) {
     margin-bottom: 100vh;

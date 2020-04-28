@@ -16,6 +16,8 @@ const LastArticles = ({
   return (
     <Container>
       <Row>
+
+
         <Col lg={6} style={{zIndex: '1'}}>
           <div className="last-article">
 
@@ -36,6 +38,8 @@ const LastArticles = ({
             </Link>
           </div>
         </Col>
+
+
         <Col lg={6} className="last-article__picture-wrap" >
           <Link
             to={ urlArticle }

@@ -62,7 +62,7 @@
       @media (max-width: $xxl - 1) {
         transform: translateX(-2rem);
         opacity: 0;
-        transition: transform 1s $animation-primary, opacity 2s $animation-primary;
+        transition: transform .5s $animation-primary, opacity 1s $animation-primary;
         transition-delay: 0s;
       }
     }

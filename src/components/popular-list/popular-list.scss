@@ -12,6 +12,18 @@
     content: none;
   }
 
+  &__title {
+    @media (max-width: $l - 1) {
+      font-size: 2rem;
+      line-height: 3.5rem;
+    }
+
+    @media (max-width: $m - 1) {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+  }
+
   &__list__wrap {
     position: relative;
     height: 400px;

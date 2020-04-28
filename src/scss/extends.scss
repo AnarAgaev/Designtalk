@@ -7,8 +7,10 @@
   transition: background-size .6s ease;
   background-size: 0 100%;
 
-  &:hover {
-    background-size: 100% 100%;
+  @media (min-width: $l) {
+    &:hover {
+      background-size: 100% 100%;
+    }
   }
 }
 

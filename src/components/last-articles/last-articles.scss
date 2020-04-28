@@ -14,7 +14,8 @@
   }
 
   @media (max-width: $s - 1) {
-    padding: 4rem 0;
+    padding: 2rem 0 3rem;
+    min-height: calc(100vh - 3.5rem);
   }
 
   &__picture-wrap {
@@ -34,9 +35,10 @@
     top: 0;
     width: 100vw;
     height: calc(100vh - 3.5rem);
-    backdrop-filter: blur(7px);
-    background: rgba(0,0,0,.1);
-    background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.5));
+    //backdrop-filter: blur(7px);
+    //background: rgba(0,0,0,.1);
+    //background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.5));
+    background-color: black;
 
     @media (max-width: $l - 1) {
       width: 200vw;

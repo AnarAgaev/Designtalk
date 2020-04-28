@@ -74,20 +74,54 @@ h2, .h2 {
 }
 h3, .h3 {
   font-size: 2rem;
-  line-height: 3.5rem;
+  line-height: 1.7;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 
-  @media (max-width: $s - 1) {
-    font-size: 1.5rem;
-    line-height: 1.5;
+}
+@media (max-width: $xl - 1) {
+  h1, .h1 {
+    font-size: 3rem;
+    line-height: 1.7;
   }
 }
+
+@media (max-width: $l - 1) {
+  h1, .h1 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  h3, .h3 {
+    font-size: 1.5rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: $m - 1) {
+  h1, .h1 {
+    font-size: 1.25rem;
+    padding-top: 2rem;
+  }
+  h3, .h3 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: $s - 1) {
+}
+
 
 // Offsets
 .offset {
   &_3 {
     padding-left: 3rem;
+    @media (max-width: $l - 1) {
+      padding-left: 2rem;
+    }
+    @media (max-width: $m - 1) {
+      padding-left: 1rem;
+    }
   }
 }
 
@@ -97,6 +131,10 @@ p {
   font-size: 1.131rem;
   font-weight: normal;
   font-style: normal;
+
+  @media (max-width: $m - 1) {
+    font-size: 0.875rem;
+  }
 }
 
 .policy-personal-data p,
