@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './popular-list-item.scss';
 
-const PopularListItem = ({ id, url, rubric, title, preview, picture }) => {
+const PopularListItem = ({
+    id, url, rubric,
+    title, preview,
+    picture
+  }) => {
 
   const imageUrl = `url(https://designtalk.ru/images/${ picture })`;
   const rubricUrl = `/rubrics/${rubric.link}`;
@@ -20,9 +24,9 @@ const PopularListItem = ({ id, url, rubric, title, preview, picture }) => {
       </div>
       <p className="popular-list-item__description">
         <span>{ preview }</span>
-        <a href={ rubricUrl }>
+        <Link to={ rubricUrl } >
           { rubric.name }
-        </a>
+        </Link>
       </p>
     </article>
   );

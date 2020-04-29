@@ -13,7 +13,7 @@
     font-style: normal;
     text-transform: uppercase;
     font-size: 0.9rem;
-    margin-bottom: -5px;
+    margin-bottom: 3px;
   }
 
   &__name {
@@ -21,7 +21,8 @@
     font-weight: 200;
     font-style: normal;
     font-size: 2rem;
-    margin-bottom: 3px;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
   }
 
   &__email {

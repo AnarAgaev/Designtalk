@@ -50,7 +50,6 @@ const App = () => {
               <Route path="/policy-personal-data" component={ PolicyPersonalData } />
               <Route path="/privacy-policy" component={ PrivacyPolicy } />
               <Route path="/terms-of-use" component= { TermsOfUse } />
-              <Route path="/articles/" component= { ArticleContainer } exact />
               <Route path="/articles/:url"
                      render={({ match }) => {
                        const { url } = match.params;

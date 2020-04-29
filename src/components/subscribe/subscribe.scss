@@ -7,7 +7,7 @@
   margin: 8rem 0 3rem !important;
 
   @media (min-width: 1650px) {
-    padding: 7rem 5rem;
+    padding: 6rem 5rem;
 
     .col-12 {
       flex: 0 0 50%;
@@ -17,11 +17,12 @@
 
   @media (max-width: $lg - 1) {
     padding: 3rem;
+    margin: 6rem 0 2rem !important;
   }
 
   @media (max-width: $sm - 1) {
     padding: 2rem 0 1rem;
-    margin: 5rem 0 1rem !important;
+    margin: 4rem 0 1rem !important;
   }
 
   &__title {
