@@ -1,26 +1,10 @@
 @import '../../scss/variables';
 
 .logo {
-  display: inline-block;
-  width: 50px;
+  width: 39px;
   height: 3.5rem;
-  top: -1px;
   cursor: pointer;
-  color: $color-primary-font;
-  font-weight: 700;
-  letter-spacing: -.05em;
-
-  &__letters {
-    font-size: 2.3rem;
-    font-family: 'Titillium Web', sans-serif;
-  }
-
-  &__point {
-    font-size: 3.3rem;
-    line-height: 0;
-    left: 2px;
-    position: relative;
-  }
+  display: flex;
 
   &::before {
     content: none;

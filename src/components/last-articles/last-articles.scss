@@ -35,9 +35,6 @@
     top: 0;
     width: 100vw;
     height: calc(100vh - 3.5rem);
-    //backdrop-filter: blur(7px);
-    //background: rgba(0,0,0,.1);
-    //background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.5));
     background-color: black;
 
     @media (max-width: $lg - 1) {
@@ -57,11 +54,11 @@
     padding-top: 0;
     padding-bottom: 1.3rem;
     word-spacing: 2px;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.25;
     letter-spacing: 0;
     text-transform: none;
-    font-size: 4.3vw;
+    font-size: 4vw;
     color: $color-secondary-font ;
 
     @media (max-width: $xl - 1) {
@@ -88,7 +85,7 @@
 
     span {
       @extend %text-underline;
-      background-image: linear-gradient(transparent calc(100% - 3px),#fff 3px);
+      background-image: linear-gradient(transparent calc(100% - 2px),#fff 2px);
 
       @media (max-width: $lg - 1) {
         background: none;
