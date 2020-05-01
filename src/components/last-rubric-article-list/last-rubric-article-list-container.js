@@ -9,7 +9,7 @@ import { fetchLastRubricArticleList } from "../../actions";
 
 class LastRubricArticleListContainer extends Component {
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     const { rubric, fetchArticles } = this.props;
 
     if (rubric && rubric !== prevProps.rubric) {
@@ -20,23 +20,28 @@ class LastRubricArticleListContainer extends Component {
   render() {
     const { articles, error } = this.props;
 
-    const articleList = renderElementList (
-      articles,
-      ArticleListItem,
-      'article-page'
-    );
-
     if (error) {
       console.log(error);
       return <ErrorIndicator />
     }
 
-    return (
-      <ArticleList
-        articles={ articleList }
-        articleListTitle={ "с этой статьёй также читают" }
-        parentClass={ "article-page" } />
-    );
+    if (articles.length) {
+      const articleList = renderElementList (
+        articles,
+        ArticleListItem,
+        'article-page'
+      );
+
+      return (
+        <ArticleList
+          articles={ articleList }
+          articleListTitle={ "с этой статьёй также читают" }
+          parentClass={ "article-page" } />
+      );
+    }
+
+    // If there isn't articles at the selected rubric, don't show ArticleList component
+    return null;
   }
 }
 

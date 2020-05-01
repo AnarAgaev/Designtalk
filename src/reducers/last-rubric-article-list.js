@@ -32,6 +32,13 @@ const updateLastRubricArticleList = (state, action) => {
         error: action.payload
       };
 
+    case 'RESET_LAST_RUBRIC_ARTICLE_LIST':
+      return {
+        ...state.lastRubricArticleList,
+        articles: [],
+        loading: false,
+      };
+
     case 'SHOW_RUBRIC_ARTICLE_LIST_ITEM':
       const articlesWithShownItems = state
         .lastRubricArticleList
