@@ -12,7 +12,7 @@ const SharingArticle = () => {
 
   return (
     <>
-      <span className="sharing-article__caption">поделиться статьёй:</span>
+      <span className="sharing-article__caption">подписывайтесь на нас в социальных сетях:</span>
       <ul className="sharing-article__social-list">
         { iconList }
       </ul>
