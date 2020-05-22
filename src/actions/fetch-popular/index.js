@@ -8,9 +8,6 @@ const fetchPopular = (dispatch, blogService) => () => {
 
   blogService.getArticles('/popular/')
     .then((response) => {
-
-      console.log(response)
-
       dispatch(fetchPopularSuccess(response));
     })
     .catch((error) => {

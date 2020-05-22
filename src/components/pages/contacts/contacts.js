@@ -4,6 +4,7 @@ import FromContainer from "../../form"
 import { jumpToTop } from "../../../utils";
 import PersonCardItem from "../../person-card-item";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import './contacts.scss';
 
 class Contacts extends Component {
@@ -15,6 +16,23 @@ class Contacts extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>Контакты | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Мы всегда внимательны к сообщениям со страницы Контакты. На этой странице вы можете задать вопросы по любым темам." />
+          <meta name="keywords" content="контакты, написать в службу поддержки, письмо в службу поддержки, служба поддержки" />
+          <link rel="canonical" href="https://designtalk.ru/contacts" />
+
+          <meta name="og:title" content="Контакты | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="Контакты | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Мы всегда внимательны к сообщениям со страницы Контакты. На этой странице вы можете задать вопросы по любым темам." />
+          <meta property="og:description" content="Мы всегда внимательны к сообщениям со страницы Контакты. На этой странице вы можете задать вопросы по любым темам." />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/contacts" />
+          <meta property="og:url" content="https://designtalk.ru/contacts" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container>
           <Row>
             <Col lg={9}>

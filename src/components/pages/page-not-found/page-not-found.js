@@ -4,11 +4,16 @@ import FromContainer from "../../form"
 import AbsoluteWrapper from "../../absolute-wrapper";
 import { Link } from "react-router-dom";
 import image from "../../../images/giphy.webp";
+import { Helmet } from "react-helmet";
 import "./page-not-found.scss";
 
 const PageNotFound = () => {
   return (
     <AbsoluteWrapper>
+      <Helmet>
+        <title>Страница не найдена | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+        <meta name="description" content="К сожалению, данной страницы на сайте больше нет. Возможно, она переименована, перенесена в другой раздел или удалена." />
+      </Helmet>
       <Container className="pnf">
         <Row>
           <Col lg={9}>

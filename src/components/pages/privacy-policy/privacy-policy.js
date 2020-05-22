@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import './privacy-policy.scss';
 
 export default class PrivacyPolicy extends Component {
@@ -14,6 +15,23 @@ export default class PrivacyPolicy extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>Политика конфиденциальности | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Политика ООО ЦИФРОВОЕ МЕДИА ДИЗАЙНТАЛК в отношении защиты конфиденциальности персональных данных, предоставляемых посетителям веб-сайта designtalk.ru" />
+          <meta name="keywords" content="политика конфиденциальности" />
+          <link rel="canonical" href="https://designtalk.ru/privacy-policy" />
+
+          <meta name="og:title" content="Политика конфиденциальности | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="Политика конфиденциальности | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Политика ООО ЦИФРОВОЕ МЕДИА ДИЗАЙНТАЛК в отношении защиты конфиденциальности персональных данных, предоставляемых посетителям веб-сайта designtalk.ru" />
+          <meta property="og:description" content="Политика ООО ЦИФРОВОЕ МЕДИА ДИЗАЙНТАЛК в отношении защиты конфиденциальности персональных данных, предоставляемых посетителям веб-сайта designtalk.ru" />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/privacy-policy" />
+          <meta property="og:url" content="https://designtalk.ru/privacy-policy" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container className={"privacy-policy"}>
           <Row>
             <Col lg={12}>

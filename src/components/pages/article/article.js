@@ -9,6 +9,7 @@ import { createMarkup, jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
 import LastRubricArticleListContainer from "../../last-rubric-article-list";
 import HorizontalAdBanner from "../../horizontal-ad-banner";
+import { Helmet } from "react-helmet";
 import './article.scss';
 
 class Article extends Component {
@@ -20,7 +21,8 @@ class Article extends Component {
   render() {
     const { article: {
       rubric, title, subtitle, date, copywriter, author,
-      photographer, stylist, content, picture
+      photographer, stylist, content, picture, description,
+      keywords, url
     }} = this.props;
 
     const urlImage = `https://designtalk.ru/images/${picture}`;
@@ -28,6 +30,23 @@ class Article extends Component {
 
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>{title ? `${title} | ` : ''}Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content={ description } />
+          <meta name="keywords" content={ keywords } />
+          <link rel="canonical" href={ `https://designtalk.ru/articles/${url}` } />
+
+          <meta name="og:title" content={ title } />
+          <meta property="og:title" content={ title } />
+          <meta name="og:description" content={ description } />
+          <meta property="og:description" content={ description } />
+          <meta name="og:image" content={ urlImage } />
+          <meta property="og:image" content={ urlImage } />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content={ `https://designtalk.ru/articles/${url}` } />
+          <meta property="og:url" content={ `https://designtalk.ru/articles/${url}` } />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container className="article">
           <Row>
             <Col lg={12}>

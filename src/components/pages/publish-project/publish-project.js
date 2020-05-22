@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import FromContainer from "../../form"
 import { jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import './publish-project.scss';
 
 class PublishProject extends Component {
@@ -14,6 +15,23 @@ class PublishProject extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>Опубилковать проект | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Как опубликовать свой проект на сайте designtalk.ru и в группах в социальных сетях." />
+          <meta name="keywords" content="опубликовать проект, архитектура, дизайн интерьера, искусство" />
+          <link rel="canonical" href="https://designtalk.ru/publish-project" />
+
+          <meta name="og:title" content="Опубилковать проект | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="Опубилковать проект | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Как опубликовать свой проект на сайте designtalk.ru и в группах в социальных сетях." />
+          <meta property="og:description" content="Как опубликовать свой проект на сайте designtalk.ru и в группах в социальных сетях." />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/publish-project" />
+          <meta property="og:url" content="https://designtalk.ru/publish-project" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container>
           <Row>
             <Col lg={12}>

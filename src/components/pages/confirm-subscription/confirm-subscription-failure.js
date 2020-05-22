@@ -2,11 +2,16 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import "./confirm-subscription.scss";
 
 const ConfirmSubscriptionFailure = () => {
   return (
     <AbsoluteWrapper>
+      <Helmet>
+        <title>Подписка не подтверждена. | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+        <meta name="description" content="Во время процесса подтверждения подписки произошла ошибка" />
+      </Helmet>
       <Container className={"confirm-subscription"}>
         <Row>
           <Col lg={12}>

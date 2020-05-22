@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { jumpToTop } from "../../../utils";
 import AboutPageTitle from "../../about-page-title";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import './about.scss';
 
 export default class About extends Component {
@@ -14,6 +15,23 @@ export default class About extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>О нас | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Designtalk - это блог о дизайне пространств и всего что в этом пространстве находится. Наша миссия Вдохновлять и популяризировать качественный и современный дизайн интерьера." />
+          <meta name="keywords" content="designtalk, о блоге, о нас, о проекте, что такое designtalk, designtalk что это" />
+          <link rel="canonical" href="https://designtalk.ru/about" />
+
+          <meta name="og:title" content="О нас | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="О нас | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Designtalk - это блог о дизайне пространств и всего что в этом пространстве находится. Наша миссия Вдохновлять и популяризировать качественный и современный дизайн интерьера." />
+          <meta property="og:description" content="Designtalk - это блог о дизайне пространств и всего что в этом пространстве находится. Наша миссия Вдохновлять и популяризировать качественный и современный дизайн интерьера." />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/about" />
+          <meta property="og:url" content="https://designtalk.ru/about" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <AboutPageTitle />
         <Container className={"about"}>
           <Row>

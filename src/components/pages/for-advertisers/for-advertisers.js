@@ -5,6 +5,7 @@ import { jumpToTop } from "../../../utils";
 import PersonCardList from "../../person-card-list";
 import AbsoluteWrapper from "../../absolute-wrapper";
 import personList from "./person-list-data";
+import { Helmet } from "react-helmet";
 import './for-advertisers.scss';
 
 class ForAdvertisers extends Component {
@@ -16,6 +17,23 @@ class ForAdvertisers extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>Рекламодателям | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Реклама на страницах сайта Designtalk.ru и в постах в социальных сетях. Возможно использование любых рекламных форматов от спецпроектов до статических рекламных баннеров и рекламных статей." />
+          <meta name="keywords" content="реклама, реклама в блоге, реклама дизайн интерьера, реклама в социальных сетях, реклама designtalk" />
+          <link rel="canonical" href="https://designtalk.ru/for-advertisers" />
+
+          <meta name="og:title" content="Рекламодателям | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="Рекламодателям | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Реклама на страницах сайта Designtalk.ru и в постах в социальных сетях. Возможно использование любых рекламных форматов от спецпроектов до статических рекламных баннеров и рекламных статей." />
+          <meta property="og:description" content="Реклама на страницах сайта Designtalk.ru и в постах в социальных сетях. Возможно использование любых рекламных форматов от спецпроектов до статических рекламных баннеров и рекламных статей." />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/for-advertisers" />
+          <meta property="og:url" content="https://designtalk.ru/for-advertisers" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container>
           <Row>
             <Col lg={10}>

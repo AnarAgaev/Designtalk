@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import './policy-personal-data.scss';
 
 export default class PolicyPersonalData extends Component {
@@ -13,6 +14,23 @@ export default class PolicyPersonalData extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>Политика в отношении обработки персональных данных | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Политика в отношении обработки персональных данных ООО ЦИФРОВОЕ МЕДИА ДИЗАЙНТАЛК" />
+          <meta name="keywords" content="политика персональных данных" />
+          <link rel="canonical" href="https://designtalk.ru/policy-personal-data" />
+
+          <meta name="og:title" content="Политика в отношении обработки персональных данных | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="Политика в отношении обработки персональных данных | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Политика в отношении обработки персональных данных ООО ЦИФРОВОЕ МЕДИА ДИЗАЙНТАЛК" />
+          <meta property="og:description" content="Политика в отношении обработки персональных данных ООО ЦИФРОВОЕ МЕДИА ДИЗАЙНТАЛК" />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/policy-personal-data" />
+          <meta property="og:url" content="https://designtalk.ru/policy-personal-data" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container className={"policy-personal-data"}>
           <Row>
             <Col lg={12}>

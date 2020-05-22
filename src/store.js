@@ -14,13 +14,13 @@ const blockMountingMiddleware = () => (dispatch) => (action) => {
   return dispatch(action);
 };
 
-const logMiddleware = ({ getState }) => (dispatch) => (action) => {
-  console.log(action, action.type, getState());
-  return dispatch(action);
-};
+// const logMiddleware = ({ getState }) => (dispatch) => (action) => {
+//   console.log(action, action.type, getState());
+//   return dispatch(action);
+// };
 
 const store = createStore(reducer, applyMiddleware(
-  logMiddleware,
+  // logMiddleware,
   blockMountingMiddleware
 ));
 

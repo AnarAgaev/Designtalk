@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { jumpToTop } from "../../../utils";
 import AbsoluteWrapper from "../../absolute-wrapper";
+import { Helmet } from "react-helmet";
 import './terms-of-use.scss';
 
 export default class TermsOfUse extends Component {
@@ -14,6 +15,23 @@ export default class TermsOfUse extends Component {
   render() {
     return (
       <AbsoluteWrapper>
+        <Helmet>
+          <title>Пользовательское соглашение | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА.</title>
+          <meta name="description" content="Политика и условия использования интернет сайта designtalk.ru" />
+          <meta name="keywords" content="пользовательское соглашение, условия использования" />
+          <link rel="canonical" href="https://designtalk.ru/terms-of-use" />
+
+          <meta name="og:title" content="Пользовательское соглашение | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta property="og:title" content="Пользовательское соглашение | Designtalk - это БЛОГ О ДИЗАЙНЕ ПРОСТРАНСТВА." />
+          <meta name="og:description" content="Политика и условия использования интернет сайта designtalk.ru" />
+          <meta property="og:description" content="Политика и условия использования интернет сайта designtalk.ru" />
+          <meta name="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:image" content="https://designtalk.ru/images/cover.jpg" />
+          <meta property="og:type" content="article" />
+          <meta name="og:url" content="https://designtalk.ru/terms-of-use" />
+          <meta property="og:url" content="https://designtalk.ru/terms-of-use" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Container className={"terms-of-use"}>
           <Row>
             <Col lg={12}>
